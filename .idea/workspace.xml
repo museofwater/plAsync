@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6372b416-336c-45ff-a683-acd1511aa06a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/images/accept.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/images/ajax-loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/images/error.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/images/openid-large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncAndroid/Service/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/SigninController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/models/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/assets/stylesheets/all.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/stylesheets/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/javascripts/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/stylesheets/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/javascripts/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/javascripts/jquery.validate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/javascripts/newUser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/assets/stylesheets/newUser.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/views/newUser.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/views/newUserFormField.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/javascripts/openid-en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/javascripts/openid-jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncAndroid/SDK/plAsync Android SDK.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncAndroid/Service/plAsync Android Service.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/public/javascripts/signin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/assets/stylesheets/signin.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/views/signin.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/views/signin_orig.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncServer/app/views/welcome.scala.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plAsyncServer/app/assets/stylesheets/login.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/model/User.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/UserController.java" afterPath="$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plAsyncServer/conf/application.conf" afterPath="$PROJECT_DIR$/plAsyncServer/conf/application.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plAsyncServer/public/login.html" afterPath="$PROJECT_DIR$/plAsyncServer/public/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plAsyncServer/conf/routes" afterPath="$PROJECT_DIR$/plAsyncServer/conf/routes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="plAsync.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -145,6 +114,7 @@
     <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/res/layout/main.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
     <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/res/values/strings.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
     <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/build.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
+    <file path="/README.md" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374177166409" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,10 +175,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="plAsyncLogo.png" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="plAsyncLogo.png" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plAsyncLogo.png">
           <provider selected="true" editor-type-id="images">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncServer/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="27" selection-start="144" selection-end="144" vertical-scroll-proportion="0.16666667">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -234,6 +222,7 @@
         <option value="$PROJECT_DIR$/plAsyncServer/src/main/java/com/plasync/ApplicationController.java" />
         <option value="$PROJECT_DIR$/plAsyncServer/plasync-server-parent/pom.xml" />
         <option value="$PROJECT_DIR$/plAsyncServer/plasync-server-web/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -851,7 +840,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="778" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -870,7 +859,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.6702254" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2864137" sideWeight="0.6702254" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2864137" sideWeight="0.6702254" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -950,6 +939,20 @@
     <entry file="file://$PROJECT_DIR$/plAsyncLogo.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncServer/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="27" selection-start="144" selection-end="144" vertical-scroll-proportion="0.16666667">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
