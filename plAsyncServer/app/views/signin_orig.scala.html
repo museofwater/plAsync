@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/all.css">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="/assets/javascripts/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/javascripts/openid-jquery.js"></script>
+        <script type="text/javascript" src="/assets/javascripts/openid-en.js"></script>
+        <script type="text/javascript" src="/assets/javascripts/signin.js"></script>
+        <title></title>
+    </head>
+    <body>
+        <div id="content" class="container">
+            <div class="subheader">
+                <h1>Please Sign In with your Open ID</h1>
+            </div>
+            <div id="mainbar">
+                <p class="script-only">Do you already have an account on one of these sites? Click the logo to
+                                       <b>log in</b> with it here:
+                </p>
+                <form id="openid_form" action="\signin" method="post">
+                    <div id="openid_btns">
+                        <a title="log in with Google" href="javascript:openid.signin('google');"
+                        class="icon-google-large openid_large_btn"></a>
+                        <a title="log in with Facebook" href="javascript:openid.signin('facebook');"
+                        class="icon-facebook-large openid_large_btn"></a>
+                        <a title="log in with Yahoo" href="javascript:openid.signin('yahoo');"
+                        class="icon-yahoo-large openid_large_btn"></a>
+                        <a title="log in with AOL" href="javascript:openid.signin('aol');"
+                        class="icon-aol-large openid_large_btn"></a>
+                        <a title="log in with myOpenID" href="javascript:openid.signin('myopenId');"
+                        class="icon-myopenid-large openid_large_btn"></a>
+                        <br>
+                        <div id="show-more-options" style="display: block;">
+                            <div id="more-openid-options">
+                                <a title="log in with LiveJournal" href="javascript:openid.signin('livejournal');"
+                                class="icon-livejournal openid_small_btn"></a>
+                                <a title="log in with WordPress" href="javascript:openid.signin('wordpress');"
+                                class="icon-wordpress openid_small_btn"></a>
+                                <a title="log in with Blogger" href="javascript:openid.signin('blogger');"
+                                class="icon-blogger openid_small_btn"></a>
+                                <a title="log in with Verisign" href="javascript:openid.signin('verisign');"
+                                class="icon-verisign openid_small_btn"></a>
+                                <a title="log in with claimID" href="javascript:openid.signin('claimid');"
+                                class="icon-claimid openid_small_btn"></a>
+                                <a title="log in with ClickPass" href="javascript:openid.signin('clickpass');"
+                                class="icon-clickpass openid_small_btn"></a>
+                            </div>
+                            <div id="simple-openid-selector">
+                                    <!--<div id="openid_input_area" class="script-only">
+                <p id="openid_provider_label"></p>
+                <input id="openid_username" type="text" name="openid_username" value="">
+                <input id="openid_submit" type="submit" value="Sign In" style="cursor: default;">
+            </div>-->
+                                <div id="openid-url-input-area">
+                                        <!--<noscript>
+                    &lt;p class="noscript-notice"&gt;Because JavaScript is disabled, you can only log in by entering your OpenID URL manually:&lt;/p&gt;
+                </noscript>-->
+                                    <p class="script-only">Or, you can manually enter your OpenID</p>
+                                    <table id="openid-url-input">
+                                        <tbody><tr>
+                                            <td class="vt large">
+                                                <input id="openid_identifier" name="openid_identifier" class="openid-identifier"
+                                                style="height: 28px; width: 500px;" type="text" tabindex="100">
+                                            </td>
+                                            <td class="vt large">
+                                                <input id="submit-button" style="margin-left: 5px; height: 36px;" type="submit" value="Log in" tabindex="101">
+                                            </td>
+                                        </tr>
+                                        </tbody></table>
+                                </div>
+                            </div>
+                        </div>
+
+                            <!--
+    <a title="log in with Google" href="javascript:openid.signin('google');"
+           style="background: #fff url(/public/images/openid-logos.png); background-position: -1px -1px"
+           class="google openid_large_btn"/>
+    <a title="log in with Facebook" href="javascript:openid.signin('facebook');"
+       style="background: #fff url(http://../images/openid-logos.png); background-position: -1px -456px"
+       class="facebook openid_large_btn"/>
+    <a title="log in with Yahoo" href="javascript:openid.signin('yahoo');"
+       style="background: #fff url(http://../images/openid-logos.png); background-position: -1px -63px"
+       class="yahoo openid_large_btn"/>
+    <br><div id="show-more-options" style="display: block;">
+        <div id="more-openid-options" class="script-only">
+            <a title="log in with myOpenID" href="javascript:openid.signin('myopenid');"
+               style="background: #fff url(http://../images/openid-logos.png); background-position: -27px -326px"
+               class="myopenid openid_small_btn"/>
+            <a title="log in with LiveJournal" href="javascript:openid.signin('livejournal');"
+               style="background: #fff url(http://../images/openid-logos.png); background-position: -1px -352px"
+               class="livejournal openid_small_btn"/>
+            <a title="log in with WordPress" href="javascript:openid.signin('wordpress');"
+               style="background: #fff url(http://../images/openid-logos.png); background-position: -1px -404px"
+               class="wordpress openid_small_btn"/>
+            <a title="log in with Blogger" href="javascript:openid.signin('blogger');"
+               style="background: #fff url(http://../images/openid-logos.png); background-position: -1px -249px"
+               class="blogger openid_small_btn"/>
+            <a title="log in with Verisign" href="javascript:openid.signin('verisign');"
+               style="background: #fff url(http://../images/openid-logos.png); background-position: -1px -378px"
+               class="verisign openid_small_btn"/>
+            <a title="log in with claimID" href="javascript:openid.signin('claimid');"
+               style="background: #fff url(http://../images/openid-logos.png); background-position: -1px -326px"
+               class="claimid openid_small_btn"/>
+            <a title="log in with ClickPass" href="javascript:openid.signin('clickpass');"
+               style="background: #fff url(http://../images/openid-logos.png); background-position: -1px -274px"
+               class="clickpass openid_small_btn"/>
+            <a title="log in with Google Profile" href="javascript:openid.signin('google_profile');"
+               style="background: #fff url(http://../images/openid-logos.png); background-position: -1px -300px"
+               class="google_profile openid_small_btn"/>
+            <a title="log in with AOL" href="javascript:openid.signin('aol');"
+               style="background: #fff url(http://../images/openid-logos.png); background-position: -27px -249px"
+               class="aol openid_small_btn"/>
+        </div>
+
+
+        <div id="simple-openid-selector">
+        <div id="openid_input_area" class="script-only">
+            <p id="openid_provider_label"></p>
+            <input id="openid_username" type="text" name="openid_username" value="">
+            <input id="openid_submit" type="submit" value="Sign In" style="cursor: default;">
+        </div>
+        <div id="openid-url-input-area">
+            <noscript>
+                &lt;p class="noscript-notice"&gt;Because JavaScript is disabled, you can only log in by entering your OpenID URL manually:&lt;/p&gt;
+            </noscript>
+            <p class="script-only">Or, you can manually enter your OpenID</p>
+            <table id="openid-url-input">
+                <tbody><tr>
+                    <td class="vt large">
+                        <input id="openid_identifier" name="openid_identifier" class="openid-identifier" style="height: 28px; width: 500px;" type="text" tabindex="100">
+                    </td>
+                    <td class="vt large">
+                        <input id="submit-button" style="margin-left: 5px; height: 36px;" type="submit" value="Log in" tabindex="101">
+                    </td>
+                </tr>
+                </tbody></table>
+        </div>
+    </div>
+    </div>    -->
+                    </div>  <!-- openid buttons -->
+                </form>
+            </div> <!-- mainbar -->
+            <div id="sidebar">
+                <div class="module newuser">
+                    <h4>Why am I being asked to Sign In?</h4>
+                    <p>This plAsync server does not recognize your device.  It is asking you to sign in so it can link
+                        your identity with your device.  As long as you sign in the same way from each device, you will
+                        be able to participate in multiplayer games hosted by this server from any device</p>
+                </div>
+                <div class="module newuser">
+                    <h4>Why OpenID?</h4>
+                    <p>It’s a single username and password that allows you to log in to any OpenID-enabled site.</p>
+                    <p>It works on thousands of websites.</p>
+                    <p>It’s an open standard.</p>
+                    <p class="ar">
+                        <a href="http://openid.net/what/">learn more »</a><br>
+                    </p>
+                </div>
+            </div>
+        </div> <!-- content -->
+    </body>
+</html>

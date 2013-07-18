@@ -3,13 +3,29 @@
 # ~~~~
 
 # Home page
-GET     /                           com.plasync.server.controllers.ApplicationController.index()
+GET         /                                com.plasync.server.controllers.ApplicationController.index()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET         /assets/*file                    controllers.Assets.at(path="/public", file)
+
+# Sign In pages
+GET         /signin                          com.plasync.server.controllers.SigninController.signin()
+POST        /signin                          com.plasync.server.controllers.SigninController.authenticate()
+GET         /signin/verify                   com.plasync.server.controllers.SigninController.verify(provider: String)
+
+# Internal services to support signin/signup
+GET         /user/:username/available        com.plasync.server.controllers.UserController.available(username: String)
+GET         /user/:id/signup                 com.plasync.server.controllers.UserController.signup(id: String)
+GET         /user/:username/welcome          com.plasync.server.controllers.UserController.welcome(username: String, newUser: Boolean)
+
+# Testing convenience services -- REMOVE IN PRODUCTION
+GET         /user/clearAll                   com.plasync.server.controllers.UserController.clearUsers()
 
 # RESTFul User Services
-GET     /user                      com.plasync.server.controllers.UserController.getAllUsers
-GET     /user/:id                  com.plasync.server.controllers.UserController.getUser(id: Long)
-#POST    /user                      com.plasync.server.controllers.UserController.createUser
+GET         /user                            com.plasync.server.controllers.UserController.getAllUsers()
+GET         /user/:id                        com.plasync.server.controllers.UserController.getUser(id: String)
+POST        /user                            com.plasync.server.controllers.UserController.createUser()
+
+
+
 

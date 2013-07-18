@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+        <title>Sign in &middot; OpenID</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/bootstrap-responsive.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/all.css">
+
+        <!-- Javascript -->
+        <script type="text/javascript" src="/assets/javascripts/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript" src="/assets/javascripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/javascripts/openid-jquery.js"></script>
+        <script type="text/javascript" src="/assets/javascripts/openid-en.js"></script>
+        <script type="text/javascript" src="/assets/javascripts/signin.js"></script>
+    </head>
+
+    <body>
+
+        <div id="content" class="container">
+            <div class="subheader">
+                <h1>Please Sign In with your Open ID</h1>
+            </div>
+            <div id="mainbar">
+                <p class="script-only">Do you already have an account on one of these sites? Click the logo to
+                    <b>log in</b> with it here:
+                </p>
+            <form id="openid_form" action="\signin" method="post" class="form-signin">
+                <input type="hidden" id="openIdProvider" name="openIdProvider"/>
+                <div id="openid_btns">
+                    <a title="log in with Google" href="javascript:openid.signin('google');"
+                    class="icon-google-large openid_large_btn"></a>
+                    <!--<a title="log in with Facebook" href="javascript:openid.signin('facebook');"
+                    class="icon-facebook-large openid_large_btn"></a>  -->
+                    <a title="log in with Yahoo" href="javascript:openid.signin('yahoo');"
+                    class="icon-yahoo-large openid_large_btn"></a>
+                    <a title="log in with AOL" href="javascript:openid.signin('aol');"
+                    class="icon-aol-large openid_large_btn"></a>
+                    <a title="log in with myOpenID" href="javascript:openid.signin('myopenId');"
+                    class="icon-myopenid-large openid_large_btn"></a>
+                    <br>
+                    <div id="show-more-options" style="display: block;">
+                        <div id="more-openid-options">
+                            <a title="log in with LiveJournal" href="javascript:openid.signin('livejournal');"
+                            class="icon-livejournal openid_small_btn"></a>
+                            <a title="log in with WordPress" href="javascript:openid.signin('wordpress');"
+                            class="icon-wordpress openid_small_btn"></a>
+                            <a title="log in with Blogger" href="javascript:openid.signin('blogger');"
+                            class="icon-blogger openid_small_btn"></a>
+                            <a title="log in with Verisign" href="javascript:openid.signin('verisign');"
+                            class="icon-verisign openid_small_btn"></a>
+                            <a title="log in with claimID" href="javascript:openid.signin('claimid');"
+                            class="icon-claimid openid_small_btn"></a>
+                            <a title="log in with ClickPass" href="javascript:openid.signin('clickpass');"
+                            class="icon-clickpass openid_small_btn"></a>
+                        </div>
+                        <div id="simple-openid-selector">
+                            <div id="openid-url-input-area">
+                                <p class="script-only">Or, you can manually enter your OpenID</p>
+                                <table id="openid-url-input">
+                                    <tbody><tr>
+                                        <td class="vt large">
+                                            <input id="openid_identifier" name="openid_identifier" class="openid-identifier"
+                                            style="height: 28px; width: 180px;" type="text" tabindex="100">
+                                        </td>
+                                        <td class="vt large">
+                                            <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+                                            <!--<input id="submit-button" style="margin-left: 5px; height: 36px;" type="submit" value="Log in" tabindex="101"> -->
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>  <!-- openid buttons -->
+            </form>
+                <!-- More information links -->
+                <div class="accordion" id="more-info" class="more-info">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseOne">
+                                Why am I Being Asked to Sign In?
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <p>This plAsync server does not recognize your device.  It is asking you to sign in so
+                                    it can link your identity with your device.  As long as you sign in the same way
+                                    from each device, you will be able to participate in multiplayer games hosted by
+                                    this server from any device.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseTwo">
+                                Why Do You Need my Email?
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <p>If you are using Google, we need your email address because Google OpenIDs are
+                                   specific to the domain that requested them.  This could cause problems with identifying
+                                   you across devices, so we use your email to verify your identity.  plAsync wil not
+                                   display or share your email with anyone.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseThree">
+                                Why Can't I Sign In with Facebook?
+                            </a>
+                        </div>
+                        <div id="collapseThree" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <p>Facebook is not an OpenID provider.  Facebook signins expire every 60 days.  If you
+                                   tried to signin after expiration, your token would be different and plAsync would
+                                   not recognize you.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseFour">
+                                Why OpenID?
+                            </a>
+                        </div>
+                        <div id="collapseFour" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <p>It’s a single username and password that allows you to log in to any OpenID-enabled site.</p>
+                                <p>It works on thousands of websites.</p>
+                                <p>It’s an open standard.</p>
+                                <p class="ar">
+                                    <a href="http://openid.net/what/">learn more »</a><br>
+                                </p>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                ...
+            </div> <!-- mainbar -->
+          <!-- <div id="sidebar">
+                <div class="module newuser">
+                    <h4>Why am I being asked to Sign In?</h4>
+                    <p>This plAsync server does not recognize your device.  It is asking you to sign in so it can link
+                        your identity with your device.  As long as you sign in the same way from each device, you will
+                        be able to participate in multiplayer games hosted by this server from any device</p>
+                </div>
+                <div class="module newuser">
+                    <h4>Why OpenID?</h4>
+                    <p>It’s a single username and password that allows you to log in to any OpenID-enabled site.</p>
+                    <p>It works on thousands of websites.</p>
+                    <p>It’s an open standard.</p>
+                    <p class="ar">
+                        <a href="http://openid.net/what/">learn more »</a><br>
+                    </p>
+                </div>
+            </div>   -->
+        </div> <!-- content -->
+    </body>
+</html>

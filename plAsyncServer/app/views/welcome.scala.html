@@ -1,0 +1,47 @@
+@(username: String, newUser: Boolean)
+@welcomeMessage = {
+    @if(newUser) {
+        Welcome @username
+    } else {
+        Welcome Back @username
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/all.css">
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="/assets/javascripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/bootstrap.min.js"></script>
+    <script>
+        function closeWindow() {
+            window.open(location,'_self').close();
+        }
+
+        window.onbeforeunload = function () {
+        // This function does nothing.  It won't spawn a confirmation dialog
+        // But it will ensure that the page is not cached by the browser.
+        }
+    </script>
+    <title>@welcomeMessage</title>
+</head>
+<body>
+    <div id="content" class="container">
+        <div class="subheader">
+            <h1>@welcomeMessage</h1>
+        </div>
+        <div id="mainbar">
+            <p class="script-only">Press the button to close the browser and return to your game.
+            </p>
+            <button id="welcome-close" class="btn btn-primary " style="margin-bottom: 5px"
+            onclick="javascript:closeWindow()">Close</button>
+        </div>
+</body>
+</html>

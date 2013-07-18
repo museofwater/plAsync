@@ -1,0 +1,20 @@
+@(elements: views.html.helper.FieldElements)
+
+<div class="@if(elements.hasErrors) {error}">
+    @*<label for="@elements.id">@elements.label</label>*@
+    <div class="input">
+        @elements.input
+        <span class="checkAvailable"></span>
+        <span class="errors">@elements.errors.mkString(", ")</span>
+        <span class="help">@elements.infos.mkString(", ")</span>
+    </div>
+</div>
+
+<!-- <div class="clearfix error" id="username_field">
+    <label for="username">Username:</label>
+    <div class="input">
+        <input type="text" name="username" id="username" value="">
+        <span class="help-inline">This field is required!, Another error</span>
+        <span class="help-block">Required, Another constraint</d</span>
+    </div>
+</div> -->

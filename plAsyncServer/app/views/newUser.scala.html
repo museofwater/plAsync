@@ -1,0 +1,56 @@
+@(newUserForm: Form[com.plasync.server.models.User])
+@import helper._
+@implicitField = @{ FieldConstructor(newUserFormField.f) }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/all.css">
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="/assets/javascripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/newUser.js"></script>
+    <title>Welcome New User</title>
+</head>
+<body>
+    <div id="content" class="container">
+        <div class="subheader">
+            <h1>Welcome to plAsync</h1>
+        </div>
+        <div id="mainbar">
+            <p>pLAsync has detected that you are new to this server.  Please provide a username or email address.</p>
+            @helper.form(action = com.plasync.server.controllers.routes.UserController.createUser(), 'id -> "newUserForm") {
+                @helper.inputText(newUserForm("username"), 'class -> "form-item", 'id -> "username-input",
+                                              'placeholder -> "username", 'name -> "username", 'autocomplete -> "off")
+                <input id="username-submit" class="btn btn-primary username_not_taken" type="submit" style="margin-bottom: 5px"/>
+
+
+                <input type="hidden" value="@newUserForm("id").value" name="id"/>
+            }
+            <div class="accordion" id="more-info">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseOne">
+                            What Will My Username Be Used For?
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            <p>The username you enter will be how you appear to other players in multiplayer games hosted by this
+                                server.  Your friends can search for you and invite you to games using this username.  You can use
+                                your email address, or pick your own name provided it is not in use by another user.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
