@@ -1,259 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="add5dbcd-87b7-4327-ac92-569f0d966e7a" name="Default" comment="" />
-    <ignored path="plAsyncServer.iws" />
+    <list default="true" id="6372b416-336c-45ff-a683-acd1511aa06a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    </list>
+    <ignored path="plAsync.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374008054563" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-batch-app/Manage 3rd Party Request3.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373910639674" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-batch-app/Manage 3rd Party Request2.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373910639674" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-batch-app/Manage 3rd Party Request1.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373910639674" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-batch-app/Manage Claim Letter Request" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373910639674" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-batch-app/Find Tracked Items Response.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373910259710" ignored="false" />
-    <file path="/SecurityController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372291703474" ignored="false" />
-    <file path="/Application.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374183759920" ignored="false" />
-    <file path="/routes" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374152808033" ignored="false" />
-    <file path="/UserController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374180938403" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/orchestration/ClaimDataServiceImpl.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372370514711" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/src/test/java/gov/va/vba/vbms/dal/services/vetsnet/impl/VetRecordServiceGatewayImplTest.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372370514711" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-impl/src/main/java/gov/va/vba/vbms/bl/impl/correspondence/finalization/FinalizeLetterInBGSCommand.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373562461146" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/transform/correspondence/LetterTransformerSupport.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372370514711" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/RBAEvaluation.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentEnclosure.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/TrackedItem.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/StandardParagraph.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Veteran.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/CriminalInfo.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/PowInfo.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ServiceInfo.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/package-info.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ObjectFactory.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/StandardFillInValue.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentPlanTaskActivity.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimDevelopmentLetter.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/VBMSUserRole.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/RegionalOffice.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Document.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/UnsolicitedEvidence.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterBody.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FinancialInfo.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DocumentAssociationInput.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FormField.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentActionGroup.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DocumentAssociationType.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentActionParagraph.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FillIn.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Party.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/AlternateName.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/StandardFillIn.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ThirdPartyFollowUpLetter.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/TimeToCall.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/PersonalInfo.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ProviderLetter.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimLetterSection.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Email.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Claim.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentPlanTask.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Paragraph.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimantNotificationLetter.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/MarriageInfo.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Annotation.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentActivity.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/TypeValue.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Issue.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/InsuranceInfo.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Contention.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Decoration.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LookUpValue.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/resources/vbms_p2_version.properties" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374158973489" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Phone.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FaultDetailBean.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FormDocument.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterSection.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Letter.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterDocument.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/CodeValue.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentStatus.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DocumentType.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/OutputArgument.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Relationship.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentPlanTaskActivityAction.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/StandardDevelopmentAction.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Department.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Participant.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DeploymentInfo.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterContent.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentAction.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimLetter.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Flash.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/VBMSUser.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimContact.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentPlan.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/NamePrefix.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentTask.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/CustomParagraph.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Source.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DocumentAssociation.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Address.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ThirdPartyLetter.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Person.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterContention.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ContentionCategory.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/RegionalArea.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006872961" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-security-web-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-ecm-poller-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-document-upload-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-root-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/transform/mapper/ClaimWorkItemEntityMapper.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375166909" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-logging-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-workqueue-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-devplan-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-performance-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-security-saml-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-correspondence-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-servlet-filter-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-error-handling-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372375647307" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-rules/src/main/resources/META-INF/spring/bl-rules-root-context.properties" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372377747538" ignored="false" />
-    <file path="/User.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374098936838" ignored="false" />
-    <file path="/all.css" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373126150746" ignored="false" />
-    <file path="/main.css" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372532805486" ignored="false" />
-    <file path="/login.html" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372899369151" ignored="false" />
-    <file path="/test.html" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372540678792" ignored="false" />
-    <file path="/login.less" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372811537041" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-impl/src/test/java/gov/va/vba/vbms/bl/impl/correspondence/finalization/FinalizeLetterInBGSCommandTest.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372811752839" ignored="false" />
-    <file path="/LoginController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372972784350" ignored="false" />
-    <file path="/login.scala.html" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1372982619551" ignored="false" />
-    <file path="/SigninController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374183585193" ignored="false" />
-    <file path="/welcome.scala.html" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374103681890" ignored="false" />
-    <file path="/signin.scala.html" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006977998" ignored="false" />
-    <file path="/newUser.scala.html" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374161448283" ignored="false" />
-    <file path="/application.conf" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373052087406" ignored="false" />
-    <file path="/all.less" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373937000350" ignored="false" />
-    <file path="/a.dummy" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374180156605" ignored="false" />
-    <file path="/1.sql" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373136571131" ignored="false" />
-    <file path="/newUserFormField.scala.html" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373207926369" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/webapp/WEB-INF/stinger.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/src/main/resources/schemas/cdm/common/Common-v4.xsd" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/src/main/resources/schemas/cdm/letter/Letter-v4.xsd" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/resources/META-INF/spring/dal-impl-orchestration-root-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/correspondence/LetterContentFillIn.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-integration-tests/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/src/main/resources/schemas/cdm/participant/Participant-v4.xsd" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-parent/security-analysis-pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/correspondence/LetterCategory.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-parent/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-transform/src/main/resources/document/document-mappings-v2.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/FreeFormText.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-security-client/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/src/main/java/gov/va/vba/vbms/dal/services/correspondence/CorrespondenceServiceGateway.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373562461145" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/src/main/java/gov/va/vba/vbms/dal/services/correspondence/impl/CorrespondenceServiceGatewayImpl.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/DevPlanTaskActFillin.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-mimepull/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-batch-app/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373910251230" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/resources/META-INF/spring/ui-web-correspondence-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-install-weblogic/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-transform/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/correspondence/LetterType.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157890396" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-install-weblogic/src/main/resources/build.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/DocumentAction.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-db-config/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-security-authz/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/CustomParagraph.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/src/main/resources/schemas/cdm/claim/Claim-v4.xsd" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-transform/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373294288086" ignored="false" />
-    <file path="/signin.less" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373408360793" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/orchestration/TrackedItemDataServiceImplV2.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374158449523" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-db/src/main/resources/META-INF/spring/dal-db-root-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/src/main/java/gov/va/vba/vbms/dal/services/correspondence/impl/CorrespondenceServiceGatewayImplV2.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373562461146" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-impl/src/main/resources/META-INF/spring/bl-impl-root-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/src/main/resources/schemas/cdm/letter/Letter-v2.xsd" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374174383771" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-impl/src/main/resources/META-INF/spring/bl-impl-correspondence-fillin-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373562461146" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-impl/src/main/resources/META-INF/spring/bl-impl-reporting-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373562461146" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-db/src/main/resources/META-INF/persistence.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-impl/src/main/resources/META-INF/spring/bl-impl-correspondence-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/resources/META-INF/spring/ui-web-root-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/vso/VSOAllClaimsController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/helpers/VSOFilterHelper.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/webapp/resources_p4/js/vsoClaims.js" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/src/main/java/gov/va/vba/vbms/dal/services/vetsnet/impl/WorkQueueServiceGatewayImpl.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-integration-tests/src/test/java/gov/va/vba/vbms/dal/impl/orchestration/CorrespondenceServiceImplIntegrationTest.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-impl/src/main/java/gov/va/vba/vbms/bl/impl/correspondence/LetterServiceImplV2.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-db/src/main/java/gov/va/vba/vbms/dal/db/entity/correspondence/LetterContentEntity.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/transform/correspondence/ClaimDevelopmentLetterTransformer.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-integration-tests/src/test/java/gov/va/vba/vbms/correspondence/webservices/development/services/GenerateCorrespondenceServiceIntegrationTest.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/src/main/java/gov/va/vba/vbms/dal/services/vetsnet/impl/VSOWorkQueueServiceGatewayImpl.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/Letter.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-common/src/main/resources/META-INF/spring/common-cache-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-integration-tests/src/test/resources/META-INF/spring/spring-contexts/dal-impl-orchestration-test-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/correspondence/LetterInfo.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-rules/src/main/java/gov/va/vba/vbms/rules/service/impl/LetterRuleServiceImpl.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-db/src/main/java/gov/va/vba/vbms/dal/db/entity/WorkItemEntity.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model/src/test/java/gov/va/vba/vbms/model/correspondence/CorrespondenceModelTest.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/src/main/resources/META-INF/spring/vetsnet-services-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/LetterManagementController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/ClaimController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/transform/correspondence/LetterContentMapper.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373575318966" ignored="false" />
-    <file path="/TrackedItemDataServiceImplV2.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374009035261" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-db/src/main/java/gov/va/vba/vbms/dal/db/entity/DocumentUploadDataEntity.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/util/WorkQueueUtils.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/NotesController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-common/src/main/java/gov/va/vba/vbms/common/cache/CacheConstants.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/orchestration/ClaimViewDataServiceImpl.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/helpers/WorkItemUserListHelper.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/WorkQueueController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-db/src/main/java/gov/va/vba/vbms/dal/db/entity/ClaimWorkItemEntity.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/resources/META-INF/spring/dal-impl-orchestration-transform-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-db/src/main/java/gov/va/vba/vbms/dal/db/entity/RawDBQEntity.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/AssignmentConfigurationController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-impl/src/main/resources/META-INF/spring/bl-impl-root-context.properties" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/WorkItemController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/WorkItemUpdateController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-db/src/main/java/gov/va/vba/vbms/dal/db/entity/CachedWorkAssignmentEntity.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661006906" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/letter/v2/LetterTemplateEnum.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661253192" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/target/generated-sources/jaxws-wsimport/gov/va/vba/vbms/cdm/letter/v2/LetterTemplateEnum.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373661508744" ignored="false" />
-    <file path="/newUser.js" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373934585121" ignored="false" />
-    <file path="/newUser.less" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373829388200" ignored="false" />
-    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/welcome.template.scala" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373834565189" ignored="false" />
-    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/newUserFormField.template.scala" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373834004553" ignored="false" />
-    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/signin_orig.template.scala" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373834004553" ignored="false" />
-    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/main.template.scala" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373834004553" ignored="false" />
-    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/index.template.scala" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373834004553" ignored="false" />
-    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/signin.template.scala" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374148361830" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/pom.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373903425601" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-batch-app/manageClaimLetterV2 Custom Dev Action SOAP Request.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1373903539352" ignored="false" />
-    <file path="/openid-jquery.js" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374006393443" ignored="false" />
-    <file path="$PROJECT_DIR$/logs/application.log" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374158856916" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-security-authz/src/main/resources/META-INF/spring/security-authz-pdp-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-db/src/main/resources/META-INF/spring/dal-db-filtering-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-impl/src/main/resources/META-INF/spring/bl-impl-devplan-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-bl-rules/src/main/resources/META-INF/spring/bl-rules-root-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-configuration/src/main/resources/vbms-sqa/vbms_p2.properties" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-api/src/main/java/gov/va/vba/vbms/dal/ClaimDataService.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/src/main/resources/META-INF/spring/correspondence-services-context.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374157898581" ignored="false" />
-    <file path="$PROJECT_DIR$/../../vbms/branches/trunk/vbms-dal-services/target/generated-sources/jaxws-wsimport/gov/va/vba/vbms/dal/services/vetsnet/external/trackeditemservices/DevelopmentItem.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374158767851" ignored="false" />
-    <file path="/Dummy.txt" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374174439120" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/Service/res/values/strings.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374174918333" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/Service/AndroidManifest.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374174918333" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/Service/project.properties" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374174918333" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/SDK/build.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374175102056" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/SDK/res/layout/main.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374175102056" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/SDK/AndroidManifest.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374175102056" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/TestApp/src/com/plasync/client/android/testapp/MainActivity.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374175386632" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/TestApp/res/layout/main.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374175386633" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/TestApp/AndroidManifest.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374175386633" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/TestApp/res/values/strings.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374175386633" ignored="false" />
-    <file path="$PROJECT_DIR$/../plAsyncAndroid/TestApp/build.xml" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374175386633" ignored="false" />
-    <file path="$PROJECT_DIR$/../README.md" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374177195064" ignored="false" />
-    <file path="/README.md" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374177166409" ignored="false" />
-    <file path="$PROJECT_DIR$/tempPlay/app/controllers/Application.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374183768418" ignored="false" />
-    <file path="/AppKeyController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374185255901" ignored="false" />
-    <file path="/ApplicationController.java" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374190760453" ignored="false" />
-    <file path="/plAsyncServer.iml copy" changelist="add5dbcd-87b7-4327-ac92-569f0d966e7a" time="1374188339990" ignored="false" />
+    <file path="/ApplicationController.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372010439253" ignored="false" />
+    <file path="/fragment.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372012216525" ignored="false" />
+    <file path="/pom.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372011991089" ignored="false" />
+    <file path="/Dummy.txt" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374174440795" ignored="false" />
+    <file path="/a.dummy" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372108743632" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-ui-web/src/main/webapp/WEB-INF/web.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193195404" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-ui-web/src/main/resources/META-INF/spring/ui-web-root-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193195404" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/ClaimViewItem.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193195404" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-ui-web/src/main/resources/META-INF/spring/ui-web-root-context.properties" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193195404" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/RBAEvaluation.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentEnclosure.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/TrackedItem.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/StandardParagraph.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Veteran.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/CriminalInfo.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/PowInfo.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ServiceInfo.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/package-info.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ObjectFactory.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/StandardFillInValue.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentPlanTaskActivity.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimDevelopmentLetter.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/VBMSUserRole.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/RegionalOffice.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Document.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/UnsolicitedEvidence.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterBody.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FinancialInfo.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DocumentAssociationInput.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FormField.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentActionGroup.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DocumentAssociationType.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentActionParagraph.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FillIn.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Party.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688658" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/AlternateName.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/StandardFillIn.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ThirdPartyFollowUpLetter.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/TimeToCall.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/PersonalInfo.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ProviderLetter.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimLetterSection.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Email.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Claim.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentPlanTask.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Paragraph.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimantNotificationLetter.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/MarriageInfo.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Annotation.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentActivity.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/TypeValue.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Issue.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/InsuranceInfo.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Contention.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Decoration.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LookUpValue.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Phone.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FaultDetailBean.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/FormDocument.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterSection.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Letter.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterDocument.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/CodeValue.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentStatus.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DocumentType.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/OutputArgument.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Relationship.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentPlanTaskActivityAction.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/StandardDevelopmentAction.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Department.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Participant.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DeploymentInfo.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterContent.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentAction.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimLetter.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Flash.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/VBMSUser.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ClaimContact.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentPlan.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/NamePrefix.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DevelopmentTask.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/CustomParagraph.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Source.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/DocumentAssociation.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Address.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ThirdPartyLetter.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/Person.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/LetterContention.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/ContentionCategory.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model-external/target/generated-sources/xjc/gov/va/vba/vbms/cdm/RegionalArea.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193688659" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-ui-web/src/main/resources/vbms_p2_version.properties" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193880932" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-logging-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-workqueue-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-devplan-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-performance-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-document-upload-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-security-saml-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-correspondence-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-ecm-poller-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-root-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-security-web-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-error-handling-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
+    <file path="$PROJECT_DIR$/plAsyncAndroid/SDK/res/layout/main.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175102056" ignored="false" />
+    <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/AndroidManifest.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
+    <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/src/com/plasync/client/android/testapp/MainActivity.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
+    <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/res/layout/main.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
+    <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/res/values/strings.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
+    <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/build.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
+    <file path="/README.md" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374177166409" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +129,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -305,38 +166,24 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="plAsyncServer" />
+    <favorites_list name="plAsync" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AppKeyController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/AppKeyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
+      <file leaf-file-name="plAsyncLogo.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncLogo.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/ApplicationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="24" selection-start="117" selection-end="117" vertical-scroll-proportion="0.07326008">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plAsyncServer/app/views/index.scala.html">
+      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncServer/README">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -344,19 +191,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newUser.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plAsyncServer/app/views/newUser.scala.html">
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="52" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/models/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="52" selection-start="593" selection-end="599" vertical-scroll-proportion="0.0">
+            <state line="7" column="27" selection-start="144" selection-end="144" vertical-scroll-proportion="0.16666667">
               <folding />
             </state>
           </provider>
@@ -369,34 +207,90 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__com_ning_async_http_client_1_7_6.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__com_novocode_junit_interface_0_9.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__com_typesafe_akka_akka_actor_2_10_2_1_0.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__com_typesafe_akka_akka_slf4j_2_10_2_1_0.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__com_typesafe_config_1_0_0.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__commons_codec_commons_codec_1_3.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__commons_codec_commons_codec_1_6.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__commons_collections_commons_collections_3_2_1.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__commons_io_commons_io_2_0_1.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__commons_lang_commons_lang_2_6.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/libraries copy/SBT__commons_logging_commons_logging_1_1_1.xml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/SigninController.java" />
-        <option value="$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/AppKeyController.java" />
-        <option value="$PROJECT_DIR$/plAsyncServer/plAsyncServer.iml copy" />
-        <option value="$PROJECT_DIR$/plAsyncServer/plAsyncServer.iml" />
-        <option value="$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/ApplicationController.java" />
+        <option value="$PROJECT_DIR$/plAsyncServer/src/main/java/com/plasync/HelloController.java" />
+        <option value="$PROJECT_DIR$/plAsyncServer/src/main/java/com/plasync/ApplicationController.java" />
+        <option value="$PROJECT_DIR$/plAsyncServer/plasync-server-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/plAsyncServer/plasync-server-web/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="plAsync Web Interface WAR 1.0-SNAPSHOT" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="plAsync Web Interface WAR 1.0-SNAPSHOT" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="plAsync Server 0.1-SNAPSHOT" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="plAsync Server 0.1-SNAPSHOT" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1680" />
-    <option name="height" value="967" />
+    <option name="height" value="778" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -407,19 +301,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
-  </component>
-  <component name="ProjectStructureProblems">
-    <ignored-problems>
-      <problem id="unused-library(library:project:SBT: cglib:cglib-nodep:2.1_3)" />
-      <problem id="unused-library(library:project:SBT: ch.qos.logback:logback-classic:1.0.7)" />
-      <problem id="unused-library(library:project:SBT: ch.qos.logback:logback-core:1.0.7)" />
-      <problem id="unused-library(library:project:SBT: com.github.scala-incubator.io:scala-io-core_2.10:0.4.2)" />
-      <problem id="unused-library(library:project:SBT: com.github.scala-incubator.io:scala-io-file_2.10:0.4.2)" />
-      <problem id="unused-library(library:project:SBT: com.google.code.findbugs:jsr305:2.0.1)" />
-      <problem id="unused-library(library:project:SBT: com.typesafe.akka:akka-actor_2.10:2.1.0)" />
-      <problem id="unused-library(library:project:SBT: com.typesafe.akka:akka-slf4j_2.10:2.1.0)" />
-    </ignored-problems>
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -434,6 +316,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -452,21 +336,183 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsyncServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsyncServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsyncServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsyncServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsyncServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsyncServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsyncServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsyncServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plAsyncServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
+    <property name="jdk.selected.JAVA_MODULE" value="Android 4.2 Platform" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="recentsLimit" value="5" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/plAsyncServer" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/plAsyncServer/plAsyncServer.iml" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -474,23 +520,63 @@
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.plasync.controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
-      <recent name="$PROJECT_DIR$/.settings" />
-      <recent name="$PROJECT_DIR$/app/assets" />
-      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/plasync-server-web" />
     </key>
   </component>
-  <component name="RunManager" selected="Remote.Debug plAsync Server">
+  <component name="RunManager" selected="Android Application.plAsync Test App">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -499,21 +585,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <extension name="scalaCoverage" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -557,22 +628,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="XSLT" factoryName="XSLT">
-      <option name="myOutputFile" />
-      <option name="myOpenOutputFile" value="false" />
-      <option name="myOpenInBrowser" value="false" />
-      <option name="mySmartErrorHandling" value="true" />
-      <option name="myRunnerPort" value="34873" />
-      <option name="myVmArguments" />
-      <option name="myWorkingDirectory" />
-      <option name="myModule" />
-      <option name="myJdk" />
-      <parameters />
-      <OutputType value="CONSOLE" save-to-file="false" />
-      <FileType name="XML" />
-      <JdkChoice value="FROM_MODULE" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -588,16 +643,18 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="Play2FrameworkRunConfigurations" factoryName="Play 2 App">
-      <module name="" />
-      <setting name="play2JpdaPort" value="9999" />
-      <setting name="play2JvmOptions" value="-Xms512M -Xmx1024M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M" />
-      <setting name="play2NeedOpenInBrowser" value="true" />
-      <setting name="play2OpenUrl" value="http://localhost:9000" />
-      <setting name="play2EnvVariables" value="" />
-      <setting name="play2IsNonDefaultInstallDirUsed" value="false" />
-      <setting name="play2NonDefaultInstallDir" value="" />
-      <setting name="play2isAutoReloadEnabled" value="false" />
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -621,29 +678,146 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Debug plAsync Server" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="9999" />
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="false" name="plAsync Server on Tomcat 7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="plAsyncServer:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_7_plAsync" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="9999" />
+        <option name="DEBUG_PORT" value="55145" />
         <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="false" />
+        <option name="LOCAL" value="true" />
       </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="Make" enabled="false" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="plAsyncServer:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="false" name="plAsync Android Service" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="plAsync Android Service" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Remote.Debug plAsync Server" />
+    <configuration default="false" name="plAsync Test App" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="plAsync Test App" />
+      <option name="ACTIVITY_CLASS" value="com.plasync.client.android.testapp.MainActivity" />
+      <option name="MODE" value="specific_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.plAsync Server on Tomcat 7" />
+      <item index="1" class="java.lang.String" itemvalue="Android Application.plAsync Android Service" />
+      <item index="2" class="java.lang.String" itemvalue="Android Application.plAsync Test App" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -653,40 +827,45 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="add5dbcd-87b7-4327-ac92-569f0d966e7a" name="Default" comment="" />
-      <created>1372200532345</created>
-      <updated>1372200532345</updated>
+      <changelist id="6372b416-336c-45ff-a683-acd1511aa06a" name="Default" comment="" />
+      <created>1372009748203</created>
+      <updated>1372009748203</updated>
     </task>
+    <task id="LOCAL-00001" summary="Basic setup for the plAsync server and spring webapp">
+      <created>1372012757116</created>
+      <updated>1372012757116</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="967" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1680" height="778" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39930955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39787486" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39976275" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249694" sideWeight="0.6007109" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.249694" sideWeight="0.60212517" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.6702254" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2864137" sideWeight="0.6702254" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3258294" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -723,7 +902,7 @@
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
     <option name="LIMIT_HISTORY" value="true" />
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
@@ -733,7 +912,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic setup for the plAsync server and spring webapp" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -747,6 +926,7 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Basic setup for the plAsync server and spring webapp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -756,113 +936,22 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/AppKeyController.java">
+    <entry file="file://$PROJECT_DIR$/plAsyncLogo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncServer/README">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/views/index.scala.html">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="7" column="27" selection-start="144" selection-end="144" vertical-scroll-proportion="0.16666667">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/views/newUser.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="69" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="52" selection-start="593" selection-end="599" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/AppKeyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="53" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/views/newUser.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="69" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/views/index.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="52" selection-start="593" selection-end="599" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/SigninController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/SigninController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="9" selection-start="89" selection-end="89" vertical-scroll-proportion="0.09355509" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="52" selection-start="593" selection-end="599" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/views/index.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/views/newUser.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="52" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/AppKeyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/plAsyncServer.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="109" selection-start="12697" selection-end="12697" vertical-scroll-proportion="2.0149255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/app/com/plasync/server/controllers/ApplicationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="117" selection-end="117" vertical-scroll-proportion="0.07326008">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -872,11 +961,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>plasync-server-web:war</last-edited>
+          <last-edited>plAsyncServer:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -884,7 +974,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Detection</last-edited>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -919,7 +1009,20 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>plAsyncServer</last-edited>
+          <last-edited>plAsyncServer-play</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -931,7 +1034,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>SBT: cglib:cglib-nodep:2.1_3</last-edited>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
