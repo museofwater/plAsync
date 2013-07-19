@@ -1,0 +1,10 @@
+plAsyncServer/.settings
+plAsyncServer/logs
+plAsyncServer/project/project
+plAsyncServer/project/target
+plAsyncServer/target
+plAsyncAndroid/SDK/gen
+plAsyncAndroid/Service/gen
+plAsyncAndroid/TestApp/gen
+
+
