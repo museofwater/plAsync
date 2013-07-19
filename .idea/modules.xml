@@ -6,9 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/plAsyncAndroid/Service/plAsync Android Service.iml" filepath="$PROJECT_DIR$/plAsyncAndroid/Service/plAsync Android Service.iml" />
       <module fileurl="file://$PROJECT_DIR$/plAsyncAndroid/TestApp/plAsync Test App.iml" filepath="$PROJECT_DIR$/plAsyncAndroid/TestApp/plAsync Test App.iml" />
       <module fileurl="file://$PROJECT_DIR$/plAsyncServer/plAsyncServer.iml" filepath="$PROJECT_DIR$/plAsyncServer/plAsyncServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plAsyncServer/plasync-server-parent/plasync-server-parent.iml" filepath="$PROJECT_DIR$/plAsyncServer/plasync-server-parent/plasync-server-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plasync-server-web/plAsyncServer/plasync-server-web.iml" filepath="$PROJECT_DIR$/plasync-server-web/plAsyncServer/plasync-server-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plAsyncServer-play/target/scala-2.9.1/src_managed/src_managed.iml" filepath="$PROJECT_DIR$/plAsyncServer-play/target/scala-2.9.1/src_managed/src_managed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plAsyncServer/plAsyncServer-build.iml" filepath="$PROJECT_DIR$/plAsyncServer/plAsyncServer-build.iml" />
     </modules>
   </component>
 </project>
