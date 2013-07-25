@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.plasync.client.android"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <application android:label="" android:icon="@drawable/ic_launcher">
+
+        <!-- This is the signin activity for plAsync -->
+        <activity android:name="AsyncMultiplayerSetupActivity"
+                  android:label="@string/SETUP_ACTIVITY_NAME">
+
+            <!-- This is the intent for getting the local user.  Apps that use plAsync must use this
+                 intent to retrieve the local user, or allow the user to signin.  Apps should
+                 use startActivityForResult as the sigin activity may require user interaction -->
+            <intent-filter>
+                <action android:name="@string/SETUP_ASYNC_MULTIPLAYER_SESSION_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

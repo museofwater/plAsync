@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: commons-collections:commons-collections:3.2.1">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/local/commons-collections/commons-collections/3.2.1/jars/commons-collections.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

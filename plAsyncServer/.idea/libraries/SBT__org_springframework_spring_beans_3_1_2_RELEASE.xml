@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.springframework:spring-beans:3.1.2.RELEASE">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/local/org.springframework/spring-beans/3.1.2.RELEASE/jars/spring-beans.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

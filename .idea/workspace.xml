@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6372b416-336c-45ff-a683-acd1511aa06a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncAndroid/Service/src/com/plasync/client/android/service/AsyncMultiplayerMessageHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncAndroid/Service/src/com/plasync/client/android/service/AsyncMultiplayerService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerServiceConnection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerSession.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerUser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/SessionInitializationFailedException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plAsyncAndroid/SDK/AndroidManifest.xml" afterPath="$PROJECT_DIR$/plAsyncAndroid/SDK/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plAsyncAndroid/SDK/plAsync Android SDK.iml" afterPath="$PROJECT_DIR$/plAsyncAndroid/SDK/plAsync Android SDK.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="plAsync.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/ApplicationController.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372010439253" ignored="false" />
-    <file path="/fragment.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372012216525" ignored="false" />
+    <file path="/fragment.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374350050311" ignored="false" />
     <file path="/pom.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372011991089" ignored="false" />
     <file path="/Dummy.txt" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374238444259" ignored="false" />
     <file path="/a.dummy" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372108743632" ignored="false" />
@@ -109,12 +118,41 @@
     <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-security-web-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
     <file path="$MAVEN_REPOSITORY$/gov/va/vba/vbms/vbms-ui-web/5.0-SNAPSHOT/vbms-ui-web-5.0-SNAPSHOT-classes.jar!/META-INF/spring/ui-web-error-handling-context.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1372193881226" ignored="false" />
     <file path="$PROJECT_DIR$/plAsyncAndroid/SDK/res/layout/main.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175102056" ignored="false" />
-    <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/AndroidManifest.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
     <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/src/com/plasync/client/android/testapp/MainActivity.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
     <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/res/layout/main.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
     <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/res/values/strings.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
-    <file path="$PROJECT_DIR$/plAsyncAndroid/TestApp/build.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374175386632" ignored="false" />
     <file path="/README.md" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374177166409" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/correspondence/LetterCustomDevelopmentAction.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264248581" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-model/src/main/java/gov/va/vba/vbms/model/correspondence/LetterCustomContent.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374263317154" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-dal-db/src/main/java/gov/va/vba/vbms/dal/db/entity/correspondence/LetterCustomContentEntity.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374263971806" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-dal-db/src/main/java/gov/va/vba/vbms/dal/db/entity/correspondence/LetterCustomDevelopmentActionEntity.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264217101" ignored="false" />
+    <file path="/LetterCustomDevelopmentAction.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264155243" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/transform/correspondence/LetterContentMapper.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264384108" ignored="false" />
+    <file path="/LetterContentMapper.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264376401" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-dal-impl-orchestration/src/test/java/gov/va/vba/vbms/dal/impl/transform/correspondence/LetterContentMapperTest.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264610366" ignored="false" />
+    <file path="/LetterContentMapperTest.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264547587" ignored="false" />
+    <file path="/LetterContentFilter.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264733915" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-common/src/main/java/gov/va/vba/vbms/common/filter/correspondence/LetterContentFilter.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374265293294" ignored="false" />
+    <file path="/TrackedItemDataServiceImplV2.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264820233" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/orchestration/TrackedItemDataServiceImplV2.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374264824470" ignored="false" />
+    <file path="/CustomContentValidator.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374265235919" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-bl-impl/src/main/java/gov/va/vba/vbms/bl/impl/correspondence/validator/CustomContentValidator.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374265238213" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-dal-impl-orchestration/src/main/java/gov/va/vba/vbms/dal/impl/transform/correspondence/LetterTransformerSupport.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374266487427" ignored="false" />
+    <file path="/LetterTransformerSupport.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374265394103" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-ui-web/src/test/java/gov/va/vba/vbms/claims/controllers/filter/ShouldFollowUpLetterFilterTest.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374265658470" ignored="false" />
+    <file path="/LetterBeanTest.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374265868499" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-ui-web/src/test/java/gov/va/vba/vbms/claims/controllers/model/ui/LetterBeanTest.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374265869571" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/model/ui/LetterBean.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374265806622" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-ui-web/src/main/java/gov/va/vba/vbms/claims/controllers/LetterManagementController.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374267119499" ignored="false" />
+    <file path="/LetterManagementController.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374267015339" ignored="false" />
+    <file path="$PROJECT_DIR$/../vbms/branches/trunk/vbms-common/src/test/java/gov/va/vba/vbms/common/filter/correspondence/LetterContentFilterTest.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374266487427" ignored="false" />
+    <file path="/LetterContentFilterTest.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374266344955" ignored="false" />
+    <file path="/AsyncMultiplayerService.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374337431918" ignored="false" />
+    <file path="/AsyncMultiplayerSession.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374361822733" ignored="false" />
+    <file path="/AsyncMultiplayerServiceConnection.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374340351817" ignored="false" />
+    <file path="$PROJECT_DIR$/plAsyncAndroid/SDK/gen/com/plasync/client/android/BuildConfig.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374340447624" ignored="false" />
+    <file path="/User.java" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374350112558" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="6372b416-336c-45ff-a683-acd1511aa06a" time="1374504738033" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,44 +213,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="plAsyncLogo.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plAsyncLogo.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plAsyncServer/README">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="27" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="build.properties" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plAsyncServer/project/build.properties">
           <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsyncMultiplayerService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncAndroid/Service/src/com/plasync/client/android/service/AsyncMultiplayerService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="61" selection-start="708" selection-end="708" vertical-scroll-proportion="-15.6">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsyncMultiplayerMessageHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncAndroid/Service/src/com/plasync/client/android/service/AsyncMultiplayerMessageHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="41" selection-start="740" selection-end="740" vertical-scroll-proportion="-14.4">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsyncMultiplayerSession.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerSession.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="8" selection-start="2648" selection-end="2648" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="16" selection-start="516" selection-end="516" vertical-scroll-proportion="0.20728643">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncAndroid/TestApp/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Build.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plAsyncServer/project/Build.scala">
+      <file leaf-file-name="AsyncMultiplayerUser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="120" selection-start="419" selection-end="419" vertical-scroll-proportion="0.34798536">
+            <state line="18" column="31" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsyncMultiplayerServiceConnection.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerServiceConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionInitializationFailedException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/SessionInitializationFailedException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="-5.4">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plAsyncAndroid/Service/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -241,6 +334,13 @@
         <option value="$PROJECT_DIR$/plAsyncServer/plasync-server-parent/pom.xml" />
         <option value="$PROJECT_DIR$/plAsyncServer/plasync-server-web/pom.xml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/plAsyncAndroid/Service/src/com/plasync/client/android/service/AsyncMultiplayerService.java" />
+        <option value="$PROJECT_DIR$/plAsyncAndroid/Service/src/com/plasync/client/android/service/AsyncMultiplayerMessageHandler.java" />
+        <option value="$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/SessionInitializationFailedException.java" />
+        <option value="$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerServiceConnection.java" />
+        <option value="$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/User.java" />
+        <option value="$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerSession.java" />
+        <option value="$PROJECT_DIR$/plAsyncAndroid/SDK/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -601,11 +701,15 @@
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.plasync.controllers" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.plasync.client.android" />
+      <recent name="com.plasync.client.android.service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/plasync-server-web" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.plasync.controllers" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.plAsync Test App">
@@ -916,7 +1020,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="967" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -929,18 +1033,18 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.6702254" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2864137" sideWeight="0.6702254" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2864137" sideWeight="0.6702254" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1012,18 +1116,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/plAsyncLogo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="27" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
@@ -1046,13 +1138,6 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="27" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plAsyncServer/project/build.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1071,6 +1156,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncServer/project/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncAndroid/Service/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncAndroid/Service/src/com/plasync/client/android/service/AsyncMultiplayerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="61" selection-start="708" selection-end="708" vertical-scroll-proportion="-15.6">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncAndroid/Service/src/com/plasync/client/android/service/AsyncMultiplayerMessageHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="41" selection-start="740" selection-end="740" vertical-scroll-proportion="-14.4">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/SessionInitializationFailedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="-5.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerServiceConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="31" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/src/com/plasync/client/android/AsyncMultiplayerSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="8" selection-start="2648" selection-end="2648" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncAndroid/TestApp/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plAsyncAndroid/SDK/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="16" selection-start="516" selection-end="516" vertical-scroll-proportion="0.20728643">
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -1082,7 +1245,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1090,7 +1252,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring</last-edited>
+          <last-edited>Android</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1125,12 +1287,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>plAsyncServer-play</last-edited>
+          <last-edited>plAsync Android SDK</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

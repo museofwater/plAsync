@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: commons-codec:commons-codec:1.6">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/local/commons-codec/commons-codec/1.6/jars/commons-codec.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

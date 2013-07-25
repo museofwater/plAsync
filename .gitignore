@@ -4,7 +4,9 @@ plAsyncServer/project/project
 plAsyncServer/project/target
 plAsyncServer/target
 plAsyncAndroid/SDK/gen
+plAsyncAndroid/SDK/build
 plAsyncAndroid/Service/gen
 plAsyncAndroid/TestApp/gen
+plAsyncAndroid/TestApp/build
 
 

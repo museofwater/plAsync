@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Setup Action (used when creating Intent -->
+    <string name="SETUP_ASYNC_MULTIPLAYER_SESSION_ACTION">com.plasync.client.android.action.SETUP_ASYNC_MULTIPLAYER_SESSION</string>
+
+    <!-- Inputs to the com.plasync.client.android.action.SETUP_ASYNC_MULTIPLAYER_SESSION Intent -->
+    <string name="PLASYNC_SERVER_URL_SETTING">PLASYNC_SERVER_URL_SETTING</string>
+    <!-- <string name="PLASYNC_API_KEY_SETTING">PLASYNC_SERVER_URL_SETTING</string> -->
+
+    <!-- Outputs from the com.plasync.client.android.action.SETUP_ASYNC_MULTIPLAYER_SESSION
+         Intent -->
+    <string name="PLASYNC_USER_ID_SETTING">PLASYNC_USER_ID_SETTING</string>
+    <string name="PLASYNC_USERNAME_SETTING">PLASYNC_USERNAME_SETTING</string>
+
+    <!-- Setup Intent Request Code -->
+    <integer name="SETUP_ASYNC_MULTIPLAYER_SESSION_REQUEST_CODE">100</integer>
+
+    <!-- Setup Intent Response Codes -->
+    <integer name="SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_OK_CODE">200</integer>
+    <integer name="SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_CANCELED_CODE">301</integer>
+    <integer name="SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_FAILED_CODE">302</integer>
+</resources>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: com.google.guava:guava:13.0.1">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/local/com.google.guava/guava/13.0.1/jars/guava.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
