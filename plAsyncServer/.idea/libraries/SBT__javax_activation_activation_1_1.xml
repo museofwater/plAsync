@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: javax.activation:activation:1.1">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/cache/javax.activation/activation/jars/activation-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<!-- this file provides a hook for mobile browsers (Android and iOS) to trigger closing the webview -->
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script>
+    closeWindow();
+
+    function closeWindow() {
+        window.open(location,'_self').close();
+    }
+
+    window.onbeforeunload = function () {
+        // This function does nothing.  It won't spawn a confirmation dialog
+        // But it will ensure that the page is not cached by the browser.
+    }
+</script>
+</body>
+</html>

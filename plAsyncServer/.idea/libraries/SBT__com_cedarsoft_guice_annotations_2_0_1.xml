@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: com.cedarsoft:guice-annotations:2.0.1">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/cache/com.cedarsoft/guice-annotations/jars/guice-annotations-2.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

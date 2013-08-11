@@ -20,16 +20,6 @@
     <!-- Javascript -->
     <script type="text/javascript" src="/assets/javascripts/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="/assets/javascripts/bootstrap.min.js"></script>
-    <script>
-        function closeWindow() {
-            window.open(location,'_self').close();
-        }
-
-        window.onbeforeunload = function () {
-        // This function does nothing.  It won't spawn a confirmation dialog
-        // But it will ensure that the page is not cached by the browser.
-        }
-    </script>
     <title>@welcomeMessage</title>
 </head>
 <body>
@@ -40,8 +30,10 @@
         <div id="mainbar">
             <p class="script-only">Press the button to close the browser and return to your game.
             </p>
+            <!-- This button redirects to a page that will close the window.  This is done so that mobile
+                 browsers (i.e. Android and iOS) can listen for the URL and take action on close. -->
             <button id="welcome-close" class="btn btn-primary " style="margin-bottom: 5px"
-            onclick="javascript:closeWindow()">Close</button>
+            onclick="window.location.href = '/close'">Close</button>
         </div>
 </body>
 </html>

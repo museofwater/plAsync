@@ -1,7 +1,11 @@
 var usernameAvailable = false;
 
 $(function () {
-    // Do an initial check in case their is data in the input (user hit the back button)
+    // Initially hide both alerts
+    $("#usernameAvailable").hide();
+    $("#usernameTaken").hide();
+
+    // Do an initial check in case there is data in the input (user hit the back button)
     checkUsername();
 
     $('#username-input').keyup(function () {
@@ -11,19 +15,10 @@ $(function () {
     // Do the updates on stop so we only process the last request
     $(document).ajaxStop(function() {
         if (usernameAvailable) {
-            $('.checkAvailable').html('<img src="/assets/images/accept.png" /> Username Avaliable');
-            $(".checkAvailable").removeClass("red");
-            $('.check').addClass("green");
-            $("#username-input").removeClass("yellow");
-            $("#username-input").addClass("white");
-            enableSubmit();
-        } else {
-            $('.checkAvailable').html('<img src="/assets/images/error.png" /> Username Taken');
-            $(".checkAvailable").removeClass("green");
-            $('.checkAvailable').addClass("red")
-            $("#username-input").removeClass("white");
-            $("#username-input").addClass("yellow");
-            disableSubmit();
+            onUsernameAvailable();
+        }
+        else {
+            onUsernameTaken();
         }
     });
 });
@@ -47,6 +42,7 @@ function checkUsername() {
             cache: false,
             success: function (result) {
                 usernameAvailable = result;
+                $('.checkAvailable').html('');
             }
         });
     }
@@ -54,6 +50,28 @@ function checkUsername() {
         $('.checkAvailable').html('');
     }
     return usernameAvailable
+}
+
+function onUsernameAvailable() {
+//    $('.checkAvailable').html('<img src="/assets/images/accept.png" /> Username Avaliable');
+//    $(".checkAvailable").removeClass("red");
+//    $('.check').addClass("green");
+    $("#usernameAvailable").show();
+    $("#usernameTaken").hide();
+    $("#username-input").removeClass("yellow");
+    $("#username-input").addClass("white");
+    enableSubmit();
+}
+
+function onUsernameTaken() {
+//    $('.checkAvailable').html('<img src="/assets/images/error.png" /> Username Taken');
+//    $(".checkAvailable").removeClass("green");
+//    $('.checkAvailable').addClass("red")
+    $("#usernameTaken").show();
+    $("#usernameAvailable").hide();
+    $("#username-input").removeClass("white");
+    $("#username-input").addClass("yellow");
+    disableSubmit();
 }
 
 function enableSubmit() {

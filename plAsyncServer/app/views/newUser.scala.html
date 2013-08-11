@@ -29,6 +29,12 @@
             @helper.form(action = com.plasync.server.controllers.routes.UserController.createUser(), 'id -> "newUserForm") {
                 @helper.inputText(newUserForm("username"), 'class -> "form-item", 'id -> "username-input",
                                               'placeholder -> "username", 'name -> "username", 'autocomplete -> "off")
+                <div class="alert-success" id="usernameAvailable">
+                    Username available.
+                </div>
+                <div class="alert-error" id="usernameTaken">
+                    Username taken.
+                </div>
                 <input id="username-submit" class="btn btn-primary username_not_taken" type="submit" style="margin-bottom: 5px"/>
 
 

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="SETUP_ACTIVITY_NAME">Async Multiplayer Setup Activity</string>
+    <string name="SETUP_ACTIVITY_NAME">Sign In</string>
 </resources>

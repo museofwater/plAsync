@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.apache.commons:commons-email:1.2">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/cache/org.apache.commons/commons-email/jars/commons-email-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

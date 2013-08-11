@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: play:templates_2.10:2.1.3">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/local/play/templates_2.10/2.1.3/jars/templates_2.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

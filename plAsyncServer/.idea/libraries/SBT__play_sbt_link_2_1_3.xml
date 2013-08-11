@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: play:sbt-link:2.1.3">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/local/play/sbt-link/2.1.3/jars/sbt-link.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

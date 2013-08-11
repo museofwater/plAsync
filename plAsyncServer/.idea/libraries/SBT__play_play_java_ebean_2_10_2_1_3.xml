@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: play:play-java-ebean_2.10:2.1.3">
+    <CLASSES>
+      <root url="jar://$PLAY_HOME$/repository/local/play/play-java-ebean_2.10/2.1.3/jars/play-java-ebean_2.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -3,9 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/plAsyncServer/plAsyncServer.iml" filepath="$PROJECT_DIR$/plAsyncServer/plAsyncServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plAsyncServer/plasync-server-parent/plasync-server-parent.iml" filepath="$PROJECT_DIR$/plAsyncServer/plasync-server-parent/plasync-server-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plasync-server-web/plAsyncServer/plasync-server-web.iml" filepath="$PROJECT_DIR$/plasync-server-web/plAsyncServer/plasync-server-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plAsyncServer-play/target/scala-2.9.1/src_managed/src_managed.iml" filepath="$PROJECT_DIR$/plAsyncServer-play/target/scala-2.9.1/src_managed/src_managed.iml" />
     </modules>
   </component>
 </project>

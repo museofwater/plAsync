@@ -3,16 +3,13 @@ package com.plasync.client.android.testapp;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.plasync.client.android.testapp.R;
+public class AsyncMultiplayerTestAppActivity extends Activity {
 
-public class TestSetupActivity extends Activity {
-
-    private static final String TAG = TestSetupActivity.class.getName();
+    private static final String TAG = AsyncMultiplayerTestAppActivity.class.getName();
+//    private static final String URL = "http://192.168.1.67:9000";
+    private static final String URL = "http://192.168.8.72:9000";
 
     /**
      * Called when the activity is first created.
@@ -20,21 +17,21 @@ public class TestSetupActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.test_setup);
 
-        String plAsyncServerUrl = getString(R.string.PLASYNC_SERVER_URL_SETTING);
+        // TODO get this via the UI
+        String plAsyncServerUrl = URL;
         Intent setupIntent = new Intent();
+
+        // Explicit intent
         ComponentName setupActivityComponent = new ComponentName("com.plasync.client.android.testapp",
                 "com.plasync.client.android.AsyncMultiplayerSetupActivity");
-        try {
-            ActivityInfo info = getPackageManager().getActivityInfo(setupActivityComponent, PackageManager.GET_INTENT_FILTERS);
-            Log.d(TAG,info.toString());
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
         setupIntent.setComponent(setupActivityComponent);
+
+        // Implicit intent
 //        setupIntent.setAction(getString(R.string.SETUP_ASYNC_MULTIPLAYER_SESSION_ACTION));
 //        setupIntent.addCategory("android.intent.category.DEFAULT");
+
         setupIntent.putExtra((getString(R.string.PLASYNC_SERVER_URL_SETTING)), plAsyncServerUrl);
         startActivityForResult(setupIntent,
                 getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_REQUEST_CODE));
@@ -43,5 +40,13 @@ public class TestSetupActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_OK_CODE)) {
+            String userId = data.getStringExtra(getString(R.string.PLASYNC_USER_ID_SETTING));
+            String username = data.getStringExtra(getString(R.string.PLASYNC_USERNAME_SETTING));
+        }
+        else {
+            // async mulitplayer disabled
+        }
+
     }
 }

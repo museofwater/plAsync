@@ -5,6 +5,9 @@
 # Home page
 GET         /                                com.plasync.server.controllers.ApplicationController.index()
 
+# Close redirect (for mobile browsers)
+GET         /close                           controllers.Assets.at(path="/public", file = "close.html")
+
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                    controllers.Assets.at(path="/public", file)
 
@@ -13,18 +16,20 @@ GET         /signin                          com.plasync.server.controllers.Sign
 POST        /signin                          com.plasync.server.controllers.SigninController.authenticate()
 GET         /signin/verify                   com.plasync.server.controllers.SigninController.verify(provider: String)
 
-# Internal services to support signin/signup
+# Internal service to support signin/signup
 GET         /user/:username/available        com.plasync.server.controllers.UserController.available(username: String)
 GET         /user/:id/signup                 com.plasync.server.controllers.UserController.signup(id: String)
 GET         /user/:username/welcome          com.plasync.server.controllers.UserController.welcome(username: String, newUser: Boolean)
 
-# Testing convenience services -- REMOVE IN PRODUCTION
+# Testing convenience service -- REMOVE IN PRODUCTION
 GET         /user/clearAll                   com.plasync.server.controllers.UserController.clearUsers()
 
 # RESTFul User Services
 GET         /user                            com.plasync.server.controllers.UserController.getAllUsers()
 GET         /user/:id                        com.plasync.server.controllers.UserController.getUser(id: String)
 POST        /user                            com.plasync.server.controllers.UserController.createUser()
+
+
 
 
 

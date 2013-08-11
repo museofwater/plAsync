@@ -25,7 +25,7 @@
 
         <div id="content" class="container">
             <div class="subheader">
-                <h1>Please Sign In with your Open ID</h1>
+                <h1>Please Sign In</h1>
             </div>
             <div id="mainbar">
                 <p class="script-only">Do you already have an account on one of these sites? Click the logo to
@@ -36,17 +36,24 @@
                 <div id="openid_btns">
                     <a title="log in with Google" href="javascript:openid.signin('google');"
                     class="icon-google-large openid_large_btn"></a>
-                    <!--<a title="log in with Facebook" href="javascript:openid.signin('facebook');"
-                    class="icon-facebook-large openid_large_btn"></a>  -->
+                    <a title="log in with Facebook" href="javascript:openid.signin('facebook');"
+                    class="icon-facebook-large openid_large_btn"></a>
                     <a title="log in with Yahoo" href="javascript:openid.signin('yahoo');"
                     class="icon-yahoo-large openid_large_btn"></a>
                     <a title="log in with AOL" href="javascript:openid.signin('aol');"
                     class="icon-aol-large openid_large_btn"></a>
-                    <a title="log in with myOpenID" href="javascript:openid.signin('myopenId');"
-                    class="icon-myopenid-large openid_large_btn"></a>
                     <br>
-                    <div id="show-more-options" style="display: block;">
+                    <div class="accordion" id="more-options">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-options" href="#moreOptionsCollapse">
+                                More Sign In Options
+                                </a>
+                    <div id="moreOptionsCollapse" class="accordion-body collapse">
+                    <div id="show-more-options" style="display: block;" class="accordion-inner">
                         <div id="more-openid-options">
+                            <a title="log in with myOpenID" href="javascript:openid.signin('myopenId');"
+                            class="icon-myopenid openid_small_btn"></a>
                             <a title="log in with LiveJournal" href="javascript:openid.signin('livejournal');"
                             class="icon-livejournal openid_small_btn"></a>
                             <a title="log in with WordPress" href="javascript:openid.signin('wordpress');"
@@ -62,33 +69,30 @@
                         </div>
                         <div id="simple-openid-selector">
                             <div id="openid-url-input-area">
-                                <p class="script-only">Or, you can manually enter your OpenID</p>
-                                <table id="openid-url-input">
-                                    <tbody><tr>
-                                        <td class="vt large">
-                                            <input id="openid_identifier" name="openid_identifier" class="openid-identifier"
-                                            style="height: 28px; width: 180px;" type="text" tabindex="100">
-                                        </td>
-                                        <td class="vt large">
-                                            <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-                                            <!--<input id="submit-button" style="margin-left: 5px; height: 36px;" type="submit" value="Log in" tabindex="101"> -->
-                                        </td>
-                                    </tr>
-                                    </tbody></table>
+                                <p class="script-only">Manually enter your OpenID</p>
+                                <input id="openid_identifier" name="openid_identifier" class="openid-identifier"
+                                       style="height: 28px" type="text" tabindex="100">
+                                <br>
+                                <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+
                             </div>
                         </div>
                     </div>
                 </div>  <!-- openid buttons -->
+                </div>
+                </div>
+                </div>
+                </div>
             </form>
                 <!-- More information links -->
                 <div class="accordion" id="more-info" class="more-info">
                     <div class="accordion-group">
                         <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseOne">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseSignin">
                                 Why am I Being Asked to Sign In?
                             </a>
                         </div>
-                        <div id="collapseOne" class="accordion-body collapse">
+                        <div id="collapseSignin" class="accordion-body collapse">
                             <div class="accordion-inner">
                                 <p>This plAsync server does not recognize your device.  It is asking you to sign in so
                                     it can link your identity with your device.  As long as you sign in the same way
@@ -97,11 +101,11 @@
                             </div>
                         </div>
                         <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseTwo">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseEmail">
                                 Why Do You Need my Email?
                             </a>
                         </div>
-                        <div id="collapseTwo" class="accordion-body collapse">
+                        <div id="collapseEmail" class="accordion-body collapse">
                             <div class="accordion-inner">
                                 <p>If you are using Google, we need your email address because Google OpenIDs are
                                    specific to the domain that requested them.  This could cause problems with identifying
@@ -111,23 +115,11 @@
                             </div>
                         </div>
                         <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseThree">
-                                Why Can't I Sign In with Facebook?
-                            </a>
-                        </div>
-                        <div id="collapseThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <p>Facebook is not an OpenID provider.  Facebook signins expire every 60 days.  If you
-                                   tried to signin after expiration, your token would be different and plAsync would
-                                   not recognize you.</p>
-                            </div>
-                        </div>
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseFour">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#more-info" href="#collapseOpenId">
                                 Why OpenID?
                             </a>
                         </div>
-                        <div id="collapseFour" class="accordion-body collapse">
+                        <div id="collapseOpenId" class="accordion-body collapse">
                             <div class="accordion-inner">
                                 <p>It’s a single username and password that allows you to log in to any OpenID-enabled site.</p>
                                 <p>It works on thousands of websites.</p>

@@ -3,11 +3,12 @@
           package="com.plasync.client.android"
           android:versionCode="1"
           android:versionName="1.0">
+    <uses-permission android:name="android.permission.INTERNET" />
     <application android:label="" android:icon="@drawable/ic_launcher">
-
         <!-- This is the signin activity for plAsync -->
         <activity android:name="AsyncMultiplayerSetupActivity"
-                  android:label="@string/SETUP_ACTIVITY_NAME">
+                  android:label="@string/SETUP_ACTIVITY_NAME"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
 
             <!-- This is the intent for getting the local user.  Apps that use plAsync must use this
                  intent to retrieve the local user, or allow the user to signin.  Apps should
