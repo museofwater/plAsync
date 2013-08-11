@@ -1,12 +1,18 @@
+# Global ignores
+workspace.xml
+
+# plAsync Server ignores
 plAsyncServer/.settings
 plAsyncServer/logs
 plAsyncServer/project/project
 plAsyncServer/project/target
 plAsyncServer/target
+/plAsyncServer/conf/evolutions/
+
+# plAsync Android ignores
 plAsyncAndroid/SDK/gen
 plAsyncAndroid/SDK/build
 plAsyncAndroid/Service/gen
 plAsyncAndroid/TestApp/gen
 plAsyncAndroid/TestApp/build
-
-
+plAsyncAndroid/.gradle/
