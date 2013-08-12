@@ -18,6 +18,8 @@ import static play.data.Form.form;
  * To change this template use File | Settings | File Templates.
  */
 public class UserController extends Controller {
+    private static final String PLASYNC_SERVER_USERNAME_COOKIE = "com.plasync.server.username";
+    private static final String PLASYNC_SERVER_USERID_COOKIE = "com.plasync.server.userId";
 
     /* User CRUD operations */
 
@@ -40,7 +42,7 @@ public class UserController extends Controller {
             User newUser = new User(id);
             newUser.username = username;
             newUser.save();
-            return redirect(com.plasync.server.controllers.routes.UserController.welcome(username, true));
+            return redirect(com.plasync.server.controllers.routes.UserController.welcome(username, id, true));
         }
         else {
             return redirect(com.plasync.server.controllers.routes.UserController.signup(id));
@@ -61,7 +63,7 @@ public class UserController extends Controller {
         }
         else {
             // If user already is registered, redirect to welcome
-            return redirect(com.plasync.server.controllers.routes.UserController.welcome(user.username, false));
+            return redirect(com.plasync.server.controllers.routes.UserController.welcome(user.username, id, false));
         }
     }
 
@@ -70,8 +72,9 @@ public class UserController extends Controller {
         return ok(Json.toJson(!User.exists(username)));
     }
 
-    public static Result welcome(String username, boolean newUser) {
-        // TODO save the user id and username in a cookie
+    public static Result welcome(String username, String userId, boolean newUser) {
+        response().setCookie(PLASYNC_SERVER_USERNAME_COOKIE, username);
+        response().setCookie(PLASYNC_SERVER_USERID_COOKIE, userId);
         return ok(views.html.welcome.render(username, newUser));
     }
 

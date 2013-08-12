@@ -19,7 +19,7 @@ GET         /signin/verify                   com.plasync.server.controllers.Sign
 # Internal service to support signin/signup
 GET         /user/:username/available        com.plasync.server.controllers.UserController.available(username: String)
 GET         /user/:id/signup                 com.plasync.server.controllers.UserController.signup(id: String)
-GET         /user/:username/welcome          com.plasync.server.controllers.UserController.welcome(username: String, newUser: Boolean)
+GET         /user/:username/welcome          com.plasync.server.controllers.UserController.welcome(username: String, userId: String, newUser: Boolean)
 
 # Testing convenience service -- REMOVE IN PRODUCTION
 GET         /user/clearAll                   com.plasync.server.controllers.UserController.clearUsers()
