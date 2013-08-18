@@ -1,11 +1,14 @@
 package com.plasync.server.controllers;
 
 import com.plasync.server.models.User;
+import play.Logger;
 import play.data.Form;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 
 import static play.data.Form.form;
@@ -20,6 +23,7 @@ import static play.data.Form.form;
 public class UserController extends Controller {
     private static final String PLASYNC_SERVER_USERNAME_COOKIE = "com.plasync.server.username";
     private static final String PLASYNC_SERVER_USERID_COOKIE = "com.plasync.server.userId";
+    private static final String UTF_8 = "UTF-8";
 
     /* User CRUD operations */
 
@@ -73,8 +77,20 @@ public class UserController extends Controller {
     }
 
     public static Result welcome(String username, String userId, boolean newUser) {
-        response().setCookie(PLASYNC_SERVER_USERNAME_COOKIE, username);
-        response().setCookie(PLASYNC_SERVER_USERID_COOKIE, userId);
+        // Url Encode the cookies in case they have special characters
+        String usernameEncoded;
+        String userIdEncoded;
+        try {
+            usernameEncoded = URLEncoder.encode(username, UTF_8);
+            userIdEncoded = URLEncoder.encode(userId, UTF_8);
+        } catch (UnsupportedEncodingException e) {
+            Logger.error("Error encoding cookie values", e);
+            // Use unencoded cookies
+            usernameEncoded = username;
+            userIdEncoded = userId;
+        }
+        response().setCookie(PLASYNC_SERVER_USERNAME_COOKIE, usernameEncoded);
+        response().setCookie(PLASYNC_SERVER_USERID_COOKIE, userIdEncoded);
         return ok(views.html.welcome.render(username, newUser));
     }
 

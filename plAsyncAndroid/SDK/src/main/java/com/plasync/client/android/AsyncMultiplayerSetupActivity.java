@@ -3,6 +3,7 @@ package com.plasync.client.android;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.WebView;
@@ -11,6 +12,8 @@ import android.webkit.WebViewClient;
 import com.plasync.client.android.dal.AsyncMultiplayerUserDao;
 import com.plasync.client.android.model.AsyncMultiplayerUser;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,6 +23,7 @@ import java.util.Scanner;
 public class AsyncMultiplayerSetupActivity extends Activity {
 
     private static final String TAG = AsyncMultiplayerSetupActivity.class.getName();
+    public static final String UTF_8 = "UTF-8";
 
     private WebView wvSignin;
     private String plAsyncServerUrl;
@@ -102,7 +106,7 @@ public class AsyncMultiplayerSetupActivity extends Activity {
 
     private void setSigninResult(String username, String userId) {
         // Store user in database
-        setSigninResult(storeUser(userId,username));
+        setSigninResult(storeUser(userId, username));
     }
 
     private AsyncMultiplayerUser storeUser(String userId, String username) {
@@ -156,6 +160,13 @@ public class AsyncMultiplayerSetupActivity extends Activity {
                     }
                     if (cookieItemScanner.hasNext()) {
                         cookieValue = cookieItemScanner.next().trim();
+                        // URLDecode the cookie value
+                        try {
+                            cookieValue = URLDecoder.decode(cookieValue, UTF_8);
+                        }
+                        catch (UnsupportedEncodingException e) {
+                            Log.e(TAG, "Error decoding cookie value", e);
+                        }
                     }
 
                     if (cookieName != null && cookieValue != null &&
