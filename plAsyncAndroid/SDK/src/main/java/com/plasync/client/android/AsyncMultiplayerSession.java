@@ -41,21 +41,4 @@ public class AsyncMultiplayerSession {
         this.plAsyncApiKey = plAsyncApiKey;
     }
 
-    /** Initializes the session which involves the following
-     *
-     * 1.  Detecting the existence of the plAsync service and prompting the user to install if it does not exist
-     * 2.  Requesting the user id and username from the service
-     *
-     * @throws SessionInitializationFailedException
-     */
-//    public void init() throws SessionInitializationFailedException {
-//        AsyncMultiplayerUser user = getLocalUser(plAsyncServerUrl);
-//        if (user == null) {
-//            user = registerUser();
-//        }
-//    }
-
-
-
-
 }

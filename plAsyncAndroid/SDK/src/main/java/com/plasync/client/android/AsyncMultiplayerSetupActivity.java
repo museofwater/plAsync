@@ -8,6 +8,10 @@ import android.webkit.CookieSyncManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.plasync.client.android.dal.AsyncMultiplayerUserDao;
+import com.plasync.client.android.model.AsyncMultiplayerUser;
+
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -19,8 +23,10 @@ public class AsyncMultiplayerSetupActivity extends Activity {
 
     private WebView wvSignin;
     private String plAsyncServerUrl;
+    private AsyncMultiplayerUserDao userDao;
 
     public void onCreate(Bundle savedInstanceState) {
+        userDao = new AsyncMultiplayerUserDao(this);
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
@@ -31,12 +37,7 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         AsyncMultiplayerUser user = getLocalUser(plAsyncServerUrl);
 
         if (user != null) {
-            Intent result = new Intent();
-            result.putExtra(getString(R.string.PLASYNC_USER_ID_SETTING), user.getId());
-            result.putExtra(getString(R.string.PLASYNC_USERNAME_SETTING), user.getUsername());
-            setResult(getResources().getInteger(
-                    R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_OK_CODE), result);
-            finish();
+            setSigninResult(user);
         }
         else {
             registerUser();
@@ -49,8 +50,15 @@ public class AsyncMultiplayerSetupActivity extends Activity {
      * @return The user or null if one is not stored locally for this URL
      */
     private AsyncMultiplayerUser getLocalUser(String url) {
-//        return new AsyncMultiplayerUser("id", "username");
-        return null;
+        // TODO add support for multiple users on a device
+        userDao.open();
+        List<AsyncMultiplayerUser> users = userDao.getUsersForServerUrl(url);
+        if (!users.isEmpty()) {
+            return users.get(0);
+        }
+        else {
+            return null;
+        }
     }
 
     private AsyncMultiplayerUser registerUser() {
@@ -76,16 +84,33 @@ public class AsyncMultiplayerSetupActivity extends Activity {
 
     private void setSigninFailureResult() {
         setResult(getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_FAILED_CODE));
+        // Close the database
+        userDao.close();
+        finish();
+    }
+
+    private void setSigninResult(AsyncMultiplayerUser user) {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra(getString(R.string.PLASYNC_USERNAME_SETTING),user.getUsername());
+        resultIntent.putExtra(getString(R.string.PLASYNC_USER_ID_SETTING),user.getUserId());
+        setResult(getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_OK_CODE),
+                resultIntent);
+        // Close the database
+        userDao.close();
         finish();
     }
 
     private void setSigninResult(String username, String userId) {
-        Intent resultIntent = new Intent();
-        resultIntent.putExtra(getString(R.string.PLASYNC_USERNAME_SETTING),username);
-        resultIntent.putExtra(getString(R.string.PLASYNC_USER_ID_SETTING),userId);
-        setResult(getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_OK_CODE),
-                  resultIntent);
-        finish();
+        // Store user in database
+        setSigninResult(storeUser(userId,username));
+    }
+
+    private AsyncMultiplayerUser storeUser(String userId, String username) {
+        AsyncMultiplayerUser newUser = new AsyncMultiplayerUser();
+        newUser.setServerUrl(plAsyncServerUrl);
+        newUser.setUserId(userId);
+        newUser.setUsername(username);
+        return userDao.createUser(newUser);
     }
 
     private class SigninWebViewClient extends WebViewClient {
