@@ -1,8 +1,14 @@
 package com.plasync.client.android;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
@@ -11,6 +17,7 @@ import android.webkit.WebViewClient;
 
 import com.plasync.client.android.dal.AsyncMultiplayerUserDao;
 import com.plasync.client.android.model.AsyncMultiplayerUser;
+import com.plasync.client.android.util.NetworkUtil;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -28,6 +35,9 @@ public class AsyncMultiplayerSetupActivity extends Activity {
     private WebView wvSignin;
     private String plAsyncServerUrl;
     private AsyncMultiplayerUserDao userDao;
+    private ProgressDialog progressLoadUrl;
+    private boolean progressIsShowing = false;
+    private SigninWebViewClient webViewClient;
 
     public void onCreate(Bundle savedInstanceState) {
         userDao = new AsyncMultiplayerUserDao(this);
@@ -66,15 +76,18 @@ public class AsyncMultiplayerSetupActivity extends Activity {
     }
 
     private AsyncMultiplayerUser registerUser() {
-        // TODO Handle no network connection
+        webViewClient = new SigninWebViewClient(getResources().getInteger(R.integer.timeout));
         setContentView(R.layout.setup);
         wvSignin = (WebView)findViewById(R.id.wvSignin);
         wvSignin.getSettings().setJavaScriptEnabled(true);
         wvSignin.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        wvSignin.setWebViewClient(new SigninWebViewClient());
-        loadUrl(getString(R.string.SIGNIN_URL));
-
+        wvSignin.setWebViewClient(webViewClient);
+        loadUrl(getUrl(getString(R.string.SIGNIN_URL)));
         return null;
+    }
+
+    private String getUrl(String subUrl) {
+        return plAsyncServerUrl + subUrl;
     }
 
     private void setPlAsyncServerUrl(String url) {
@@ -82,8 +95,17 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         plAsyncServerUrl = url.endsWith("/") ? url : url + "/";
     }
 
-    private void loadUrl(String subUrl) {
-        wvSignin.loadUrl(plAsyncServerUrl + subUrl);
+    private void loadUrl(String url) {
+        if (!NetworkUtil.checkNetwork(this)) {
+            setSigninFailureResult();
+        }
+        // Show progress
+        progressIsShowing = true;
+        progressLoadUrl =
+                ProgressDialog.show(this, getString(R.string.CONNECTING_TITLE),
+                        getString(R.string.CONNECTING_MSG));
+
+        wvSignin.loadUrl(url);
     }
 
     private void setSigninFailureResult() {
@@ -118,8 +140,67 @@ public class AsyncMultiplayerSetupActivity extends Activity {
     }
 
     private class SigninWebViewClient extends WebViewClient {
+        /**
+         * Timeout for page load in seconds
+         */
+        private int timeout;
+        private String urlLoading;
+
+        boolean pageLoaded = false;
+
+        // Flag to instruct the client to ignore callbacks after an error
+        boolean ignoreCallbacks = false;
+
+        Handler timeoutHandler;
+
+        private SigninWebViewClient(int timeout) {
+            this.timeout = timeout;
+            timeoutHandler = new Handler();
+        }
+
+        // Called by activity before requesting load of a url
+        private void prepareToLoadUrl() {
+           this.ignoreCallbacks = false;
+           this.pageLoaded = true;
+           this.urlLoading = null;
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            if (ignoreCallbacks) {
+                return;
+            }
+            urlLoading = url;
+            // timeout has expired if this flag is still set when the message is handled
+            pageLoaded = false;
+            Runnable run = new Runnable() {
+                public void run() {
+
+                    if(!pageLoaded) {
+                        showTimeoutAlert();
+                    }
+                }
+            };
+            timeoutHandler.postDelayed(run, this.timeout*1000);
+        }
+
+        @Override
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+            // Ignore future callbacks because the page load has failed
+            ignoreCallbacks = true;
+            showServerErrorAlert();
+        }
+
         @Override
         public void onPageFinished(WebView view, String url) {
+            if (ignoreCallbacks) {
+                return;
+            }
+            pageLoaded = true;
+            if (progressIsShowing) {
+                progressLoadUrl.dismiss();
+            }
+            urlLoading = null;
             if (url.endsWith(getString(R.string.CLOSE_URL))) {
                 CookieSyncManager.getInstance().sync();
                 // Get the cookie from cookie jar.
@@ -187,6 +268,52 @@ public class AsyncMultiplayerSetupActivity extends Activity {
                     setSigninResult(username,userId);
                 }
             }
+        }
+
+        private void showTimeoutAlert() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(AsyncMultiplayerSetupActivity.this);
+            // Add the buttons
+            builder.setTitle(R.string.TIMEOUT_TITLE)
+                   .setMessage(R.string.TIMEOUT_MSG)
+                   .setPositiveButton(R.string.RETRY, new DialogInterface.OnClickListener() {
+                       public void onClick(DialogInterface dialog, int id) {
+                           // Try to load url again
+                           loadUrl(urlLoading);
+                       }
+                   });
+                   builder.setNegativeButton(R.string.CANCEL, new DialogInterface.OnClickListener() {
+                       public void onClick(DialogInterface dialog, int id) {
+                            // User cancelled the dialog
+                           setSigninFailureResult();
+                       }
+                   });
+
+            // Create the AlertDialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+
+        private void showServerErrorAlert() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(AsyncMultiplayerSetupActivity.this);
+            // Add the buttons
+            builder.setTitle(R.string.SERVER_ERROR_TITLE)
+                    .setMessage(R.string.SERVER_ERROR_MSG)
+                    .setPositiveButton(R.string.RETRY, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Try to load url again
+                            loadUrl(urlLoading);
+                        }
+                    });
+            builder.setNegativeButton(R.string.CANCEL, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // User cancelled the dialog
+                    setSigninFailureResult();
+                }
+            });
+
+            // Create the AlertDialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
     }
 

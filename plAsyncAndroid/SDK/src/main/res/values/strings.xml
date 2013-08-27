@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="SETUP_ACTIVITY_NAME">Sign In</string>
+    <string name="CONNECTING_TITLE">Connecting to server</string>
+    <string name="CONNECTING_MSG">Please wait a moment...</string>
+    <string name="TIMEOUT_TITLE">Connection Error</string>
+    <string name="TIMEOUT_MSG">Failed to connect to server.  Press Retry to try again or Cancel to abort.</string>
+    <string name="SERVER_ERROR_TITLE">Server Error</string>
+    <string name="SERVER_ERROR_MSG">Server returned an error.  Press Retry to try again or Cancel to abort.</string>
+    <string name="RETRY">Retry</string>
+    <string name="CANCEL">Cancel</string>
 </resources>

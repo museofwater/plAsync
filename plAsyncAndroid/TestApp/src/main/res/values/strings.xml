@@ -8,7 +8,7 @@
     <string name="USERNAME_LABEL">Current User:</string>
     <string name="SERVER_URL_LABEL">Server Url</string>
     <string name="SERVER_URL_DIALOG_TITLE">Server Url</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
-
+    <string name="OK">OK</string>
+    <string name="CANCEL">Cancel</string>
+    <string name="SET_SERVER_URL">Change Server</string>
 </resources>

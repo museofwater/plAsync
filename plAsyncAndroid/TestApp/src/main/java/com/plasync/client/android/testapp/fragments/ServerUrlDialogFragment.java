@@ -43,7 +43,7 @@ public class ServerUrlDialogFragment extends DialogFragment {
 
         builder.setView(view)
                 // Add action buttons
-                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         if (listener != null) {
@@ -51,7 +51,7 @@ public class ServerUrlDialogFragment extends DialogFragment {
                         }
                     }
                 })
-                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.CANCEL, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         ServerUrlDialogFragment.this.getDialog().cancel();
                     }
