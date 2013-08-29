@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
@@ -75,7 +74,7 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         }
     }
 
-    private AsyncMultiplayerUser registerUser() {
+    private void registerUser() {
         webViewClient = new SigninWebViewClient(getResources().getInteger(R.integer.timeout));
         setContentView(R.layout.setup);
         wvSignin = (WebView)findViewById(R.id.wvSignin);
@@ -83,7 +82,6 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         wvSignin.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         wvSignin.setWebViewClient(webViewClient);
         loadUrl(getUrl(getString(R.string.SIGNIN_URL)));
-        return null;
     }
 
     private String getUrl(String subUrl) {
@@ -104,7 +102,7 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         progressLoadUrl =
                 ProgressDialog.show(this, getString(R.string.CONNECTING_TITLE),
                         getString(R.string.CONNECTING_MSG));
-
+        webViewClient.prepareToLoadUrl();
         wvSignin.loadUrl(url);
     }
 
@@ -149,9 +147,10 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         boolean pageLoaded = false;
 
         // Flag to instruct the client to ignore callbacks after an error
-        boolean ignoreCallbacks = false;
+        boolean hasError = false;
 
         Handler timeoutHandler;
+        private AlertDialog alertDialog;
 
         private SigninWebViewClient(int timeout) {
             this.timeout = timeout;
@@ -160,14 +159,14 @@ public class AsyncMultiplayerSetupActivity extends Activity {
 
         // Called by activity before requesting load of a url
         private void prepareToLoadUrl() {
-           this.ignoreCallbacks = false;
+           this.hasError = false;
            this.pageLoaded = true;
            this.urlLoading = null;
         }
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            if (ignoreCallbacks) {
+            if (hasError) {
                 return;
             }
             urlLoading = url;
@@ -175,8 +174,15 @@ public class AsyncMultiplayerSetupActivity extends Activity {
             pageLoaded = false;
             Runnable run = new Runnable() {
                 public void run() {
+                    // Do nothing if we already have an error
+                    if (hasError) {
+                        return;
+                    }
 
-                    if(!pageLoaded) {
+                    // Dismiss any current alerts and progress
+                    dismissProgress();
+                    dismissErrorAlert();
+                    if (!pageLoaded) {
                         showTimeoutAlert();
                     }
                 }
@@ -187,19 +193,19 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         @Override
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
             // Ignore future callbacks because the page load has failed
-            ignoreCallbacks = true;
+            hasError = true;
+            dismissProgress();
             showServerErrorAlert();
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
-            if (ignoreCallbacks) {
+            if (hasError) {
                 return;
             }
             pageLoaded = true;
-            if (progressIsShowing) {
-                progressLoadUrl.dismiss();
-            }
+            dismissProgress();
+            dismissErrorAlert();
             urlLoading = null;
             if (url.endsWith(getString(R.string.CLOSE_URL))) {
                 CookieSyncManager.getInstance().sync();
@@ -271,49 +277,48 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         }
 
         private void showTimeoutAlert() {
-            AlertDialog.Builder builder = new AlertDialog.Builder(AsyncMultiplayerSetupActivity.this);
-            // Add the buttons
-            builder.setTitle(R.string.TIMEOUT_TITLE)
-                   .setMessage(R.string.TIMEOUT_MSG)
-                   .setPositiveButton(R.string.RETRY, new DialogInterface.OnClickListener() {
-                       public void onClick(DialogInterface dialog, int id) {
-                           // Try to load url again
-                           loadUrl(urlLoading);
-                       }
-                   });
-                   builder.setNegativeButton(R.string.CANCEL, new DialogInterface.OnClickListener() {
-                       public void onClick(DialogInterface dialog, int id) {
-                            // User cancelled the dialog
-                           setSigninFailureResult();
-                       }
-                   });
-
-            // Create the AlertDialog
-            AlertDialog dialog = builder.create();
-            dialog.show();
+            showErrorAlert(R.string.TIMEOUT_TITLE, R.string.TIMEOUT_MSG);
         }
 
         private void showServerErrorAlert() {
+            showErrorAlert(R.string.SERVER_ERROR_TITLE,R.string.SERVER_ERROR_MSG);
+        }
+
+        private void showErrorAlert(int titleResource, int messageResource) {
             AlertDialog.Builder builder = new AlertDialog.Builder(AsyncMultiplayerSetupActivity.this);
             // Add the buttons
-            builder.setTitle(R.string.SERVER_ERROR_TITLE)
-                    .setMessage(R.string.SERVER_ERROR_MSG)
+            builder.setTitle(titleResource)
+                    .setMessage(messageResource)
                     .setPositiveButton(R.string.RETRY, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             // Try to load url again
                             loadUrl(urlLoading);
+                            dialog.dismiss();
                         }
                     });
             builder.setNegativeButton(R.string.CANCEL, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // User cancelled the dialog
                     setSigninFailureResult();
+                    dialog.cancel();
                 }
             });
 
             // Create the AlertDialog
-            AlertDialog dialog = builder.create();
-            dialog.show();
+            alertDialog = builder.create();
+            alertDialog.show();
+        }
+
+        private void dismissProgress() {
+            if (progressLoadUrl != null && progressLoadUrl.isShowing()) {
+                progressLoadUrl.dismiss();
+            }
+        }
+
+        private void dismissErrorAlert() {
+            if (alertDialog != null && alertDialog.isShowing()) {
+                alertDialog.dismiss();
+            }
         }
     }
 
