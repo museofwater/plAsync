@@ -35,6 +35,12 @@ public class User extends Model {
         return find.byId(id);
     }
 
+    public static User findByUsername(String username) {
+        return find
+                .where()
+                .eq("username", username).findUnique();
+    }
+
     public static boolean exists(String username) {
         return find
                 .where()
@@ -43,19 +49,30 @@ public class User extends Model {
     }
 
     @Id
-    public String id;
+    private String id;
 
     /**
      * A human readable/recognizable identifier to use when searching for and inviting friends.
      */
     @Column(unique=true)
-    public String username;
+    private String username;
 
     public User(String id)
     {
         this.id = id;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
+    }
 
 
 

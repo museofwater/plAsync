@@ -21,14 +21,25 @@ import static play.data.Form.form;
  * To change this template use File | Settings | File Templates.
  */
 public class UserController extends Controller {
+    private static final String USERNAME_QUERY_PARAMETER = "username";
+    private static final String USERID_QUERY_PARAMETER = "id";
+
     private static final String PLASYNC_SERVER_USERNAME_COOKIE = "com.plasync.server.username";
     private static final String PLASYNC_SERVER_USERID_COOKIE = "com.plasync.server.userId";
     private static final String UTF_8 = "UTF-8";
 
+
     /* User CRUD operations */
 
 //    @With(AppKeyController.class)
-    public static Result getAllUsers() {
+    public static Result getUsers() {
+        // Get any query parameters to search by
+        String username = request().getQueryString(USERNAME_QUERY_PARAMETER);
+        if (username != null) {
+            username = username.trim();
+            User user = User.findByUsername(username);
+            return user != null ? ok(Json.toJson(user)) : notFound();
+        }
         return ok(Json.toJson(User.findAllUsers()));
 //        return play.mvc.Results.TODO;
     }
@@ -40,11 +51,11 @@ public class UserController extends Controller {
 
 //    @With(AppKeyController.class)
     public static Result createUser() {
-        String id = form().bindFromRequest().get("id");
-        String username = form().bindFromRequest().get("username").trim();
+        String id = form().bindFromRequest().get(USERID_QUERY_PARAMETER);
+        String username = form().bindFromRequest().get(USERNAME_QUERY_PARAMETER).trim();
         if (!User.exists(username)) {
             User newUser = new User(id);
-            newUser.username = username;
+            newUser.setUsername(username);
             newUser.save();
             return redirect(com.plasync.server.controllers.routes.UserController.welcome(username, id, true));
         }
@@ -67,7 +78,7 @@ public class UserController extends Controller {
         }
         else {
             // If user already is registered, redirect to welcome
-            return redirect(com.plasync.server.controllers.routes.UserController.welcome(user.username, id, false));
+            return redirect(com.plasync.server.controllers.routes.UserController.welcome(user.getUsername(), id, false));
         }
     }
 

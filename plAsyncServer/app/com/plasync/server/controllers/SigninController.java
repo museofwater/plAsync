@@ -60,6 +60,6 @@ public class SigninController extends Controller {
         if (user == null) {
             return redirect(com.plasync.server.controllers.routes.UserController.signup(userId));
         }
-        return redirect(com.plasync.server.controllers.routes.UserController.welcome(user.username, userId, false));
+        return redirect(com.plasync.server.controllers.routes.UserController.welcome(user.getUsername(), userId, false));
     }
 }
