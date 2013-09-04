@@ -17,3 +17,7 @@ plAsyncAndroid/TestApp/gen
 plAsyncAndroid/TestApp/build
 plAsyncAndroid/.gradle/
 
+
+plAsyncServer/.idea/dataSources.ids
+
+plAsyncServer/.idea/dataSources.xml
