@@ -8,7 +8,7 @@ object ApplicationBuild extends Build {
   val appVersion      = "1.0-SNAPSHOT"
 
   val appDependencies = Seq(
-    // Add your project dependencies here,
+    "commons-collections" % "commons-collections" % "3.2.1",
     javaCore,
     javaJdbc,
     javaEbean
