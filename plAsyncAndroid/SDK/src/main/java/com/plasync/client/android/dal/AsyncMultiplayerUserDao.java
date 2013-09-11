@@ -24,7 +24,7 @@ public class AsyncMultiplayerUserDao {
     private static final String COLUMN_USER_ID = AsyncMultiplayerDataContract.COLUMN_USER_ID;
     private static final String COLUMN_USERNAME = AsyncMultiplayerDataContract.COLUMN_USERNAME;
 
-    private static final String[] ALL_COLUMNS = {COLUMN_SERVER_URL, COLUMN_USER_ID, COLUMN_USERNAME};
+    private static final String[] ALL_COLUMNS = {COLUMN_ID, COLUMN_SERVER_URL, COLUMN_USER_ID, COLUMN_USERNAME};
     private static final String EMPTY_SELECTION = "";
     private static final String[] EMPTY_SELECTION_ARGS = {};
     private static final String SERVER_URL_SELECTION = COLUMN_SERVER_URL + " = ?";
