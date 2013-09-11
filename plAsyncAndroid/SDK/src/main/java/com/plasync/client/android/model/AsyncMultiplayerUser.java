@@ -10,6 +10,8 @@ package com.plasync.client.android.model;
 public class AsyncMultiplayerUser {
     private String serverUrl;
     private long id;
+
+
     private String userId;
 
     private String username;

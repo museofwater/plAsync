@@ -12,7 +12,12 @@ plAsyncServer/target
 # plAsync Android ignores
 plAsyncAndroid/SDK/gen
 plAsyncAndroid/SDK/build
-plAsyncAndroid/Service/gen
+plAsyncAndroid/ContentProviderContract/gen
+plAsyncAndroid/ContentProviderContract/build
+plAsyncAndroid/google-play-services_lib/gen
+plAsyncAndroid/google-play-services_lib/build
+plAsyncAndroid/DataManager/gen
+plAsyncAndroid/DataManager/build
 plAsyncAndroid/TestApp/gen
 plAsyncAndroid/TestApp/build
 plAsyncAndroid/.gradle/

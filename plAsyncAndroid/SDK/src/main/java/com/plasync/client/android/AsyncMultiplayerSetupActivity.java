@@ -64,7 +64,6 @@ public class AsyncMultiplayerSetupActivity extends Activity {
      */
     private AsyncMultiplayerUser getLocalUser(String url) {
         // TODO add support for multiple users on a device
-        userDao.open();
         List<AsyncMultiplayerUser> users = userDao.getUsersForServerUrl(url);
         if (!users.isEmpty()) {
             return users.get(0);
@@ -109,7 +108,6 @@ public class AsyncMultiplayerSetupActivity extends Activity {
     private void setSigninFailureResult() {
         setResult(getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_FAILED_CODE));
         // Close the database
-        userDao.close();
         finish();
     }
 
@@ -120,7 +118,6 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         setResult(getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_OK_CODE),
                 resultIntent);
         // Close the database
-        userDao.close();
         finish();
     }
 

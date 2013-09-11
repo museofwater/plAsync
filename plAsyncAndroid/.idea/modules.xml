@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ContentProviderContract/ContentProviderContract.iml" filepath="$PROJECT_DIR$/ContentProviderContract/ContentProviderContract.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataManager/DataManager.iml" filepath="$PROJECT_DIR$/DataManager/DataManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDK/SDK.iml" filepath="$PROJECT_DIR$/SDK/SDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestApp/TestApp.iml" filepath="$PROJECT_DIR$/TestApp/TestApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/plAsyncAndroid.iml" filepath="$PROJECT_DIR$/plAsyncAndroid.iml" />
     </modules>
   </component>

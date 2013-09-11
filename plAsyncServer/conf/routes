@@ -2,9 +2,6 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET         /                                 com.plasync.server.controllers.ApplicationController.index()
-
 # Close redirect (for mobile browsers)
 GET         /close                            controllers.Assets.at(path="/public", file = "close.html")
 
@@ -23,6 +20,9 @@ GET         /user/:username/welcome           com.plasync.server.controllers.Use
 
 # Testing convenience service -- REMOVE IN PRODUCTION
 GET         /user/clearAll                    com.plasync.server.controllers.UserController.clearUsers()
+
+# Messaging properties
+GET         /gcmSenderId                      com.plasync.server.controllers.ApplicationController.getGCMSenderId()
 
 # RESTFul User Services
 GET         /user                             com.plasync.server.controllers.UserController.getUsers()

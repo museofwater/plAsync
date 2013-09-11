@@ -1,1 +1,1 @@
-include ':SDK', ':TestApp'
+include ':SDK', ':google-play-services_lib', ':TestApp', ':ContentProviderContract', ':DataManager'

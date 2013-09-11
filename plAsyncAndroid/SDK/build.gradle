@@ -14,6 +14,9 @@ repositories {
 
 dependencies {
     compile 'com.android.support:support-v4:13.0.+'
+    compile files('libs/gson-2.2.4.jar')
+    compile project(':google-play-services_lib')
+    compile project(':ContentProviderContract')
 }
 
 android {
@@ -21,7 +24,7 @@ android {
     buildToolsVersion "17.0.0"
 
     defaultConfig {
-        minSdkVersion 7
+        minSdkVersion 8
         targetSdkVersion 17
     }
 }
