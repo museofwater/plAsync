@@ -1,4 +1,4 @@
-package com.plasync.server.models;
+package org.plasync.server.models;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,7 +13,6 @@ import play.db.ebean.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import java.util.List;
 
 /**
  * Represents a device (Android, iOS, or Facebook)

@@ -1,4 +1,4 @@
-@(newUserForm: Form[com.plasync.server.models.User])
+@(newUserForm: Form[org.plasync.server.models.User])
 @import helper._
 @implicitField = @{ FieldConstructor(newUserFormField.f) }
 
@@ -26,7 +26,7 @@
         </div>
         <div id="mainbar">
             <p>pLAsync has detected that you are new to this server.  Please provide a username or email address.</p>
-            @helper.form(action = com.plasync.server.controllers.routes.UserController.createUser(), 'id -> "newUserForm") {
+            @helper.form(action = org.plasync.server.controllers.routes.UserController.createUser(), 'id -> "newUserForm") {
                 @helper.inputText(newUserForm("username"), 'class -> "form-item", 'id -> "username-input",
                                               'placeholder -> "username", 'name -> "username", 'autocomplete -> "off")
                 <div class="alert-success" id="usernameAvailable">

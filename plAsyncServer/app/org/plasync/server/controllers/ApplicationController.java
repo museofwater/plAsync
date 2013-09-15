@@ -1,10 +1,9 @@
-package com.plasync.server.controllers;
+package org.plasync.server.controllers;
 
-import com.plasync.server.models.Credentials;
+import org.plasync.server.models.Credentials;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.index;
 
 public class ApplicationController extends Controller {
 

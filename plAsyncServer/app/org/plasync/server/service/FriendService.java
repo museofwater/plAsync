@@ -1,11 +1,11 @@
-package com.plasync.server.service;
+package org.plasync.server.service;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.TxRunnable;
-import com.plasync.server.models.FriendAssociation;
-import com.plasync.server.models.FriendRequest;
-import com.plasync.server.models.FriendRequestStatus;
-import com.plasync.server.models.User;
+import org.plasync.server.models.FriendAssociation;
+import org.plasync.server.models.FriendRequest;
+import org.plasync.server.models.FriendRequestStatus;
+import org.plasync.server.models.User;
 
 import java.util.ArrayList;
 import java.util.HashSet;

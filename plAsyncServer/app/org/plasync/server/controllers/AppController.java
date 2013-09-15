@@ -1,9 +1,8 @@
-package com.plasync.server.controllers;
+package org.plasync.server.controllers;
 
-import com.plasync.server.models.App;
-import com.plasync.server.models.Device;
-import com.plasync.server.service.AppService;
-import com.plasync.server.service.InvalidAppSpecificationException;
+import org.plasync.server.models.App;
+import org.plasync.server.service.AppService;
+import org.plasync.server.service.InvalidAppSpecificationException;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;

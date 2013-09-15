@@ -1,4 +1,4 @@
-package com.plasync.server.models;
+package org.plasync.server.models;
 
 /**
  * Created with IntelliJ IDEA.

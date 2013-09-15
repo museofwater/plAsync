@@ -1,4 +1,4 @@
-package com.plasync.server.controllers;
+package org.plasync.server.controllers;
 
 import play.mvc.Action;
 import play.mvc.Http;

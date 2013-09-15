@@ -1,7 +1,7 @@
-package com.plasync.server.service;
+package org.plasync.server.service;
 
-import com.plasync.server.models.App;
-import com.plasync.server.models.DeviceType;
+import org.plasync.server.models.App;
+import org.plasync.server.models.DeviceType;
 
 /**
  * Created with IntelliJ IDEA.

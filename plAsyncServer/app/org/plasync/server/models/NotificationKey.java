@@ -1,4 +1,4 @@
-package com.plasync.server.models;
+package org.plasync.server.models;
 
 import play.db.ebean.Model;
 

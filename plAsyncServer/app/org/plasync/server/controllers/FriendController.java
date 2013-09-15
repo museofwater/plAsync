@@ -1,12 +1,9 @@
-package com.plasync.server.controllers;
+package org.plasync.server.controllers;
 
-import com.plasync.server.models.FriendAssociation;
-import com.plasync.server.models.FriendRequest;
-import com.plasync.server.models.FriendRequestStatus;
-import com.plasync.server.service.DuplicateFriendRequestException;
-import com.plasync.server.service.FriendService;
-import com.plasync.server.service.NotFoundException;
-import com.plasync.server.service.NotificationService;
+import org.plasync.server.models.FriendRequest;
+import org.plasync.server.service.DuplicateFriendRequestException;
+import org.plasync.server.service.FriendService;
+import org.plasync.server.service.NotFoundException;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;

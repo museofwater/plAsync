@@ -1,6 +1,6 @@
-package com.plasync.server.service;
+package org.plasync.server.service;
 
-import com.plasync.server.models.FriendAssociation;
+import org.plasync.server.models.FriendAssociation;
 
 /**
  * Created with IntelliJ IDEA.

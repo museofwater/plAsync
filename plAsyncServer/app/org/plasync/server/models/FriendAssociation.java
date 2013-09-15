@@ -1,4 +1,4 @@
-package com.plasync.server.models;
+package org.plasync.server.models;
 
 import com.avaje.ebean.ExpressionList;
 import com.avaje.ebean.Junction;
@@ -7,10 +7,7 @@ import play.db.ebean.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.commons.collections.CollectionUtils;
 
 /**
  * Created with IntelliJ IDEA.

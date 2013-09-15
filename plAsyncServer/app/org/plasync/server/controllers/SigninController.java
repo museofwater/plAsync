@@ -1,6 +1,6 @@
-package com.plasync.server.controllers;
+package org.plasync.server.controllers;
 
-import com.plasync.server.models.User;
+import org.plasync.server.models.User;
 import play.libs.F;
 import play.libs.OpenID;
 import play.mvc.Controller;
@@ -58,8 +58,8 @@ public class SigninController extends Controller {
         // Get the user
         User user = User.findById(userId);
         if (user == null) {
-            return redirect(com.plasync.server.controllers.routes.UserController.signup(userId));
+            return redirect(org.plasync.server.controllers.routes.UserController.signup(userId));
         }
-        return redirect(com.plasync.server.controllers.routes.UserController.welcome(user.getUsername(), userId, false));
+        return redirect(org.plasync.server.controllers.routes.UserController.welcome(user.getUsername(), userId, false));
     }
 }

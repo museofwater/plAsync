@@ -1,6 +1,6 @@
-package com.plasync.server.controllers;
+package org.plasync.server.controllers;
 
-import com.plasync.server.models.User;
+import org.plasync.server.models.User;
 import play.Logger;
 import play.data.Form;
 import play.libs.Json;
@@ -24,8 +24,8 @@ public class UserController extends Controller {
     private static final String USERNAME_QUERY_PARAMETER = "username";
     private static final String USERID_QUERY_PARAMETER = "id";
 
-    private static final String PLASYNC_SERVER_USERNAME_COOKIE = "com.plasync.server.username";
-    private static final String PLASYNC_SERVER_USERID_COOKIE = "com.plasync.server.userId";
+    private static final String PLASYNC_SERVER_USERNAME_COOKIE = "org.plasync.server.username";
+    private static final String PLASYNC_SERVER_USERID_COOKIE = "org.plasync.server.userId";
     private static final String UTF_8 = "UTF-8";
 
 
@@ -57,10 +57,10 @@ public class UserController extends Controller {
             User newUser = new User(id);
             newUser.setUsername(username);
             newUser.save();
-            return redirect(com.plasync.server.controllers.routes.UserController.welcome(username, id, true));
+            return redirect(org.plasync.server.controllers.routes.UserController.welcome(username, id, true));
         }
         else {
-            return redirect(com.plasync.server.controllers.routes.UserController.signup(id));
+            return redirect(org.plasync.server.controllers.routes.UserController.signup(id));
         }
     }
 
@@ -78,7 +78,7 @@ public class UserController extends Controller {
         }
         else {
             // If user already is registered, redirect to welcome
-            return redirect(com.plasync.server.controllers.routes.UserController.welcome(user.getUsername(), id, false));
+            return redirect(org.plasync.server.controllers.routes.UserController.welcome(user.getUsername(), id, false));
         }
     }
 
