@@ -3,39 +3,42 @@
 # ~~~~
 
 # Close redirect (for mobile browsers)
-GET         /close                            controllers.Assets.at(path="/public", file = "close.html")
+GET     /close                              controllers.Assets.at(path="/public", file = "close.html")
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file                     controllers.Assets.at(path="/public", file)
+GET     /assets/*file                       controllers.Assets.at(path="/public", file)
 
 # Sign In pages
-GET         /signin                           com.plasync.server.controllers.SigninController.signin()
-POST        /signin                           com.plasync.server.controllers.SigninController.authenticate()
-GET         /signin/verify                    com.plasync.server.controllers.SigninController.verify(provider: String)
+GET     /signin                             com.plasync.server.controllers.SigninController.signin()
+POST    /signin                             com.plasync.server.controllers.SigninController.authenticate()
+GET     /signin/verify                      com.plasync.server.controllers.SigninController.verify(provider: String)
 
 # Internal service to support signin/signup
-GET         /user/:username/available         com.plasync.server.controllers.UserController.available(username: String)
-GET         /user/:id/signup                  com.plasync.server.controllers.UserController.signup(id: String)
-GET         /user/:username/welcome           com.plasync.server.controllers.UserController.welcome(username: String, userId: String, newUser: Boolean)
+GET     /user/:username/available           com.plasync.server.controllers.UserController.available(username: String)
+GET     /user/:id/signup                    com.plasync.server.controllers.UserController.signup(id: String)
+GET     /user/:username/welcome             com.plasync.server.controllers.UserController.welcome(username: String, userId: String, newUser: Boolean)
 
 # Testing convenience service -- REMOVE IN PRODUCTION
-GET         /user/clearAll                    com.plasync.server.controllers.UserController.clearUsers()
+GET     /user/clearAll                      com.plasync.server.controllers.UserController.clearUsers()
 
 # Messaging properties
-GET         /gcmSenderId                      com.plasync.server.controllers.ApplicationController.getGCMSenderId()
+GET     /gcmSenderId                        com.plasync.server.controllers.ApplicationController.getGCMSenderId()
 
 # RESTFul User Services
-GET         /user                             com.plasync.server.controllers.UserController.getUsers()
-GET         /user/:id                         com.plasync.server.controllers.UserController.getUser(id: String)
-POST        /user                             com.plasync.server.controllers.UserController.createUser()
+GET     /user                               com.plasync.server.controllers.UserController.getUsers()
+GET     /user/:id                           com.plasync.server.controllers.UserController.getUser(id: String)
+POST    /user                               com.plasync.server.controllers.UserController.createUser()
 
 # RESTFul Friend Services
-GET         /friend/:userId                   com.plasync.server.controllers.FriendController.getFriends(userId: String)
-GET         /friend/:userId/unaccepted        com.plasync.server.controllers.FriendController.getUnacceptedFriendRequests(userId: String)
-PUT         /friend                           com.plasync.server.controllers.FriendController.createFriendRequest()
+GET     /friend/:appId/:userId              com.plasync.server.controllers.FriendController.getFriends(appId: String, userId: String)
+GET     /friend/:appId/:userId/unaccepted   com.plasync.server.controllers.FriendController.getUnacceptedFriendRequests(appId: String, userId: String)
+PUT     /friend                             com.plasync.server.controllers.FriendController.createFriendRequest()
 # Note that a generic update is not provided to ensure that the friend relationships are updated consistently
-POST        /friend/:requestId/accept         com.plasync.server.controllers.FriendController.acceptFriendRequest(requestId: Long)
-POST        /friend/:requestId/decline        com.plasync.server.controllers.FriendController.declineFriendRequest(requestId: Long)
+POST    /friend/:requestId/accept           com.plasync.server.controllers.FriendController.acceptFriendRequest(requestId: Long)
+POST    /friend/:requestId/decline          com.plasync.server.controllers.FriendController.declineFriendRequest(requestId: Long)
+
+# RESTFul App Services
+POST    /app                                com.plasync.server.controllers.AppController.addApp()
 
 
 

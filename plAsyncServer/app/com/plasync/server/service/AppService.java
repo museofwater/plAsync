@@ -1,6 +1,6 @@
 package com.plasync.server.service;
 
-import com.plasync.server.models.Device;
+import com.plasync.server.models.App;
 import com.plasync.server.models.DeviceType;
 
 /**
@@ -10,16 +10,16 @@ import com.plasync.server.models.DeviceType;
  * Time: 8:16 PM
  * To change this template use File | Settings | File Templates.
  */
-public class DeviceService {
+public class AppService {
 
-    public static void addDevice(Device device) throws InvalidDeviceSpecificationException {
-        if (device.getType() == DeviceType.ANDROID) {
-            AndroidDeviceService.addDevice(device);
+    public static void addApp(App app) throws InvalidAppSpecificationException {
+        if (app.getDeviceType() == DeviceType.ANDROID) {
+            AndroidAppService.addApp(app);
         }
-        else if (device.getType() == DeviceType.IOS) {
+        else if (app.getDeviceType() == DeviceType.IOS) {
             // do ios specific registration, i.e. notification key
         }
-        else if (device.getType() == DeviceType.FACEBOOK) {
+        else if (app.getDeviceType() == DeviceType.FACEBOOK) {
             // do facebook specific registration
         }
     }

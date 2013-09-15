@@ -24,6 +24,8 @@ public class FriendRequest {
 
     private Long requestId;
 
+    private String appId;
+
     private User requestor;
 
     private User requested;
@@ -38,8 +40,10 @@ public class FriendRequest {
         this.requested = requested;
     }
 
-    public FriendRequest(long requestId, User requestor, User requested, FriendRequestStatus requestStatus) {
+    public FriendRequest(long requestId, String appId, User requestor, User requested,
+                         FriendRequestStatus requestStatus) {
         this.requestId = requestId;
+        this.appId = appId;
         this.requestor = requestor;
         this.requested = requested;
         this.requestStatus = requestStatus;
@@ -47,6 +51,14 @@ public class FriendRequest {
 
     public Long getRequestId() {
         return requestId;
+    }
+
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
     }
 
     public User getRequestor() {

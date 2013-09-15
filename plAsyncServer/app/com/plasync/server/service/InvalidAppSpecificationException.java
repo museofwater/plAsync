@@ -7,8 +7,8 @@ package com.plasync.server.service;
  * Time: 6:28 AM
  * To change this template use File | Settings | File Templates.
  */
-public class InvalidDeviceSpecificationException extends Exception {
-    public InvalidDeviceSpecificationException(String message) {
+public class InvalidAppSpecificationException extends Exception {
+    public InvalidAppSpecificationException(String message) {
         super(message);
     }
 }

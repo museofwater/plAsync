@@ -20,12 +20,12 @@ import play.mvc.Result;
  */
 public class FriendController extends Controller {
 
-    public static Result getFriends(String userId) {
-        return ok(Json.toJson(FriendService.getFriends(userId)));
+    public static Result getFriends(String appId, String userId) {
+        return ok(Json.toJson(FriendService.getFriends(appId, userId)));
     }
 
-    public static Result getUnacceptedFriendRequests(String userId) {
-        return ok(Json.toJson(FriendService.getUnacceptedFriendRequests(userId)));
+    public static Result getUnacceptedFriendRequests(String appId, String userId) {
+        return ok(Json.toJson(FriendService.getUnacceptedFriendRequests(appId, userId)));
     }
 
     public static Result createFriendRequest() {

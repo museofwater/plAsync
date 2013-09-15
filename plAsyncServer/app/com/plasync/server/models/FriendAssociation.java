@@ -43,6 +43,11 @@ public class FriendAssociation extends Model {
     @OneToOne
     private User friend;
 
+    /**
+     * Identifies the app for which the friend association is relevant
+     */
+    private String appId;
+
     private FriendRequestStatus requestStatus = FriendRequestStatus.PENDING;
 
     public static FriendAssociation findById(long id)
@@ -56,10 +61,12 @@ public class FriendAssociation extends Model {
      * @param filterStatuses
      * @return
      */
-    public static List<FriendAssociation> findFromAssociationsByUser(String userId, FriendRequestStatus... filterStatuses) {
+    public static List<FriendAssociation> findFromAssociationsByUser(String appId, String userId,
+                                                                     FriendRequestStatus... filterStatuses) {
         ExpressionList<FriendAssociation> el = find
                 .where()
-                .eq("user.id", userId);
+                .eq("user.id", userId)
+                .eq("appId", appId);
         // If there is more then one filter status then create an "or" junction
         Junction<FriendAssociation> junction = null;
         if (filterStatuses.length > 1) {
@@ -85,10 +92,12 @@ public class FriendAssociation extends Model {
      * @param filterStatuses
      * @return
      */
-    public static List<FriendAssociation> findToAssociationsByUser(String userId, FriendRequestStatus... filterStatuses) {
+    public static List<FriendAssociation> findToAssociationsByUser(String appId, String userId,
+                                                                   FriendRequestStatus... filterStatuses) {
         ExpressionList<FriendAssociation> el = find
                 .where()
-                .eq("friend.id", userId);
+                .eq("friend.id", userId)
+                .eq("appId", appId);
         // If there is more then one filter status then create an "or" junction
         Junction<FriendAssociation> junction = null;
         if (filterStatuses.length > 1) {
@@ -111,12 +120,14 @@ public class FriendAssociation extends Model {
     public static boolean exists(FriendAssociation friendAssociation) {
         return find
                 .where()
+                .eq("appId", friendAssociation.getAppId())
                 .eq("user", friendAssociation.getUser())
                 .eq("friend", friendAssociation.getFriend())
                 .findRowCount() > 0;
     }
 
-    public FriendAssociation(User user, User friend, FriendRequestStatus status) {
+    public FriendAssociation(String appId, User user, User friend, FriendRequestStatus status) {
+        this.appId = appId;
         this.user = user;
         this.friend = friend;
         this.requestStatus = status;
@@ -140,6 +151,14 @@ public class FriendAssociation extends Model {
 
     public void setFriend(User friend) {
         this.friend = friend;
+    }
+
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
     }
 
     public FriendRequestStatus getRequestStatus() {

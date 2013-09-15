@@ -21,9 +21,7 @@ import java.util.List;
 @Entity
 public class Device extends Model {
 
-    public static Finder<Long,Device> find = new Finder<Long,Device>(
-            Long.class, Device.class
-    );
+
 
     @Id
     private long id;
@@ -31,42 +29,11 @@ public class Device extends Model {
     @OneToOne
     private User user;
 
-    private DeviceType type;
 
-    private String gcmId;
 
-    public static List<Device> findByUser(String userId) {
-        return find
-                .where()
-                .eq("user.id",userId)
-                .findList();
-    }
 
-    public long getId() {
-        return id;
-    }
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 
-    public DeviceType getType() {
-        return type;
-    }
 
-    public void setType(DeviceType type) {
-        this.type = type;
-    }
-
-    public String getGcmId() {
-        return gcmId;
-    }
-
-    public void setGcmId(String gcmId) {
-        this.gcmId = gcmId;
-    }
 }

@@ -1,8 +1,9 @@
 package com.plasync.server.controllers;
 
+import com.plasync.server.models.App;
 import com.plasync.server.models.Device;
-import com.plasync.server.service.DeviceService;
-import com.plasync.server.service.InvalidDeviceSpecificationException;
+import com.plasync.server.service.AppService;
+import com.plasync.server.service.InvalidAppSpecificationException;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -14,14 +15,14 @@ import play.mvc.Result;
  * Time: 6:21 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DeviceController extends Controller {
+public class AppController extends Controller {
 
-    public static Result addDevice() {
-        Device newDevice = Json.fromJson(request().body().asJson(), Device.class);
+    public static Result addApp() {
+        App newApp = Json.fromJson(request().body().asJson(), App.class);
         try {
-            DeviceService.addDevice(newDevice);
+            AppService.addApp(newApp);
         }
-        catch (InvalidDeviceSpecificationException ex) {
+        catch (InvalidAppSpecificationException ex) {
             return badRequest(ex.getMessage());
         }
         return ok();

@@ -12,7 +12,9 @@ import com.plasync.server.models.FriendAssociation;
 public class NotificationService {
 
     public static void sendFriendRequest(FriendAssociation newFriendRequest) {
-        //To change body of created methods use File | Settings | File Templates.
+        // Get the app id
+        String appId;
+
     }
 
     public static void sendFriendRequestAccepted(FriendAssociation friendRequest) {
