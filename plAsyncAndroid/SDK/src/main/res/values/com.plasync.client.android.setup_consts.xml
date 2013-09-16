@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Setup Action (used when creating Intent -->
-    <string name="SETUP_ASYNC_MULTIPLAYER_SESSION_ACTION">com.plasync.client.android.action.SETUP_ASYNC_MULTIPLAYER_SESSION</string>
+    <string name="SETUP_ASYNC_MULTIPLAYER_SESSION_ACTION">org.plasync.client.android.action.SETUP_ASYNC_MULTIPLAYER_SESSION</string>
 
-    <!-- Inputs to the com.plasync.client.android.action.SETUP_ASYNC_MULTIPLAYER_SESSION Intent -->
+    <!-- Inputs to the org.plasync.client.android.action.SETUP_ASYNC_MULTIPLAYER_SESSION Intent -->
     <string name="PLASYNC_SERVER_URL_SETTING">PLASYNC_SERVER_URL_SETTING</string>
     <!-- <string name="PLASYNC_API_KEY_SETTING">PLASYNC_SERVER_URL_SETTING</string> -->
 
-    <!-- Outputs from the com.plasync.client.android.action.SETUP_ASYNC_MULTIPLAYER_SESSION
+    <!-- Outputs from the org.plasync.client.android.action.SETUP_ASYNC_MULTIPLAYER_SESSION
          Intent -->
     <string name="PLASYNC_USER_ID_SETTING">PLASYNC_USER_ID_SETTING</string>
     <string name="PLASYNC_USERNAME_SETTING">PLASYNC_USERNAME_SETTING</string>

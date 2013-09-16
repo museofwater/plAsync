@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.plasync.client.android"
+          package="org.plasync.client.android"
           android:versionCode="1"
           android:versionName="1.0">
     <uses-sdk
@@ -11,14 +11,14 @@
     <!-- Needed for devices with 4.02 or earlier android -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <permission android:name="com.plasync.client.android.permission.C2D_MESSAGE"
+    <permission android:name="org.plasync.client.android.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="com.plasync.client.android.permission.C2D_MESSAGE" />
+    <uses-permission android:name="org.plasync.client.android.permission.C2D_MESSAGE" />
    <!-- <uses-permission android:name="com.playsnc.client.android.data.permission.READ_WRITE"/>-->
 
     <application android:label="" android:icon="@drawable/ic_launcher">
         <!-- This is the signin activity for plAsync -->
-        <activity android:name=".AsyncMultiplayerSetupActivity"
+        <activity android:name="org.plasync.client.android.AsyncMultiplayerSetupActivity"
                   android:label="@string/SETUP_ACTIVITY_NAME"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
 
@@ -32,7 +32,7 @@
         </activity>
 
         <receiver
-            android:name=".gcm.GcmBroadcastReceiver"
+            android:name="org.plasync.client.android.gcm.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
