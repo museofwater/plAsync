@@ -1,4 +1,4 @@
-package org.plasync.server.service;
+package org.plasync.server;
 
 /**
  * Created with IntelliJ IDEA.

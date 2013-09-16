@@ -1,5 +1,6 @@
 package org.plasync.server.service;
 
+import org.plasync.server.InvalidAppSpecificationException;
 import org.plasync.server.models.App;
 import org.plasync.server.models.DeviceType;
 

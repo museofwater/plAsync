@@ -2,10 +2,9 @@ package org.plasync.server.service;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.TxRunnable;
-import org.plasync.server.models.FriendAssociation;
-import org.plasync.server.models.FriendRequest;
-import org.plasync.server.models.FriendRequestStatus;
-import org.plasync.server.models.User;
+import org.plasync.server.AppNotFoundException;
+import org.plasync.server.DuplicateFriendRequestException;
+import org.plasync.server.models.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -75,7 +74,12 @@ public class FriendService {
         return unacceptedRequests;
     }
 
-    public static void createRequest(FriendRequest request) throws DuplicateFriendRequestException {
+    public static void createRequest(FriendRequest request) throws DuplicateFriendRequestException, AppNotFoundException {
+        // Verify that the user and app are known to the server
+        if (!App.exists(request.getAppId(),request.getRequested().getId())) {
+            throw new AppNotFoundException("User " + request.getRequested().getUsername() + " does not have an " +
+                                           "association with app " + request.getAppId());
+        }
         // create two associations, one from requestor to requested with an accepted status and one from requested to
         // requestor with a pending status
         final FriendAssociation requestorToRequested =

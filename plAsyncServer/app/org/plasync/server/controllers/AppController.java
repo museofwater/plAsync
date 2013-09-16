@@ -2,7 +2,7 @@ package org.plasync.server.controllers;
 
 import org.plasync.server.models.App;
 import org.plasync.server.service.AppService;
-import org.plasync.server.service.InvalidAppSpecificationException;
+import org.plasync.server.InvalidAppSpecificationException;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;

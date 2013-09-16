@@ -1,9 +1,9 @@
 package org.plasync.server.controllers;
 
+import org.plasync.server.AppNotFoundException;
+import org.plasync.server.DuplicateFriendRequestException;
 import org.plasync.server.models.FriendRequest;
-import org.plasync.server.service.DuplicateFriendRequestException;
-import org.plasync.server.service.FriendService;
-import org.plasync.server.service.NotFoundException;
+import org.plasync.server.service.*;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -30,8 +30,11 @@ public class FriendController extends Controller {
         try {
             FriendService.createRequest(newFriendRequest);
         }
-        catch (DuplicateFriendRequestException e) {
-            return badRequest("Duplicate friend request");
+        catch (DuplicateFriendRequestException e1) {
+            return badRequest(ErrorService.getErrorResponse(e1));
+        }
+        catch (AppNotFoundException e2) {
+            return badRequest(ErrorService.getErrorResponse(e2));
         }
         return ok();
     }

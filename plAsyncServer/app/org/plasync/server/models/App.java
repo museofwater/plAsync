@@ -33,6 +33,14 @@ public class App extends Model {
                 .findList();
     }
 
+    public static boolean exists(String userId, String appId) {
+        return find
+                .where()
+                .eq("user.id", userId)
+                .eq("appId", appId)
+                .findRowCount() > 0;
+    }
+
     @Id
     private long id;
 
