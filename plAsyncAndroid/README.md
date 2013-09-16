@@ -1,5 +1,13 @@
-This project contains the Android client libraries and Test App for plAsync.  The project is built
-using Android Studio and Gradle against Android 4.2.  The project has the following modules.
+# plAsync Android Client
+------------------------
+
+This project contains the Android client libraries and Test App for plAsync. 
+
+###Requirements:
+1.  Android Studio with Gradle 0.2.3 or better
+2.  Android 4.2 SDK
+
+###Modules:
 
 ContentProviderContract - An Android library that provides constants for the plAsync Content
                           Provider.  This library is used by the DataManager and the SDK
