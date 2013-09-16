@@ -1,5 +1,5 @@
 # plAsync Android Client
-------------------------
+========================
 
 This project contains the Android client libraries and Test App for plAsync. 
 
