@@ -13,17 +13,15 @@ import java.io.IOException;
 public class GcmClient {
     private static final String TAG = GcmClient.class.getName();
 
-    private final String senderId;
     private String gcmId = null;
     private final Context context;
     private GoogleCloudMessaging gcm = null;
 
-    public GcmClient(Context context, String senderId) {
+    public GcmClient(Context context) {
         this.context = context;
-        this.senderId = senderId;
     }
 
-    public String getGcmId() throws GcmError {
+    public String getGcmId(String senderId) throws GcmError {
         if (this.gcmId != null) {
             return this.gcmId;
         }

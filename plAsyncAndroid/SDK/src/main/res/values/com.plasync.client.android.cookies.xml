@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="PLASYNC_USERNAME_COOKIE">com.plasync.server.username</string>
-    <string name="PLASYNC_USERID_COOKIE">com.plasync.server.userId</string>
+    <string name="PLASYNC_USERNAME_COOKIE">org.plasync.server.username</string>
+    <string name="PLASYNC_USERID_COOKIE">org.plasync.server.userId</string>
 </resources>

@@ -11,4 +11,6 @@
     <string name="OK">OK</string>
     <string name="CANCEL">Cancel</string>
     <string name="SET_SERVER_URL">Change Server</string>
+    <string name="INITIALIZING_TITLE">Initializing Multiplayer Session...</string>
+    <string name="INITIALIZING_MSG">Please wait...</string>
 </resources>

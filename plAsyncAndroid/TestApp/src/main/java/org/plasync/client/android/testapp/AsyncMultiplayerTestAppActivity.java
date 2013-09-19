@@ -1,5 +1,6 @@
 package org.plasync.client.android.testapp;
 
+import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,18 +11,26 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import org.plasync.client.android.AsyncMultiplayerSession;
+import org.plasync.client.android.AsyncMultiplayerSessionError;
+import org.plasync.client.android.model.User;
 import org.plasync.client.android.testapp.fragments.ServerUrlDialogFragment;
 
-public class AsyncMultiplayerTestAppActivity extends FragmentActivity {
+public class AsyncMultiplayerTestAppActivity extends FragmentActivity implements AsyncMultiplayerSession.AsyncMultiplayerSessionListener {
 
     private static final String TAG = AsyncMultiplayerTestAppActivity.class.getName();
 //    private static final String URL = "http://192.168.1.67:9000";
 //    private static final String URL = "http://192.168.8.72:9000";
 
-    private TextView tvUsername;
-    
+    private AsyncMultiplayerSession session;
+
+    private String serverUrl = null;
     private String username = null;
     private String userId = null;
+
+    private TextView tvUsername;
+    private ProgressDialog progressInit;
+
 
     /**
      * Called when the activity is first created.
@@ -45,6 +54,12 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity {
             userId = data.getStringExtra(getString(R.string.PLASYNC_USER_ID_SETTING));
             username = data.getStringExtra(getString(R.string.PLASYNC_USERNAME_SETTING));
             tvUsername.setText(username);
+
+            session = new AsyncMultiplayerSession(this, "", new User(userId,username), serverUrl, this);
+            progressInit =
+                    ProgressDialog.show(this, getString(R.string.INITIALIZING_TITLE),
+                            getString(R.string.INITIALIZING_MSG));
+            session.init();
         }
         else {
             // async mulitplayer disabled
@@ -76,7 +91,7 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity {
     }
 
     private void setupAsyncSession(String url) {
-        String plAsyncServerUrl = url;
+        this.serverUrl = url;
         Intent setupIntent = new Intent();
 
         // Explicit intent
@@ -88,7 +103,7 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity {
 //        setupIntent.setAction(getString(R.string.SETUP_ASYNC_MULTIPLAYER_SESSION_ACTION));
 //        setupIntent.addCategory("android.intent.category.DEFAULT");
 
-        setupIntent.putExtra((getString(R.string.PLASYNC_SERVER_URL_SETTING)), plAsyncServerUrl);
+        setupIntent.putExtra((getString(R.string.PLASYNC_SERVER_URL_SETTING)), serverUrl);
         startActivityForResult(setupIntent,
                 getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_REQUEST_CODE));
     }
@@ -106,4 +121,18 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity {
     }
 
 
+    @Override
+    public void onInitComplete() {
+        if (progressInit.isShowing()) {
+            progressInit.dismiss();
+        }
+    }
+
+    @Override
+    public void onInitError(AsyncMultiplayerSessionError error) {
+        if (progressInit.isShowing()) {
+            progressInit.dismiss();
+        }
+        // Multiplayer disabled
+    }
 }

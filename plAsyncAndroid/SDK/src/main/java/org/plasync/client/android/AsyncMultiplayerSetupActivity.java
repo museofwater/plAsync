@@ -37,6 +37,7 @@ public class AsyncMultiplayerSetupActivity extends Activity {
     private ProgressDialog progressLoadUrl;
     private boolean progressIsShowing = false;
     private SigninWebViewClient webViewClient;
+    private boolean canceled;
 
     public void onCreate(Bundle savedInstanceState) {
         userDao = new AsyncMultiplayerUserDao(this);
@@ -80,6 +81,7 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         wvSignin.getSettings().setJavaScriptEnabled(true);
         wvSignin.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         wvSignin.setWebViewClient(webViewClient);
+        canceled = false;
         loadUrl(getUrl(getString(R.string.SIGNIN_URL)));
     }
 
@@ -98,9 +100,9 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         }
         // Show progress
         progressIsShowing = true;
-        progressLoadUrl =
-                ProgressDialog.show(this, getString(R.string.CONNECTING_TITLE),
-                        getString(R.string.CONNECTING_MSG));
+//        progressLoadUrl =
+//                ProgressDialog.show(this, getString(R.string.CONNECTING_TITLE),
+//                        getString(R.string.CONNECTING_MSG));
         webViewClient.prepareToLoadUrl();
         wvSignin.loadUrl(url);
     }
@@ -166,6 +168,11 @@ public class AsyncMultiplayerSetupActivity extends Activity {
             if (hasError) {
                 return;
             }
+            if (progressLoadUrl != null && !progressLoadUrl.isShowing()) {
+                progressLoadUrl = ProgressDialog.show(AsyncMultiplayerSetupActivity.this,
+                                                      getString(R.string.CONNECTING_TITLE),
+                                                      getString(R.string.CONNECTING_MSG));
+            }
             urlLoading = url;
             // timeout has expired if this flag is still set when the message is handled
             pageLoaded = false;
@@ -179,7 +186,7 @@ public class AsyncMultiplayerSetupActivity extends Activity {
                     // Dismiss any current alerts and progress
                     dismissProgress();
                     dismissErrorAlert();
-                    if (!pageLoaded) {
+                    if (!canceled && !pageLoaded) {
                         showTimeoutAlert();
                     }
                 }
@@ -192,7 +199,9 @@ public class AsyncMultiplayerSetupActivity extends Activity {
             // Ignore future callbacks because the page load has failed
             hasError = true;
             dismissProgress();
-            showServerErrorAlert();
+            if (!canceled && !pageLoaded) {
+                showServerErrorAlert();
+            }
         }
 
         @Override
@@ -296,8 +305,9 @@ public class AsyncMultiplayerSetupActivity extends Activity {
             builder.setNegativeButton(R.string.CANCEL, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // User cancelled the dialog
-                    setSigninFailureResult();
                     dialog.cancel();
+                    canceled = true;
+                    setSigninFailureResult();
                 }
             });
 

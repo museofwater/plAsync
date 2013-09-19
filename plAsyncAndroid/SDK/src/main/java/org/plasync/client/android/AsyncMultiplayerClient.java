@@ -3,6 +3,8 @@ package org.plasync.client.android;
 import android.util.Log;
 
 import com.google.gson.Gson;
+
+import org.plasync.client.android.model.App;
 import org.plasync.client.android.util.HttpHelper;
 
 import java.io.IOException;
@@ -17,10 +19,13 @@ public class AsyncMultiplayerClient {
 
     public final static String API_KEY_HEADER = "PLASYNC-APP-KEY";
 
-    private static final String GCM_SENDER_ID_URL = "cgmSenderId";
+    private static final String GCM_SENDER_ID_URL = "gcmSenderId";
+    private static final String APP_URL = "app";
 
     /**
-     * The base URL of the plAsyncServer that this session is connected to
+     * The base URL of the plAsyncServer that this session is connected to.
+     *
+     * Should not include "/"
      */
     private final String plAsyncServerUrl;
 
@@ -57,7 +62,20 @@ public class AsyncMultiplayerClient {
     }
 
     private String getUrl(String subUrl) {
-        return this.plAsyncServerUrl + subUrl;
+        return this.plAsyncServerUrl + "/" + subUrl;
+    }
+
+    public void addApp(App app) throws AsyncMultiplayerSessionError {
+        try {
+            HttpHelper.postJson(getUrl(APP_URL), new Gson().toJson(app), requestHeaders);
+        }
+        catch (HttpHelper.ServerError ex) {
+            throw new AsyncMultiplayerSessionError(ex.getMessage());
+        }
+        catch (IOException e) {
+            Log.e(TAG, "Connection error", e);
+            throw new AsyncMultiplayerSessionError("Connection error");
+        }
     }
 
 //    private static enum RequestType {

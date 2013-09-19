@@ -14,6 +14,7 @@ import org.plasync.server.models.DeviceType;
 public class AppService {
 
     public static void addApp(App app) throws InvalidAppSpecificationException {
+        // Do device specific app handling
         if (app.getDeviceType() == DeviceType.ANDROID) {
             AndroidAppService.addApp(app);
         }
@@ -23,5 +24,8 @@ public class AppService {
         else if (app.getDeviceType() == DeviceType.FACEBOOK) {
             // do facebook specific registration
         }
+
+        // Add the app to the database
+        app.save();
     }
 }

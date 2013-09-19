@@ -8,6 +8,8 @@ package org.plasync.client.android.model;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.google.gson.annotations.Expose;
+
 /**
  * Object for clients to send requests.  The request is always represented as being from the original requestor.
  *
@@ -20,12 +22,16 @@ public class FriendRequest {
      *
      *  This is the id to use for accept or decline
      */
+    @Expose
     private Long requestId;
 
+    @Expose
     private User requestor;
 
+    @Expose
     private User requested;
 
+    @Expose
     private FriendRequestStatus requestStatus;
 
 

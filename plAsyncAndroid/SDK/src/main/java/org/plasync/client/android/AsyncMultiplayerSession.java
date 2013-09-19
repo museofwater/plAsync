@@ -5,8 +5,10 @@ import android.os.AsyncTask;
 
 import org.plasync.client.android.gcm.GcmClient;
 import org.plasync.client.android.gcm.GcmError;
+import org.plasync.client.android.model.App;
 import org.plasync.client.android.model.AsyncMultiplayerUser;
 import org.plasync.client.android.model.Device;
+import org.plasync.client.android.model.DeviceType;
 import org.plasync.client.android.model.User;
 
 /**
@@ -40,7 +42,7 @@ public class AsyncMultiplayerSession {
     /**
      * The user for the session
      */
-    private final AsyncMultiplayerUser user;
+    private final User user;
 
     /**
      * Listener for session events
@@ -66,11 +68,11 @@ public class AsyncMultiplayerSession {
      *                 callback method on the listener
      */
     public AsyncMultiplayerSession(Context appContext, String plAsyncApiKey,
-                                   AsyncMultiplayerUser user,
+                                   User user, String serverUrl,
                                    AsyncMultiplayerSessionListener listener) {
         this.appContext = appContext;
         this.user = user;
-        this.plAsyncServerUrl = user.getServerUrl();
+        this.plAsyncServerUrl = serverUrl;
         this.plAsyncApiKey = plAsyncApiKey;
         this.listener = listener;
         this.asyncMultiplayerClient = new AsyncMultiplayerClient(plAsyncApiKey,plAsyncServerUrl);
@@ -94,17 +96,17 @@ public class AsyncMultiplayerSession {
             protected Void doInBackground(Void... voids) {
                 try {
                     AsyncMultiplayerSession.this.gcmClient =
-                            new GcmClient(AsyncMultiplayerSession.this.appContext, getSenderId());
+                            new GcmClient(AsyncMultiplayerSession.this.appContext);
                     String sGcmId = getLocalGcmId();
                     if (sGcmId == null) {
                         // Get the id from GCM
-                        sGcmId = AsyncMultiplayerSession.this.gcmClient.getGcmId();
+                        sGcmId = AsyncMultiplayerSession.this.gcmClient.getGcmId(getSenderId());
+
+                        // Tell the server about the user, app and it's GCM id
+                        registerApp(sGcmId);
 
                         // Store the GCM locally
                         storeGcmId(sGcmId);
-
-                        // Tell the server about the device
-                        addDevice(sGcmId);
                     }
                 }
                 catch (AsyncMultiplayerSessionError error) {
@@ -140,15 +142,12 @@ public class AsyncMultiplayerSession {
         return null;
     }
 
+    private void registerApp(String sGcmId) throws AsyncMultiplayerSessionError {
+        App app = new App(user, appContext.getPackageName(), DeviceType.ANDROID, sGcmId);
+        asyncMultiplayerClient.addApp(app);
+    }
+
     private void storeGcmId(String sGcmId) {
-    }
-
-    private void addDevice(String sGcmId) {
-        Device device = new Device(convertUser(user),sGcmId);
-    }
-
-    private User convertUser(AsyncMultiplayerUser user) {
-        return new User(user.getUserId(),user.getUsername());
     }
 
     public interface AsyncMultiplayerSessionListener {
