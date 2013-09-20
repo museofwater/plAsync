@@ -20,20 +20,20 @@ public class AsyncMultiplayerDatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_GCM_SETTINGS = "gcm_settings";
 
     // Database creation sql statement
-    private static final String DATABASE_CREATE =
+    private static final String TABLE_USERS_CREATE =
             "create table " + TABLE_USERS + "(" +
             AsyncMultiplayerDataContract.COLUMN_ID + " integer primary key autoincrement, " +
             AsyncMultiplayerDataContract.COLUMN_SERVER_URL + " text not null, " +
             AsyncMultiplayerDataContract.COLUMN_USER_ID + " text not null, " +
-            AsyncMultiplayerDataContract.COLUMN_USERNAME + " text not null" +
-            ");"
-            + "create table " + TABLE_GCM_SETTINGS + "(" +
+            AsyncMultiplayerDataContract.COLUMN_USERNAME + " text not null)";
+
+    private static final String TABLE_GCM_SETTINGS_CREATE =
+            "create table " + TABLE_GCM_SETTINGS + "(" +
             AsyncMultiplayerDataContract.COLUMN_ID + " integer primary key autoincrement, " +
             AsyncMultiplayerDataContract.COLUMN_SERVER_URL + " text not null, " +
             AsyncMultiplayerDataContract.COLUMN_APP_ID + " text not null, " +
             AsyncMultiplayerDataContract.COLUMN_GCM_ID + " text not null, " +
-            AsyncMultiplayerDataContract.COLUMN_RECEIVE_INTENT_NAME + " text not null, " +
-            ");";
+            AsyncMultiplayerDataContract.COLUMN_RECEIVE_INTENT_NAME + " text not null)";
 
 
     public AsyncMultiplayerDatabaseHelper(Context context) {
@@ -42,8 +42,10 @@ public class AsyncMultiplayerDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-        Log.d(TAG, "creating database using SQL: " + DATABASE_CREATE);
-        database.execSQL(DATABASE_CREATE);
+        Log.d(TAG, "creating database using SQL: " + TABLE_USERS_CREATE + " and " +
+                   TABLE_GCM_SETTINGS_CREATE);
+        database.execSQL(TABLE_USERS_CREATE);
+        database.execSQL(TABLE_GCM_SETTINGS_CREATE);
     }
 
     @Override

@@ -31,8 +31,8 @@ public class AsyncMultiplayerDataProvider extends ContentProvider {
     static {
         uriMatcher.addURI(authority, "users", USERS);
         uriMatcher.addURI(authority, "users/#", USERS_ID);
-        uriMatcher.addURI(authority, "gcmSettings", GCM_SETTINGS);
-        uriMatcher.addURI(authority, "gcmSettings/#", GCM_SETTINGS_ID);
+        uriMatcher.addURI(authority, "gcm_settings", GCM_SETTINGS);
+        uriMatcher.addURI(authority, "gcm_settings/#", GCM_SETTINGS_ID);
     }
 
     private SQLiteDatabase database;

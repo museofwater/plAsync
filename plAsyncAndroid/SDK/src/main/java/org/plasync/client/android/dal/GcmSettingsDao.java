@@ -41,6 +41,7 @@ public class GcmSettingsDao {
         values.put(COLUMN_SERVER_URL, gcmSettings.getServerUrl());
         values.put(COLUMN_APP_ID, gcmSettings.getAppId());
         values.put(COLUMN_GCM_ID, gcmSettings.getGcmId());
+        values.put(COLUMN_RECEIVE_INTENT_NAME, gcmSettings.getReceiveIntentName());
         Uri resourceUri = contentResolver.insert(Uri.parse(contentUri),values);
 
         // Get the newly inserted value

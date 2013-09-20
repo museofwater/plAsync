@@ -13,9 +13,12 @@ public class GcmSettings {
     /**
      * Used when creating a non-persistent instance
      */
-    public GcmSettings() {
+    public GcmSettings(String serverUrl, String appId, String gcmId, String receiveIntentName) {
+        this.serverUrl = serverUrl;
+        this.appId = appId;
+        this.gcmId = gcmId;
+        this.receiveIntentName = receiveIntentName;
     }
-
 
     /**
      * Used when creating a user retrieved from the database
