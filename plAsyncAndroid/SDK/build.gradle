@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:13.0.+'
+    compile 'com.android.support:support-v4:18.0.+'
     compile files('libs/gson-2.2.4.jar')
     compile project(':google-play-services_lib')
     compile project(':ContentProviderContract')

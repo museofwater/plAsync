@@ -9,6 +9,7 @@ object ApplicationBuild extends Build {
 
   val appDependencies = Seq(
     "commons-collections" % "commons-collections" % "3.2.1",
+    "org.mockito" % "mockito-core" % "1.9.5",
     javaCore,
     javaJdbc,
     javaEbean
