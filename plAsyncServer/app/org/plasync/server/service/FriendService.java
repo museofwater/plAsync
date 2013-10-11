@@ -5,6 +5,7 @@ import com.avaje.ebean.TxRunnable;
 import org.plasync.server.AppNotFoundException;
 import org.plasync.server.DuplicateFriendRequestException;
 import org.plasync.server.models.*;
+import play.db.ebean.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -74,7 +75,7 @@ public class FriendService {
         return unacceptedRequests;
     }
 
-    public static void createRequest(FriendRequest request) throws DuplicateFriendRequestException, AppNotFoundException {
+    public static void createRequest(FriendRequest request) throws DuplicateFriendRequestException, AppNotFoundException, NotificationException {
         // Verify that the user and app are known to the server
         if (!App.exists(request.getAppId(),request.getRequested().getId())) {
             throw new AppNotFoundException("User " + request.getRequested().getUsername() + " does not have an " +
@@ -93,25 +94,46 @@ public class FriendService {
                 new FriendAssociation(request.getAppId(), request.getRequested(), request.getRequestor(),
                                       FriendRequestStatus.PENDING);
         // Now save both
-        Ebean.execute(new TxRunnable() {
-            public void run() {
-                requestorToRequested.save();
-                requestedToRequestor.save();
-            }
-        });
+//        Ebean.execute(new TxRunnable() {
+//            public void run() {
+//                requestorToRequested.save();
+//                requestedToRequestor.save();
+//            }
+//        });
+        try {
+            Ebean.beginTransaction();
+            requestorToRequested.save();
+            requestedToRequestor.save();
+            // Notify the requested user
+            NotificationService.sendFriendRequest(requestorToRequested);
+            Ebean.commitTransaction();
+        }
+        catch (NotificationException e) {
+            throw e;
+        }
+        finally {
+            Ebean.endTransaction();
+        }
 
-        // Notify the requested user
-        NotificationService.sendFriendRequest(requestorToRequested);
     }
 
-    public static void accept(long requestId) throws NotFoundException {
+    public static void accept(long requestId) throws NotFoundException, NotificationException {
         FriendAssociation friendRequest = FriendAssociation.findById(requestId);
         if (friendRequest == null) {
             throw new NotFoundException("No friend request found for id " + requestId);
         }
         friendRequest.setRequestStatus(FriendRequestStatus.ACCEPTED);
-        friendRequest.save();
-        NotificationService.sendFriendRequestAccepted(friendRequest);
+        try {
+            Ebean.beginTransaction();
+            friendRequest.save();
+            NotificationService.sendFriendRequestAccepted(friendRequest);
+        }
+        catch (NotificationException e) {
+            throw e;
+        }
+        finally {
+            Ebean.endTransaction();
+        }
     }
 
     public static void decline(long requestId) throws NotFoundException {

@@ -36,6 +36,10 @@ public class FriendController extends Controller {
         catch (AppNotFoundException e2) {
             return badRequest(ErrorService.getErrorResponse(e2));
         }
+        catch (NotificationException e3) {
+            return internalServerError(ErrorService.getErrorResponse(e3));
+        }
+
         return ok();
     }
 
@@ -45,6 +49,9 @@ public class FriendController extends Controller {
         }
         catch (NotFoundException e) {
             return notFound(e.getMessage());
+        }
+        catch (NotificationException e3) {
+            return internalServerError(ErrorService.getErrorResponse(e3));
         }
         return ok();
     }

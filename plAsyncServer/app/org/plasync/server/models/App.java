@@ -33,7 +33,7 @@ public class App extends Model {
                 .findList();
     }
 
-    public static boolean exists(String userId, String appId) {
+    public static boolean exists(String appId, String userId) {
         return find
                 .where()
                 .eq("user.id", userId)

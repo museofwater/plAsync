@@ -13,7 +13,7 @@ public class ApplicationController extends Controller {
 //    @With(AppKeyController.class)
     public static Result getGCMSenderId() {
         if (gcmSenderId == null) {
-            gcmSenderId = Credentials.getGCMSenderID();
+            gcmSenderId = Credentials.getGcmSenderID();
         }
         return ok(Json.toJson(gcmSenderId));
     }

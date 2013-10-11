@@ -35,7 +35,11 @@ public class Credentials extends Model {
      */
     private String apiMasterKey;
 
-    public static String getGCMSenderID() {
+    public static String getGcmSenderID() {
         return find.all().get(0).gcmSenderId;
+    }
+
+    public static String getGcmApiKey() {
+        return find.all().get(0).gcmApiKey;
     }
 }

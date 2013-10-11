@@ -15,7 +15,7 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // Explicitly specify that GcmIntentService will handle the intent.
         ComponentName receiveIntentLauncherComponent =
-                new ComponentName("com.plasync.client.android.gcm",
+                new ComponentName(context.getPackageName(),
                                   GcmReceiveIntentLauncher.class.getName());
         // Start the service, keeping the device awake while it is launching.
         startWakefulService(context, (intent.setComponent(receiveIntentLauncherComponent)));

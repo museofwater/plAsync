@@ -22,4 +22,8 @@ public class ErrorService {
     public static JsonNode getErrorResponse(AppNotFoundException e) {
         return Json.toJson(new ApiError(e.getClass().getName(),"Application not found"));
     }
+
+    public static JsonNode getErrorResponse(NotificationException e) {
+        return Json.toJson(new ApiError(e.getClass().getName(),"Notification failed"));
+    }
 }

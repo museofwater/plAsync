@@ -55,7 +55,11 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity implements
             username = data.getStringExtra(getString(R.string.PLASYNC_USERNAME_SETTING));
             tvUsername.setText(username);
 
-            session = new AsyncMultiplayerSession(this, "", new User(userId,username), serverUrl, this);
+            TestAppMultiplayerSessionConfig config = new TestAppMultiplayerSessionConfig();
+            config.setUser(new User(userId,username));
+            config.setServerUrl(serverUrl);
+
+            session = new AsyncMultiplayerSession(this, config, this);
             progressInit =
                     ProgressDialog.show(this, getString(R.string.INITIALIZING_TITLE),
                             getString(R.string.INITIALIZING_MSG));

@@ -26,6 +26,8 @@ public final class GcmConstants {
     public static final String GCM_SEND_ENDPOINT =
             "https://android.googleapis.com/gcm/send";
 
+    public static final int NUM_RETRIES = 3;
+
     /**
      * HTTP parameter for registration id.
      */

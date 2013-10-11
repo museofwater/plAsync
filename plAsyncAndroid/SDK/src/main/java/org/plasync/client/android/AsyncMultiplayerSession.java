@@ -24,28 +24,13 @@ import org.plasync.client.android.model.User;
 public class AsyncMultiplayerSession {
 
     /**
-     * The base URL of the plAsyncServer that this session is connected to
-     */
-    private final String plAsyncServerUrl;
-
-    /**
-     * The plAsync API Key for using the service.
-     *
-     * This may be required by some servers.  Can be null, but that may cause the server to reject the request
-     */
-    private final String plAsyncApiKey;
-
-    /**
      * The application context for the app.
      *
      * Used to do things that require a context (i.e. binding services)
      */
     private Context appContext = null;
 
-    /**
-     * The user for the session
-     */
-    private final User user;
+    private AsyncMultiplayerSessionConfig config;
 
     /**
      * Listener for session events
@@ -66,21 +51,17 @@ public class AsyncMultiplayerSession {
      * Creates a new AsyncMultiplayerSession
      *
      * @param appContext The application context
-     * @param plAsyncApiKey The plAsync server api key for the app
-     * @param user The user for the session
+     * @param config The configuration for the session
      * @param listener A listener for session events.  Since the session communicates asynchronously
      *                 with the server, results of session operations will be conveyed via the
      *                 callback method on the listener
      */
-    public AsyncMultiplayerSession(Context appContext, String plAsyncApiKey,
-                                   User user, String serverUrl,
+    public AsyncMultiplayerSession(Context appContext, AsyncMultiplayerSessionConfig config,
                                    AsyncMultiplayerSessionListener listener) {
         this.appContext = appContext;
-        this.user = user;
-        this.plAsyncServerUrl = serverUrl;
-        this.plAsyncApiKey = plAsyncApiKey;
+        this.config = config;
         this.listener = listener;
-        this.asyncMultiplayerClient = new AsyncMultiplayerClient(plAsyncApiKey,plAsyncServerUrl);
+        this.asyncMultiplayerClient = new AsyncMultiplayerClient(config.getPlasyncApiKey(),config.getPlasyncServerUrl());
         this.gcmSettingsDao = new GcmSettingsDao(appContext);
 
     }
@@ -112,7 +93,7 @@ public class AsyncMultiplayerSession {
                         registerApp(sGcmId);
 
                         // Store the GCM locally
-                        storeGcmSettings(sGcmId,"");
+                        storeGcmSettings(sGcmId,config.getReceiveIntentName());
                     }
                 }
                 catch (AsyncMultiplayerSessionError error) {
@@ -150,12 +131,12 @@ public class AsyncMultiplayerSession {
     }
 
     private void registerApp(String sGcmId) throws AsyncMultiplayerSessionError {
-        App app = new App(user, appContext.getPackageName(), DeviceType.ANDROID, sGcmId);
+        App app = new App(config.getUser(), appContext.getPackageName(), DeviceType.ANDROID, sGcmId);
         asyncMultiplayerClient.addApp(app);
     }
 
     private void storeGcmSettings(String sGcmId, String receiveIntentName) {
-        GcmSettings gcmSettings = new GcmSettings(this.plAsyncServerUrl,appContext.getPackageName(),
+        GcmSettings gcmSettings = new GcmSettings(config.getPlasyncServerUrl(),appContext.getPackageName(),
                                                   sGcmId,receiveIntentName);
         gcmSettingsDao.createGcmSettings(gcmSettings);
     }

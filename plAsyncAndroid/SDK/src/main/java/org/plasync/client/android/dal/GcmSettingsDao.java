@@ -84,6 +84,8 @@ public class GcmSettingsDao {
                 cursor.getColumnIndex(COLUMN_APP_ID)));
         gcmSettings.setGcmId(cursor.getString(
                 cursor.getColumnIndex(COLUMN_GCM_ID)));
+        gcmSettings.setReceiveIntentName(cursor.getString(
+                 cursor.getColumnIndex(COLUMN_RECEIVE_INTENT_NAME)));
         return gcmSettings;
     }
 }

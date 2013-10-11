@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- Needed for devices with 4.02 or earlier android -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <permission android:name="org.plasync.client.android.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
@@ -31,15 +32,14 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name="org.plasync.client.android.gcm.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+        <receiver android:name="org.plasync.client.android.gcm.GcmBroadcastReceiver"
+                  android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-
-                <category android:name="com.example.pushtest" />
             </intent-filter>
         </receiver>
+
+        <service android:name="org.plasync.client.android.gcm.GcmReceiveIntentLauncher"/>
     </application>
 </manifest>

@@ -20,8 +20,13 @@ public class GcmReceiveIntentLauncher extends IntentService {
     private GcmSettingsDao gcmSettingsDao;
 
 
-    public GcmReceiveIntentLauncher(String name) {
-        super(name);
+    public GcmReceiveIntentLauncher() {
+        super(GcmReceiveIntentLauncher.class.getName());
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
         gcmSettingsDao = new GcmSettingsDao(this);
     }
 
@@ -48,10 +53,12 @@ public class GcmReceiveIntentLauncher extends IntentService {
             // If it's a regular GCM message, get the registered receive intent for the app
             else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
                 Log.i(TAG, "GCM message received: " + extras.toString());
-//                ComponentName receiveIntentComponentName = getReceiveIntentComponentName();
+                ComponentName receiveIntentComponentName = getReceiveIntentComponentName();
+                Intent receiveIntent = new Intent();
+                receiveIntent.putExtras(extras);
+                receiveIntent.setComponent(receiveIntentComponentName);
+                startService(receiveIntent);
             }
-            // Release the wake lock provided by the WakefulBroadcastReceiver.
-            GcmBroadcastReceiver.completeWakefulIntent(intent);
         }
     }
 
