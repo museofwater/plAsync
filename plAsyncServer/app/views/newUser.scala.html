@@ -16,6 +16,7 @@
     <script type="text/javascript" src="/assets/javascripts/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="/assets/javascripts/jquery.validate.min.js"></script>
     <script type="text/javascript" src="/assets/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/md5.js"></script>
     <script type="text/javascript" src="/assets/javascripts/newUser.js"></script>
     <title>Welcome New User</title>
 </head>
@@ -35,10 +36,34 @@
                 <div class="alert-error" id="usernameTaken">
                     Username taken.
                 </div>
-                <input id="username-submit" class="btn btn-primary username_not_taken" type="submit" style="margin-bottom: 5px"/>
+
 
 
                 <input type="hidden" value="@newUserForm("id").value" name="id"/>
+                <div>
+                    <div class="form-item">
+                        <div class="gravatar-icon"/>
+                    </div>
+                    <div class="gravatar-info">
+                        <b>Gravatar</b>
+                        <p>Optional avatars are provided by Gravatar. To sign up for a free avatar, please <a href="http://www.gravatar.com" target="_blank">visit Gravatar</a> now.</p>
+                    </div>
+                    <div style="clear:both;float:none;"></div>
+                </div>
+                <div class="row-gravatar">
+                    <div class="gravatar-input">
+                        @helper.inputText(newUserForm("gravatar-email-input"), 'class -> "form-item gravatar-input", 'id -> "gravatar-email-input",
+                            'placeholder -> "Gravatar email", 'name -> "gravatar-email", 'autocomplete -> "off")
+                    </div>
+                        <div class="gravatar-container">
+                            @*<div class="avatar large"*@
+                                 @*style="background-image: url(http://www.gravatar.com/avatar/99b25f186a074f4674de0f57fcf8d5e0?s=60&amp;d=http%3A%2F%2Fbattlelog-cdn.battlefield.com%2Fcdnprefix%2Favatar1%2Fpublic%2Fbase%2Fshared%2Fdefault-avatar-60.png);"></div>*@
+                            <img id="gravatar-img" src="http://www.gravatar.com/avatar/?d=mm"/>
+                        </div>
+
+                    <div style="clear:both;float:none;"></div>
+                </div>
+                <input id="username-submit" class="btn btn-primary username_not_taken" type="submit" style="margin-bottom: 5px"/>
             }
             <div class="accordion" id="more-info">
                 <div class="accordion-group">
