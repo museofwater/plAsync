@@ -6,10 +6,10 @@ import org.plasync.client.android.model.User;
 /**
  * Created by ericwood on 10/9/13.
  */
-public class TestAppMultiplayerSessionConfig implements AsyncMultiplayerSessionConfig {
+public class AsyncMultiplayerTestAppSessionConfig implements AsyncMultiplayerSessionConfig {
 
     private static final String API_KEY = null;
-    private static final String receiveIntentName = TestAppMessageReceiver.class.getName();
+    private static final String receiveIntentName = AsyncMultiplayerTestAppMessageReceiver.class.getName();
 
     private String serverUrl;
     private User user;

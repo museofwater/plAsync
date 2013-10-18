@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/layoutUser"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="11dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/USERNAME_LABEL"
+            android:id="@+id/lblUsername"
+            android:labelFor="@+id/tvUsername"
+            android:layout_marginLeft="11dp"
+            android:textSize="24dp"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/tvUsername"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/lblUsername"
+            android:layout_marginLeft="11dp"
+            android:textSize="24dp"/>
+    </LinearLayout>
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:id="@+id/layoutServer"
+        android:layout_below="@id/layoutUser"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SERVER_URL_LABEL"
+            android:id="@+id/lblServerUrl"
+            android:labelFor="@+id/tvServerUrl"
+            android:layout_marginLeft="11dp"
+            android:textSize="24dp"
+            android:layout_alignParentTop="true"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/tvServerUrl"
+            android:layout_below="@id/lblServerUrl"
+            android:layout_marginLeft="11dp"
+            android:textSize="24dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SET_URL_BUTTON"
+            android:id="@+id/btnSetUrl"
+            android:layout_marginRight="11dp"
+            android:layout_below="@id/lblServerUrl"
+            android:layout_alignParentRight="true"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

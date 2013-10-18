@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -23,7 +23,16 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".TestAppMessageReceiver"/>
+        <activity android:name=".search.FriendSearchActivity"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+
+        <service android:name=".AsyncMultiplayerTestAppMessageReceiver"/>
     </application>
 
 </manifest>

@@ -14,6 +14,9 @@ import org.plasync.client.android.model.DeviceType;
 import org.plasync.client.android.model.GcmSettings;
 import org.plasync.client.android.model.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ericwood
@@ -115,6 +118,14 @@ public class AsyncMultiplayerSession {
                 }
             }
         }.execute();
+    }
+
+    public List<User> searchFriends(String query) {
+        List<User> results = new ArrayList<User>();
+        results.add(new User("user1Id", "user1"));
+        results.add(new User("user2Id", "user2"));
+        results.add(new User("user3Id", "user3"));
+        return results;
     }
 
     /**

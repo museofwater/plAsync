@@ -7,16 +7,15 @@ import android.support.v4.app.NotificationCompat;
 import org.plasync.client.android.message.AsyncMultiplayerMessageReceiver;
 import org.plasync.client.android.message.FriendRequestAcceptedMessage;
 import org.plasync.client.android.message.FriendRequestMessage;
-import org.plasync.client.android.model.FriendRequest;
 
 /**
  * Created by ericwood on 10/9/13.
  */
-public class TestAppMessageReceiver extends AsyncMultiplayerMessageReceiver {
-    private final String TAG = TestAppMessageReceiver.class.getName();
+public class AsyncMultiplayerTestAppMessageReceiver extends AsyncMultiplayerMessageReceiver {
+    private final String TAG = AsyncMultiplayerTestAppMessageReceiver.class.getName();
 
-    public TestAppMessageReceiver() {
-        super(TestAppMessageReceiver.class.getName());
+    public AsyncMultiplayerTestAppMessageReceiver() {
+        super(AsyncMultiplayerTestAppMessageReceiver.class.getName());
     }
 
     @Override

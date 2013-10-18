@@ -35,7 +35,6 @@ public class AsyncMultiplayerSetupActivity extends Activity {
     private String plAsyncServerUrl;
     private AsyncMultiplayerUserDao userDao;
     private ProgressDialog progressLoadUrl;
-    private boolean progressIsShowing = false;
     private SigninWebViewClient webViewClient;
     private boolean canceled;
 
@@ -98,11 +97,6 @@ public class AsyncMultiplayerSetupActivity extends Activity {
         if (!NetworkUtil.checkNetwork(this)) {
             setSigninFailureResult();
         }
-        // Show progress
-        progressIsShowing = true;
-//        progressLoadUrl =
-//                ProgressDialog.show(this, getString(R.string.CONNECTING_TITLE),
-//                        getString(R.string.CONNECTING_MSG));
         webViewClient.prepareToLoadUrl();
         wvSignin.loadUrl(url);
     }
