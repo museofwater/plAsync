@@ -1,4 +1,4 @@
-@(username: String, newUser: Boolean)
+@(username: String, gravatarEmailHash: String, newUser: Boolean)
 @welcomeMessage = {
     @if(newUser) {
         Welcome @username
@@ -6,6 +6,15 @@
         Welcome Back @username
     }
 }
+
+@defaultParam = {
+    @if(gravatarEmailHash == "") {
+        d=mm
+    } else {
+        d=identicon
+    }
+}
+
 
 <!DOCTYPE html>
 <html>
@@ -28,6 +37,10 @@
             <h1>@welcomeMessage</h1>
         </div>
         <div id="mainbar">
+            <div class="gravatar-container">
+                <img id="gravatar-img"
+                     src="http://www.gravatar.com/avatar/@gravatarEmailHash?@defaultParam.toString().trim()"/>
+            </div>
             <p class="script-only">Press the button to close the browser and return to your game.
             </p>
             <!-- This button redirects to a page that will close the window.  This is done so that mobile

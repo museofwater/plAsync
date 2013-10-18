@@ -57,6 +57,11 @@ public class User extends Model {
     @Column(unique=true)
     private String username;
 
+    /**
+     * The hash of the user's Gravatar email address used for obtaining avatar images for user
+     */
+    private String gravatarEmailHash;
+
     public User(String id)
     {
         this.id = id;
@@ -74,6 +79,13 @@ public class User extends Model {
         return username;
     }
 
+    public String getGravatarEmailHash() {
+        return gravatarEmailHash;
+    }
+
+    public void setGravatarEmailHash(String gravatarEmailHash) {
+        this.gravatarEmailHash = gravatarEmailHash;
+    }
 
     @Override
     public boolean equals(Object o) {
