@@ -17,6 +17,10 @@ import play.mvc.Result;
  */
 public class FriendController extends Controller {
 
+    public static Result getAllFriendRequests(String appId, String userId) {
+        return ok(Json.toJson(FriendService.getAllFriendRequests(appId, userId)));
+    }
+
     public static Result getFriends(String appId, String userId) {
         return ok(Json.toJson(FriendService.getFriends(appId, userId)));
     }

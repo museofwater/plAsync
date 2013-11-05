@@ -1,8 +1,15 @@
 package org.plasync.server.service;
 
+import org.apache.commons.lang3.StringUtils;
 import org.plasync.server.InvalidAppSpecificationException;
 import org.plasync.server.models.App;
 import org.plasync.server.models.DeviceType;
+import org.plasync.server.models.User;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,5 +34,14 @@ public class AppService {
 
         // Add the app to the database
         app.save();
+    }
+
+    public static List<User> searchUsers(String appId, String search) {
+        Set<User> users = new HashSet<User>();
+        List<App> apps = App.findByAppId(appId, search);
+        for (App app : apps) {
+            users.add(app.getUser());
+        }
+        return new ArrayList<User>(users);
     }
 }

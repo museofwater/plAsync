@@ -16,6 +16,8 @@ import play.mvc.Result;
  */
 public class AppController extends Controller {
 
+    private static final String SEARCH_PARAM = "search";
+
     public static Result addApp() {
         App newApp = Json.fromJson(request().body().asJson(), App.class);
         try {
@@ -25,5 +27,10 @@ public class AppController extends Controller {
             return badRequest(ex.getMessage());
         }
         return ok();
+    }
+
+    public static Result searchUsers(String appId) {
+        String search = request().getQueryString(SEARCH_PARAM);
+        return ok(Json.toJson(AppService.searchUsers(appId,search)));
     }
 }

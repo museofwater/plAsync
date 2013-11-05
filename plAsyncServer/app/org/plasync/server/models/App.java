@@ -8,6 +8,8 @@ package org.plasync.server.models;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.avaje.ebean.ExpressionList;
+import org.apache.commons.lang3.StringUtils;
 import play.db.ebean.Model;
 
 import javax.persistence.Entity;
@@ -24,6 +26,16 @@ public class App extends Model {
     public static Finder<Long,App> find = new Finder<Long,App>(
             Long.class, App.class
     );
+
+    public static List<App> findByAppId(String appId, String usernameSearch) {
+        ExpressionList<App> el = find
+                .where()
+                .eq("appId", appId);
+        if (StringUtils.isNotEmpty(usernameSearch)) {
+            el = el.ilike("user.username", "%" + usernameSearch + "%");
+        }
+        return el.findList();
+    }
 
     public static List<App> findByUserAndApp(String userId, String appId) {
         return find
@@ -88,5 +100,4 @@ public class App extends Model {
     public void setGcmId(String gcmId) {
         this.gcmId = gcmId;
     }
-
 }

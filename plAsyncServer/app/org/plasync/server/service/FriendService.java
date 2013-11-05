@@ -30,26 +30,40 @@ public class FriendService {
      * @param userId
      * @return
      */
-    public static List<User> getFriends(String appId, String userId) {
-        List<User> friends = new ArrayList<User>();
+    public static List<FriendRequest> getFriends(String appId, String userId) {
+        List<FriendRequest> friends = new ArrayList<FriendRequest>();
         // Get a list of users requested by this user
         List<FriendAssociation> requests = FriendAssociation.findFromAssociationsByUser(appId, userId,
                                                                                         FriendRequestStatus.ACCEPTED);
-        // Get the users from the associations
-        Set<User> requestedUsers = getFriendsFromAssociations(requests);
         // Now get a list of accepted requests from this user
         List<FriendAssociation> acceptedRequests = FriendAssociation.findToAssociationsByUser(appId, userId,
                                                                                               FriendRequestStatus.ACCEPTED);
         // Add all of the users from the acceptedRequests that were requested by the user
         for (FriendAssociation friendAssociation : acceptedRequests) {
-            User user = friendAssociation.getUser();
-            if (requestedUsers.contains(user)) {
-                friends.add(user) ;
-            }
+            friends.add(convertFriendAssociationToFriendRequest(friendAssociation));
         }
         return friends;
     }
 
+    /**
+     * Gets all friend requests including unaccepted to the user in the specified app.
+     *
+     * @param userId
+     * @return
+     */
+    public static List<FriendRequest> getAllFriendRequests(String appId, String userId) {
+        List<FriendRequest> allRequests = new ArrayList<FriendRequest>();
+        FriendRequestStatus[] filterStatuses =
+                {FriendRequestStatus.ACCEPTED, FriendRequestStatus.PENDING, FriendRequestStatus.DECLINED};
+        List <FriendAssociation> friendAssociations = FriendAssociation.findFromAssociationsByUser(appId, userId,
+                filterStatuses);
+        for (FriendAssociation friendAssociation : friendAssociations) {
+            // The original request actually came from the friend in the user association, so we should return requests
+            // that have the friend as the original requestor and the user as the requested
+            allRequests.add(convertFriendAssociationToFriendRequest(friendAssociation));
+        }
+        return allRequests;
+    }
 
     /**
      * Gets all unaccepted requests to the user in the specified app.
@@ -68,9 +82,7 @@ public class FriendService {
         for (FriendAssociation friendAssociation : friendAssociations) {
             // The original request actually came from the friend in the user association, so we should return requests
             // that have the friend as the original requestor and the user as the requested
-            unacceptedRequests.add(new FriendRequest(friendAssociation.getId(), friendAssociation.getAppId(),
-                                                     friendAssociation.getFriend(), friendAssociation.getUser(),
-                                                     friendAssociation.getRequestStatus()));
+            unacceptedRequests.add(convertFriendAssociationToFriendRequest(friendAssociation));
         }
         return unacceptedRequests;
     }
@@ -94,12 +106,6 @@ public class FriendService {
                 new FriendAssociation(request.getAppId(), request.getRequested(), request.getRequestor(),
                                       FriendRequestStatus.PENDING);
         // Now save both
-//        Ebean.execute(new TxRunnable() {
-//            public void run() {
-//                requestorToRequested.save();
-//                requestedToRequestor.save();
-//            }
-//        });
         try {
             Ebean.beginTransaction();
             requestorToRequested.save();
@@ -145,11 +151,9 @@ public class FriendService {
         friendRequest.save();
     }
 
-    private static Set<User> getFriendsFromAssociations(List<FriendAssociation> friendAssociations) {
-        Set<User> users = new HashSet<User>();
-        for (FriendAssociation friendAssociation : friendAssociations) {
-            users.add(friendAssociation.getFriend());
-        }
-        return users;
+    private static FriendRequest convertFriendAssociationToFriendRequest(FriendAssociation friendAssociation) {
+        return new FriendRequest(friendAssociation.getId(), friendAssociation.getAppId(),
+                friendAssociation.getFriend(), friendAssociation.getUser(),
+                friendAssociation.getRequestStatus());
     }
 }

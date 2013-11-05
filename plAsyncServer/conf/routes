@@ -3,42 +3,47 @@
 # ~~~~
 
 # Close redirect (for mobile browsers)
-GET     /close                              controllers.Assets.at(path="/public", file = "close.html")
+GET         /close                                   controllers.Assets.at(path="/public", file = "close.html")
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file                       controllers.Assets.at(path="/public", file)
+GET         /assets/*file                            controllers.Assets.at(path="/public", file)
 
 # Sign In pages
-GET     /signin                             org.plasync.server.controllers.SigninController.signin()
-POST    /signin                             org.plasync.server.controllers.SigninController.authenticate()
-GET     /signin/verify                      org.plasync.server.controllers.SigninController.verify(provider: String)
+GET         /signin                                  org.plasync.server.controllers.SigninController.signin()
+POST        /signin                                  org.plasync.server.controllers.SigninController.authenticate()
+GET         /signin/verify                           org.plasync.server.controllers.SigninController.verify(provider: String)
 
 # Internal service to support signin/signup
-GET     /user/:username/available           org.plasync.server.controllers.UserController.available(username: String)
-GET     /user/:id/signup                    org.plasync.server.controllers.UserController.signup(id: String)
-GET     /user/:username/welcome             org.plasync.server.controllers.UserController.welcome(username: String, userId: String, gravatarEmailHash: String, newUser: Boolean)
+GET         /user/:username/available                org.plasync.server.controllers.UserController.available(username: String)
+GET         /user/:id/signup                         org.plasync.server.controllers.UserController.signup(id: String)
+GET         /user/:username/welcome                  org.plasync.server.controllers.UserController.welcome(username: String, userId: String, gravatarEmailHash: String, newUser: Boolean)
 
 # Testing convenience service -- REMOVE IN PRODUCTION
-GET     /user/clearAll                      org.plasync.server.controllers.UserController.clearUsers()
+GET         /user/clearAll                           org.plasync.server.controllers.UserController.clearUsers()
 
 # Messaging properties
-GET     /gcmSenderId                        org.plasync.server.controllers.ApplicationController.getGCMSenderId()
+GET         /gcmSenderId                             org.plasync.server.controllers.ApplicationController.getGCMSenderId()
 
 # RESTFul User Services
-GET     /user                               org.plasync.server.controllers.UserController.getUsers()
-GET     /user/:id                           org.plasync.server.controllers.UserController.getUser(id: String)
-POST    /user                               org.plasync.server.controllers.UserController.createUser()
+GET         /user                                    org.plasync.server.controllers.UserController.getUsers()
+GET         /user/:id                                org.plasync.server.controllers.UserController.getUser(id: String)
+POST        /user                                    org.plasync.server.controllers.UserController.createUser()
 
 # RESTFul Friend Services
-GET     /friend/:appId/:userId              org.plasync.server.controllers.FriendController.getFriends(appId: String, userId: String)
-GET     /friend/:appId/:userId/unaccepted   org.plasync.server.controllers.FriendController.getUnacceptedFriendRequests(appId: String, userId: String)
-PUT     /friend                             org.plasync.server.controllers.FriendController.createFriendRequest()
+GET         /friend/:appId/:userId                   org.plasync.server.controllers.FriendController.getAllFriendRequests(appId: String, userId: String)
+GET         /friend/:appId/:userId/accepted          org.plasync.server.controllers.FriendController.getFriends(appId: String, userId: String)
+GET         /friend/:appId/:userId/unaccepted        org.plasync.server.controllers.FriendController.getUnacceptedFriendRequests(appId: String, userId: String)
+PUT         /friend                                  org.plasync.server.controllers.FriendController.createFriendRequest()
 # Note that a generic update is not provided to ensure that the friend relationships are updated consistently
-POST    /friend/:requestId/accept           org.plasync.server.controllers.FriendController.acceptFriendRequest(requestId: Long)
-POST    /friend/:requestId/decline          org.plasync.server.controllers.FriendController.declineFriendRequest(requestId: Long)
+POST        /friend/:requestId/accept                org.plasync.server.controllers.FriendController.acceptFriendRequest(requestId: Long)
+POST        /friend/:requestId/decline               org.plasync.server.controllers.FriendController.declineFriendRequest(requestId: Long)
 
 # RESTFul App Services
-POST    /app                                org.plasync.server.controllers.AppController.addApp()
+#    Search for users of an app
+GET         /app/:id/users                           org.plasync.server.controllers.AppController.searchUsers(id: String)
+#    Create an instance of an app for a particular user and device
+POST        /app                                     org.plasync.server.controllers.AppController.addApp()
+
 
 
 
