@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/avatarContainer"
+                  android:layout_alignParentLeft="true">
+        <include android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 layout="@layout/user_avatar"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="User Name"
+        android:id="@+id/tvUsername"
+        android:layout_toRightOf="@id/avatarContainer"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"/>
+
+    <Button android:layout_width="32dp" android:layout_height="32dp"
+        android:id="@+id/btnFriendAction1"
+        android:background="@drawable/ic_accept"
+        android:layout_toLeftOf="@+id/btnFriendAction2"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"/>
+
+    <Button android:layout_width="32dp" android:layout_height="32dp"
+        android:id="@id/btnFriendAction2"
+        android:background="@drawable/ic_decline"
+        android:layout_toLeftOf="@+id/btnGameInvite"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"/>
+
+    <Button android:layout_width="32dp" android:layout_height="32dp"
+            android:id="@id/btnGameInvite"
+            android:background="@drawable/ic_game_invite"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"/>
+
+</RelativeLayout>

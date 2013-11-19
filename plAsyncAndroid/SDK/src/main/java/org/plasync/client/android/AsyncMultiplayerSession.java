@@ -3,18 +3,15 @@ package org.plasync.client.android;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import org.plasync.client.android.dal.AsyncMultiplayerUserDao;
 import org.plasync.client.android.dal.GcmSettingsDao;
 import org.plasync.client.android.gcm.GcmClient;
 import org.plasync.client.android.gcm.GcmError;
 import org.plasync.client.android.model.App;
-import org.plasync.client.android.model.AsyncMultiplayerUser;
-import org.plasync.client.android.model.Device;
 import org.plasync.client.android.model.DeviceType;
+import org.plasync.client.android.model.FriendRequest;
 import org.plasync.client.android.model.GcmSettings;
 import org.plasync.client.android.model.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,11 +32,6 @@ public class AsyncMultiplayerSession {
 
     private AsyncMultiplayerSessionConfig config;
 
-    /**
-     * Listener for session events
-     */
-    private final AsyncMultiplayerSessionListener listener;
-
     private GcmSettingsDao gcmSettingsDao;
 
     /**
@@ -55,15 +47,10 @@ public class AsyncMultiplayerSession {
      *
      * @param appContext The application context
      * @param config The configuration for the session
-     * @param listener A listener for session events.  Since the session communicates asynchronously
-     *                 with the server, results of session operations will be conveyed via the
-     *                 callback method on the listener
      */
-    public AsyncMultiplayerSession(Context appContext, AsyncMultiplayerSessionConfig config,
-                                   AsyncMultiplayerSessionListener listener) {
+    public AsyncMultiplayerSession(Context appContext, AsyncMultiplayerSessionConfig config) {
         this.appContext = appContext;
         this.config = config;
-        this.listener = listener;
         this.asyncMultiplayerClient = new AsyncMultiplayerClient(config.getPlasyncApiKey(),config.getPlasyncServerUrl());
         this.gcmSettingsDao = new GcmSettingsDao(appContext);
 
@@ -76,10 +63,14 @@ public class AsyncMultiplayerSession {
      * This is an async call.  The listener's onInitComplete will be invoked if initialization is
      * successful, otherwise the listener's onInitError will be invoked.
      * complete
+     * @param callback A listener for session init events.  Since the session communicates asynchronously
+     *                 with the server, results of the init will be conveyed via the
+     *                 callback method on the listener
      */
-    public void init() {
+    public void init(SessionInitListener callback) {
         // Initialize in background
         new AsyncTask<Void, Void, Void>() {
+            SessionInitListener callback;
             AsyncMultiplayerSessionError error;
 
             @Override
@@ -111,21 +102,102 @@ public class AsyncMultiplayerSession {
             @Override
             protected void onPostExecute(Void aVoid) {
                 if (error == null) {
-                    listener.onInitComplete();
+                    callback.onInitComplete();
                 }
                 else {
-                    listener.onInitError(this.error);
+                    callback.onInitError(this.error);
                 }
             }
-        }.execute();
+
+            public AsyncTask<Void, Void, Void> setCallback(SessionInitListener callback) {
+                this.callback = callback;
+                return this;
+            }
+        }.setCallback(callback).execute();
     }
 
-    public List<User> searchFriends(String query) {
-        List<User> results = new ArrayList<User>();
-        results.add(new User("user1Id", "user1"));
-        results.add(new User("user2Id", "user2"));
-        results.add(new User("user3Id", "user3"));
-        return results;
+    /**
+     * Searches for all users of the application with the app context passed in in config
+     * @param query The string to search for in the username
+     * @param callback A listener for search events.  Since the session communicates asynchronously
+     *                 with the server, results of search operations will be conveyed via the
+     *                 callback method on the listener
+     */
+    public void searchUsers(String query, SearchListener callback) {
+        // Search in background
+        new AsyncTask<String, Void, List<User>>() {
+            SearchListener callback;
+            AsyncMultiplayerSessionError error;
+
+            @Override
+            protected List<User> doInBackground(String... params) {
+                try {
+                    return asyncMultiplayerClient.searchUsers(appContext.getPackageName(), params[0]);
+                }
+                catch (AsyncMultiplayerSessionError error) {
+                    this.error = error;
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(List<User> users) {
+                if (error == null) {
+                    callback.onSearchComplete(users);
+                }
+                else {
+                    callback.onSearchError(this.error);
+                }
+            }
+
+            public AsyncTask<String, Void, List<User>> setCallback(SearchListener callback) {
+                this.callback = callback;
+                return this;
+            }
+        }.setCallback(callback).execute(query);
+    }
+
+    /**
+     * Retrieves all friend requests (pending, accepted, and declined) for the specified user for
+     * the application with the app context
+     * passed in in the config
+     * @param user The user to find friend requests for
+     * @param callback A listener for the results.  Since the session communicates asynchronously
+     *                 with the server, results of getting friend requests  will be conveyed via the
+     *                 callback method on the listener
+     */
+    public void getFriendRequests(User user, GetFriendRequestsListener callback) {
+        // Search in background
+        new AsyncTask<User, Void, List<FriendRequest>>() {
+            GetFriendRequestsListener callback;
+            AsyncMultiplayerSessionError error;
+
+            @Override
+            protected List<FriendRequest> doInBackground(User... params) {
+                try {
+                    return asyncMultiplayerClient.getFriendRequests(appContext.getPackageName(), params[0]);
+                }
+                catch (AsyncMultiplayerSessionError error) {
+                    this.error = error;
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(List<FriendRequest> friendRequests) {
+                if (error == null) {
+                    callback.onGetFriendRequestsComplete(friendRequests);
+                }
+                else {
+                    callback.onGetFriendRequestsError(this.error);
+                }
+            }
+
+            public AsyncTask<User, Void, List<FriendRequest>> setCallback(GetFriendRequestsListener callback) {
+                this.callback = callback;
+                return this;
+            }
+        }.setCallback(callback).execute(user);
     }
 
     /**
@@ -152,8 +224,18 @@ public class AsyncMultiplayerSession {
         gcmSettingsDao.createGcmSettings(gcmSettings);
     }
 
-    public interface AsyncMultiplayerSessionListener {
+    public interface SessionInitListener {
         void onInitComplete();
         void onInitError(AsyncMultiplayerSessionError error);
+    }
+
+    public interface SearchListener {
+        void onSearchComplete(List<User> users);
+        void onSearchError(AsyncMultiplayerSessionError error);
+    }
+
+    public interface GetFriendRequestsListener {
+        void onGetFriendRequestsComplete(List<FriendRequest> friendRequests);
+        void onGetFriendRequestsError(AsyncMultiplayerSessionError error);
     }
 }

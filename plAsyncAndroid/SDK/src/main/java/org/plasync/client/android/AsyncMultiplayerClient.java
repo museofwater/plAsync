@@ -3,12 +3,18 @@ package org.plasync.client.android;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.plasync.client.android.model.App;
+import org.plasync.client.android.model.FriendRequest;
+import org.plasync.client.android.model.User;
 import org.plasync.client.android.util.HttpHelper;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,6 +27,9 @@ public class AsyncMultiplayerClient {
 
     private static final String GCM_SENDER_ID_URL = "gcmSenderId";
     private static final String APP_URL = "app";
+    private static final String USERS_URL = "users";
+    private static final String FRIEND_REQUESTS_URL = "friend";
+    private static final String SEARCH_PARAM = "search";
 
     /**
      * The base URL of the plAsyncServer that this session is connected to.
@@ -68,6 +77,42 @@ public class AsyncMultiplayerClient {
     public void addApp(App app) throws AsyncMultiplayerSessionError {
         try {
             HttpHelper.postJson(getUrl(APP_URL), new Gson().toJson(app), requestHeaders);
+        }
+        catch (HttpHelper.ServerError ex) {
+            throw new AsyncMultiplayerSessionError(ex.getMessage());
+        }
+        catch (IOException e) {
+            Log.e(TAG, "Connection error", e);
+            throw new AsyncMultiplayerSessionError("Connection error");
+        }
+    }
+
+    public List<FriendRequest> getFriendRequests(String appId, User user) throws AsyncMultiplayerSessionError {
+        String friendRequestsJson = null;
+        try {
+            friendRequestsJson = HttpHelper.getJson(getUrl(FRIEND_REQUESTS_URL + "/" + appId + "/" +
+                                                           user.getId()),
+                    requestHeaders);
+            Type listType = new TypeToken<ArrayList<FriendRequest>>() {}.getType();
+            return new Gson().fromJson(friendRequestsJson, listType);
+        }
+        catch (HttpHelper.ServerError ex) {
+            throw new AsyncMultiplayerSessionError(ex.getMessage());
+        }
+        catch (IOException e) {
+            Log.e(TAG, "Connection error", e);
+            throw new AsyncMultiplayerSessionError("Connection error");
+        }
+    }
+
+    public List<User> searchUsers(String appId, String query) throws AsyncMultiplayerSessionError {
+        String searchResultsJson = null;
+        try {
+            searchResultsJson = HttpHelper.getJson(getUrl(APP_URL + "/" + appId + "/" + USERS_URL +
+                                                          "?" + SEARCH_PARAM + "=" + query),
+                                                   requestHeaders);
+            Type listType = new TypeToken<ArrayList<User>>() {}.getType();
+            return new Gson().fromJson(searchResultsJson, listType);
         }
         catch (HttpHelper.ServerError ex) {
             throw new AsyncMultiplayerSessionError(ex.getMessage());

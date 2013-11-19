@@ -1,6 +1,8 @@
-package org.plasync.client.android.testapp.fragments;
+package org.plasync.client.android.testapp;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,17 +12,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.plasync.client.android.testapp.R;
+import java.util.prefs.Preferences;
 
 /**
  * Created by ericwood on 10/11/13.
  */
 public class SettingsFragment extends Fragment {
+    private static final String DEFAULT_URL_PREF = "DEFAULT_URL";
+    private static final String DEFAULT_URL_PREF_DEFAULT = "http://";
     private OnSetServerUrlListener listener;
 
     private EditText tvServerUrl;
     private TextView tvUsername;
     private Button btnSetUrl;
+
+    private SharedPreferences prefs;
 
 
     @Override
@@ -28,8 +34,13 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.settings_fragment, container, false);
-        tvUsername = (TextView) view.findViewById(R.id.tvUsername);
+        tvUsername = (TextView) view.findViewById(R.id.tvCurrentUser);
         tvServerUrl = (EditText) view.findViewById(R.id.tvServerUrl);
+
+        prefs = getActivity().getPreferences(Context.MODE_PRIVATE);
+        String defaultUrl = prefs.getString(DEFAULT_URL_PREF, DEFAULT_URL_PREF_DEFAULT);
+        tvServerUrl.setText(defaultUrl);
+
         btnSetUrl = (Button) view.findViewById(R.id.btnSetUrl);
         btnSetUrl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +68,8 @@ public class SettingsFragment extends Fragment {
     private void onSetServerUrl() {
         String serverUrl = tvServerUrl.getText().toString();
         if (serverUrl != null && serverUrl.length() > 0) {
+            prefs.edit().putString(DEFAULT_URL_PREF,serverUrl).commit();
+
             listener.onSetServerUrl(serverUrl);
         }
     }

@@ -1,12 +1,13 @@
 package org.plasync.client.android.testapp;
 
 import android.app.ActionBar;
-import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,35 +18,35 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.SearchView;
 
 import org.plasync.client.android.AsyncMultiplayerSession;
 import org.plasync.client.android.AsyncMultiplayerSessionError;
+import org.plasync.client.android.model.FriendRequest;
 import org.plasync.client.android.model.User;
-import org.plasync.client.android.testapp.fragments.FriendsFragment;
-import org.plasync.client.android.testapp.fragments.GamesFragment;
-import org.plasync.client.android.testapp.fragments.SettingsFragment;
-import org.plasync.client.android.testapp.search.FriendSearchActivity;
+import org.plasync.client.android.testapp.friends.FriendRequestListener;
+import org.plasync.client.android.testapp.friends.FriendsFragment;
+import org.plasync.client.android.testapp.friends.UsersAdapter;
+import org.plasync.client.android.testapp.friends.UsersAdapterBuilder;
+import org.plasync.client.android.testapp.games.GameInviteListener;
+import org.plasync.client.android.testapp.games.GamesFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AsyncMultiplayerTestAppActivity extends FragmentActivity
-        implements AsyncMultiplayerSession.AsyncMultiplayerSessionListener,
-                   SettingsFragment.OnSetServerUrlListener {
+                   implements AsyncMultiplayerSession.SessionInitListener,
+                              SettingsFragment.OnSetServerUrlListener {
 
     private static final String TAG = AsyncMultiplayerTestAppActivity.class.getName();
+    private static final int USER_GROUP_INDEX = 0;
 //    private static final String URL = "http://192.168.1.67:9000";
 //    private static final String URL = "http://192.168.8.72:9000";
 
     private AsyncMultiplayerSession session;
 
     private String serverUrl = null;
-    private String username = null;
-    private String userId = null;
+    private User user;
 
     private ViewPager fragmentPager;
     private FriendsFragment friendsFragment;
@@ -59,8 +60,8 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
 //    private Button btnSettings;
     private SearchView searchView;
 
-    private ProgressDialog progressInit;
-
+    private ProgressDialog progressDialog;
+    private AlertDialog alertDialog;
 
 
     /**
@@ -132,7 +133,7 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
                 .setTabListener(tabListener);
         actionBar.addTab(tab);
 
-        showSettings();
+        showSettingsFragment();
 
 //        tvUsername = (TextView) findViewById(R.id.tvUsername);
 //
@@ -151,23 +152,35 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        setIntent(intent);
+        handleIntent(intent);
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_OK_CODE)) {
-            userId = data.getStringExtra(getString(R.string.PLASYNC_USER_ID_SETTING));
-            username = data.getStringExtra(getString(R.string.PLASYNC_USERNAME_SETTING));
+            String userId = data.getStringExtra(getString(R.string.PLASYNC_USER_ID_SETTING));
+            String username = data.getStringExtra(getString(R.string.PLASYNC_USERNAME_SETTING));
 //            tvUsername.setText(username);
             settingssFragment.setUsername(username);
 
             AsyncMultiplayerTestAppSessionConfig config = new AsyncMultiplayerTestAppSessionConfig();
-            config.setUser(new User(userId, username));
+            user = new User(userId, username, "0");
+            config.setUser(user);
             config.setServerUrl(serverUrl);
 
-            session = new AsyncMultiplayerSession(this, config, this);
-            progressInit =
+            session = new AsyncMultiplayerSession(this, config);
+            progressDialog =
                     ProgressDialog.show(this, getString(R.string.INITIALIZING_TITLE),
                             getString(R.string.INITIALIZING_MSG));
-            session.init();
+            session.init(this);
         }
         else {
             // async mulitplayer disabled
@@ -185,26 +198,55 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
 
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(
-                new ComponentName(getPackageName(), FriendSearchActivity.class.getName())));
+                new ComponentName(getPackageName(), AsyncMultiplayerTestAppActivity.class.getName())));
         // Initially disable search view
         searchView.setEnabled(false);
         return true;
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle item selection
-//        switch (item.getItemId()) {
-//            case R.id.menuSetServerUrl:
-//                setupAsyncSession();
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
+    @Override
+    public void onSetServerUrl(String serverUrl) {
+        this.serverUrl = serverUrl;
+        setupAsyncSession(serverUrl);
+    }
 
-//    private void setupAsyncSession() {
-//        getUrlFromUser();
+    @Override
+    public void onInitComplete() {
+        if (progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
+        AsyncMultiplayerTestApp.setSession(this.session);
+        searchView.setEnabled(true);
+    }
+
+    @Override
+    public void onInitError(AsyncMultiplayerSessionError error) {
+        if (progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
+        // Multiplayer disabled
+    }
+
+//    @Override
+//    public void onSearchComplete(List<User> users) {
+//        // Need to get the friend requests
+//        getFriendRequests();
+//
+//    }
+//
+//    @Override
+//    public void onSearchError(AsyncMultiplayerSessionError error) {
+//
+//    }
+//
+//    @Override
+//    public void onGetFriendRequestsComplete(List<FriendRequest> friendRequests) {
+//
+//    }
+//
+//    @Override
+//    public void onGetFriendRequestsError(AsyncMultiplayerSessionError error) {
+//
 //    }
 
     private void setupAsyncSession(String url) {
@@ -225,45 +267,15 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
                 getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_REQUEST_CODE));
     }
 
-//    private void getUrlFromUser() {
-//        FragmentManager fm = getSupportFragmentManager();
-//        ServerUrlDialogFragment serverUrlDialog = new ServerUrlDialogFragment();
-//        serverUrlDialog.setListener(new ServerUrlDialogFragment.ServerUrlDialogListener() {
-//            @Override
-//            public void onFinishEditDialog(String inputText) {
-//                setupAsyncSession(inputText);
-//            }
-//        });
-//        serverUrlDialog.show(fm, "fragment_server_url");
-//    }
-
-
-    @Override
-    public void onInitComplete() {
-        if (progressInit.isShowing()) {
-            progressInit.dismiss();
-        }
-        AsyncMultiplayerTestApp.setSession(this.session);
-        searchView.setEnabled(true);
-    }
-
-    @Override
-    public void onInitError(AsyncMultiplayerSessionError error) {
-        if (progressInit.isShowing()) {
-            progressInit.dismiss();
-        }
-        // Multiplayer disabled
-    }
-
-    private void showFriends() {
+    private void showFriendsFragment() {
         showFragment(0);
     }
 
-    private void showGames() {
+    private void showGamesFragment() {
         showFragment(1);
     }
 
-    private void showSettings() {
+    private void showSettingsFragment() {
         showFragment(2);
     }
 
@@ -271,11 +283,90 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
         fragmentPager.setCurrentItem(fragmentIndex);
     }
 
-    @Override
-    public void onSetServerUrl(String serverUrl) {
-        this.serverUrl = serverUrl;
-        setupAsyncSession(serverUrl);
+    private void handleIntent(Intent intent) {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            searchFriends(query);
+        }
     }
+
+    private void searchFriends(String query) {
+        // Get the users for the app from the session.  onSearchComplete will be called when done
+        session.searchUsers(query,new TestAppSearchListener());
+    }
+
+    private void showSearchResults(List<User> users, List<FriendRequest> friendRequests) {
+        // Create an adapter
+        UsersAdapter adapter = getUsersAdapter(users,friendRequests);
+        showFriends(adapter);
+        friendsFragment.setAdapter(adapter);
+        if (users.size() > 0) {
+            friendsFragment.expandGroup(adapter.getUserGroupIndex());
+        }
+    }
+
+    private void getFriendRequests(AsyncMultiplayerSession.GetFriendRequestsListener listener) {
+        // Get the friend requests.  onGetFriendRequests will be called when done
+        session.getFriendRequests(user,listener);
+    }
+
+    private void showFriends(List<FriendRequest> friendRequests) {
+        // Create an adapter
+        UsersAdapter adapter = getUsersAdapter(new ArrayList<User>(),friendRequests);
+        showFriends(adapter);
+    }
+
+    private void showFriends(UsersAdapter adapter) {
+        // Make sure the fragment is showing before setting the adapter so that it has been
+        // initialized
+        showFriendsFragment();
+        friendsFragment.setAdapter(adapter);
+    }
+
+
+    private UsersAdapter getUsersAdapter(List<User> users, List<FriendRequest> friendRequests) {
+        return UsersAdapterBuilder.createUsersAdapter(this, users, friendRequests,
+                new FriendRequestListener() {
+                    @Override
+                    public void onAddFriend(User friend) {
+
+                    }
+
+                    @Override
+                    public void onDeclineFriend(FriendRequest friendRequest) {
+
+                    }
+
+                    @Override
+                    public void onAcceptFriend(FriendRequest friendRequest) {
+
+                    }
+                },
+                new GameInviteListener() {
+                    @Override
+                    public void onGameInvite(User user) {
+
+                    }
+                }
+        );
+    }
+
+    private void showErrorAlert(int titleResource, int messageResource) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(AsyncMultiplayerTestAppActivity.this);
+        // Add the buttons
+        builder.setTitle(titleResource)
+                .setMessage(messageResource)
+                .setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+
+        // Create the AlertDialog
+        alertDialog = builder.create();
+        alertDialog.show();
+    }
+
 
     private class TestAppFragmentPagerAdapter extends FragmentPagerAdapter {
 
@@ -294,4 +385,54 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
             return fragments.size();
         }
     }
+
+    private class TestAppSearchListener implements AsyncMultiplayerSession.SearchListener {
+        private List<User> users;
+        private List<FriendRequest> friendRequests;
+
+        @Override
+        public void onSearchComplete(List<User> users) {
+            this.users = users;
+            // Get the friend requests
+            getFriendRequests(new AsyncMultiplayerSession.GetFriendRequestsListener() {
+                @Override
+                public void onGetFriendRequestsComplete(List<FriendRequest> friendRequests) {
+                    TestAppSearchListener.this.friendRequests = friendRequests;
+                    showSearchResults(TestAppSearchListener.this.users,friendRequests);
+                }
+
+                @Override
+                public void onGetFriendRequestsError(AsyncMultiplayerSessionError error) {
+
+                }
+            });
+        }
+
+        @Override
+        public void onSearchError(AsyncMultiplayerSessionError error) {
+
+        }
+    }
+
+    private class TestAppGetFriendRequestsListener
+            implements AsyncMultiplayerSession.GetFriendRequestsListener {
+        private UsersAdapterBuilder adapterBuilder;
+
+        public TestAppGetFriendRequestsListener(UsersAdapterBuilder builder) {
+            this.adapterBuilder = builder;
+        }
+
+
+        @Override
+        public void onGetFriendRequestsComplete(List<FriendRequest> friendRequests) {
+
+        }
+
+        @Override
+        public void onGetFriendRequestsError(AsyncMultiplayerSessionError error) {
+
+        }
+    }
+
+
 }

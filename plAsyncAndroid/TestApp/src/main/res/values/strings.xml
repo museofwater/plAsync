@@ -18,4 +18,10 @@
     <string name="settings_menu_button">Settings</string>
     <string name="SET_URL_BUTTON">Set</string>
     <string name="search_hint">Search friends</string>
+    <string name="game_invite">Game Invite</string>
+    <string name="users_group_name">Users</string>
+    <string name="pending_requests_group_name">Pending Requests</string>
+    <string name="friends_group_name">Friends</string>
+    <string name="declined_requests_group_name">Declined Requests</string>
+    <string name="default_url">http://192.168.1.67:9000</string>
 </resources>

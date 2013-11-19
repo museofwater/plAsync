@@ -14,8 +14,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/USERNAME_LABEL"
-            android:id="@+id/lblUsername"
-            android:labelFor="@+id/tvUsername"
+            android:id="@+id/lblCurrentUser"
+            android:labelFor="@+id/tvCurrentUser"
             android:layout_marginLeft="11dp"
             android:textSize="24dp"
             android:textIsSelectable="true" />
@@ -23,9 +23,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@id/tvUsername"
+            android:id="@id/tvCurrentUser"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/lblUsername"
+            android:layout_toRightOf="@id/lblCurrentUser"
             android:layout_marginLeft="11dp"
             android:textSize="24dp"/>
     </LinearLayout>

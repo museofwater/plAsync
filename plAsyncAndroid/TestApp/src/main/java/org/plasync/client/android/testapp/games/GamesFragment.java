@@ -1,4 +1,4 @@
-package org.plasync.client.android.testapp.fragments;
+package org.plasync.client.android.testapp.games;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

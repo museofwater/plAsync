@@ -5,17 +5,11 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView">
-
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/listView"
+   <ExpandableListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/elvFriends"
             android:layout_gravity="center" />
 
-    </ScrollView>
 
 </RelativeLayout>

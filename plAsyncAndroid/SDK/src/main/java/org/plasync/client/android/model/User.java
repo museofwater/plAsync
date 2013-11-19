@@ -25,10 +25,14 @@ public class User {
     @Expose
     private String username;
 
-    public User(String id, String username)
+    @Expose
+    private String gravatarEmailHash;
+
+    public User(String id, String username, String gravatarEmailHash)
     {
         this.id = id;
         this.username = username;
+        this.gravatarEmailHash = gravatarEmailHash;
     }
 
     public String getId() {
@@ -37,6 +41,10 @@ public class User {
 
     public String getUsername() {
         return username;
+    }
+
+    public String getGravatarEmailHash() {
+        return gravatarEmailHash;
     }
 
     @Override
