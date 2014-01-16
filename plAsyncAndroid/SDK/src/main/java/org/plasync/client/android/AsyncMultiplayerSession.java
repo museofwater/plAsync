@@ -69,9 +69,13 @@ public class AsyncMultiplayerSession {
      */
     public void init(SessionInitListener callback) {
         // Initialize in background
-        new AsyncTask<Void, Void, Void>() {
+        class SessionInitTask extends AsyncTask<Void, Void, Void> {
             SessionInitListener callback;
             AsyncMultiplayerSessionError error;
+
+            SessionInitTask(SessionInitListener callback) {
+                this.callback = callback;
+            }
 
             @Override
             protected Void doInBackground(Void... voids) {
@@ -108,12 +112,8 @@ public class AsyncMultiplayerSession {
                     callback.onInitError(this.error);
                 }
             }
-
-            public AsyncTask<Void, Void, Void> setCallback(SessionInitListener callback) {
-                this.callback = callback;
-                return this;
-            }
-        }.setCallback(callback).execute();
+        }
+        new SessionInitTask(callback).execute();
     }
 
     /**
@@ -125,9 +125,13 @@ public class AsyncMultiplayerSession {
      */
     public void searchUsers(String query, SearchListener callback) {
         // Search in background
-        new AsyncTask<String, Void, List<User>>() {
+        class SearchUsersTask extends AsyncTask<String, Void, List<User>> {
             SearchListener callback;
             AsyncMultiplayerSessionError error;
+
+            SearchUsersTask(SearchListener callback) {
+                this.callback = callback;
+            }
 
             @Override
             protected List<User> doInBackground(String... params) {
@@ -149,12 +153,9 @@ public class AsyncMultiplayerSession {
                     callback.onSearchError(this.error);
                 }
             }
+        }
 
-            public AsyncTask<String, Void, List<User>> setCallback(SearchListener callback) {
-                this.callback = callback;
-                return this;
-            }
-        }.setCallback(callback).execute(query);
+        new SearchUsersTask(callback).execute(query);
     }
 
     /**
@@ -168,9 +169,13 @@ public class AsyncMultiplayerSession {
      */
     public void getFriendRequests(User user, GetFriendRequestsListener callback) {
         // Search in background
-        new AsyncTask<User, Void, List<FriendRequest>>() {
+        class GetFriendRequestsTask extends AsyncTask<User, Void, List<FriendRequest>> {
             GetFriendRequestsListener callback;
             AsyncMultiplayerSessionError error;
+
+            GetFriendRequestsTask(GetFriendRequestsListener callback) {
+                this.callback = callback;
+            }
 
             @Override
             protected List<FriendRequest> doInBackground(User... params) {
@@ -192,12 +197,76 @@ public class AsyncMultiplayerSession {
                     callback.onGetFriendRequestsError(this.error);
                 }
             }
+        }
+        new GetFriendRequestsTask(callback).execute(user);
+    }
 
-            public AsyncTask<User, Void, List<FriendRequest>> setCallback(GetFriendRequestsListener callback) {
+    /**
+     * Responds to the specified friend request
+     * @param request The request to accept
+     * @param accepted True if the request is accepted, false if it is declined
+     * @param callback RespondToFriendRequestListener for conveying completion or errors to the caller
+     */
+    public void respondToFriendRequest(FriendRequest request, boolean accepted, RespondToFriendRequestListener callback) {
+        // Search in background
+        class RespondToFriendRequestTask extends AsyncTask<FriendRequest, Void, Void> {
+            boolean accepted;
+            RespondToFriendRequestListener callback;
+            AsyncMultiplayerSessionError error;
+
+
+            RespondToFriendRequestTask(boolean accepted, RespondToFriendRequestListener callback) {
+                this.accepted = accepted;
                 this.callback = callback;
-                return this;
             }
-        }.setCallback(callback).execute(user);
+
+            @Override
+            protected Void doInBackground(FriendRequest... params) {
+                try {
+                    asyncMultiplayerClient.respondToFriendRequest(params[0], this.accepted);
+                }
+                catch (AsyncMultiplayerSessionError asyncMultiplayerSessionError) {
+                    this.error = error;
+                }
+                return null;
+            }
+        }
+
+        new RespondToFriendRequestTask(accepted, callback).execute(request);
+
+    }
+
+    /**
+     * Creates a new friend request
+     * @param request The request to create
+     * @param callback CreateFriendRequestListener for conveying completion or errors to the caller
+     */
+    public void createFriendRequest(FriendRequest request, boolean accepted, CreateFriendRequestListener callback) {
+        // Search in background
+        class CreateFriendRequestTask extends AsyncTask<FriendRequest, Void, Void> {
+            CreateFriendRequestListener callback;
+            AsyncMultiplayerSessionError error;
+
+
+            CreateFriendRequestTask(CreateFriendRequestListener callback) {
+                this.callback = callback;
+            }
+
+            @Override
+            protected Void doInBackground(FriendRequest... params) {
+                try {
+                    asyncMultiplayerClient.createFriendRequest(params[0]);
+                }
+                catch (AsyncMultiplayerSessionError asyncMultiplayerSessionError) {
+                    this.error = error;
+                }
+                return null;
+            }
+
+        }
+
+        new CreateFriendRequestTask(callback).execute(request);
+
     }
 
     /**
@@ -224,6 +293,11 @@ public class AsyncMultiplayerSession {
         gcmSettingsDao.createGcmSettings(gcmSettings);
     }
 
+    public interface RespondToFriendRequestListener {
+        void onResponseComplete();
+        void onSessionError(AsyncMultiplayerSessionError error);
+    }
+
     public interface SessionInitListener {
         void onInitComplete();
         void onInitError(AsyncMultiplayerSessionError error);
@@ -237,5 +311,10 @@ public class AsyncMultiplayerSession {
     public interface GetFriendRequestsListener {
         void onGetFriendRequestsComplete(List<FriendRequest> friendRequests);
         void onGetFriendRequestsError(AsyncMultiplayerSessionError error);
+    }
+
+    public interface CreateFriendRequestListener {
+        void onCreateRequestComplete();
+        void onSessionError(AsyncMultiplayerSessionError error);
     }
 }

@@ -29,7 +29,11 @@ public class AsyncMultiplayerClient {
     private static final String APP_URL = "app";
     private static final String USERS_URL = "users";
     private static final String FRIEND_REQUESTS_URL = "friend";
+    private static final String ACCEPT_FRIEND_REQUEST_URL = "accept";
+    private static final String DECLINE_FRIEND_REQUEST_URL = "decline";
     private static final String SEARCH_PARAM = "search";
+    public static final String URL_SEPARATOR = "/";
+
 
     /**
      * The base URL of the plAsyncServer that this session is connected to.
@@ -70,13 +74,9 @@ public class AsyncMultiplayerClient {
         }
     }
 
-    private String getUrl(String subUrl) {
-        return this.plAsyncServerUrl + "/" + subUrl;
-    }
-
     public void addApp(App app) throws AsyncMultiplayerSessionError {
         try {
-            HttpHelper.postJson(getUrl(APP_URL), new Gson().toJson(app), requestHeaders);
+            HttpHelper.putJson(getUrl(APP_URL), new Gson().toJson(app), requestHeaders);
         }
         catch (HttpHelper.ServerError ex) {
             throw new AsyncMultiplayerSessionError(ex.getMessage());
@@ -121,6 +121,45 @@ public class AsyncMultiplayerClient {
             Log.e(TAG, "Connection error", e);
             throw new AsyncMultiplayerSessionError("Connection error");
         }
+    }
+
+    public void respondToFriendRequest(FriendRequest request, boolean accepted) throws AsyncMultiplayerSessionError {
+        try {
+
+            HttpHelper.postJson(getUrl(FRIEND_REQUESTS_URL,String.valueOf(request.getRequestId()),
+                                       accepted ? ACCEPT_FRIEND_REQUEST_URL :
+                                                  DECLINE_FRIEND_REQUEST_URL),null,requestHeaders);
+        }
+        catch (HttpHelper.ServerError ex) {
+            throw new AsyncMultiplayerSessionError(ex.getMessage());
+        }
+        catch (IOException e) {
+            Log.e(TAG, "Connection error", e);
+            throw new AsyncMultiplayerSessionError("Connection error");
+        }
+    }
+
+    public void createFriendRequest(FriendRequest request) throws AsyncMultiplayerSessionError {
+        try {
+            HttpHelper.putJson(getUrl(FRIEND_REQUESTS_URL),new Gson().toJson(request),
+                               requestHeaders);
+        }
+        catch (HttpHelper.ServerError ex) {
+            throw new AsyncMultiplayerSessionError(ex.getMessage());
+        }
+        catch (IOException e) {
+            Log.e(TAG, "Connection error", e);
+            throw new AsyncMultiplayerSessionError("Connection error");
+        }
+    }
+
+    private String getUrl(String... subUrls) {
+        StringBuffer sbUrl = new StringBuffer(this.plAsyncServerUrl);
+        for (int i = 0; i < subUrls.length; ++i) {
+            sbUrl.append(URL_SEPARATOR);
+            sbUrl.append(subUrls[i]);
+        }
+        return sbUrl.toString();
     }
 
 //    private static enum RequestType {
