@@ -3,8 +3,19 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="useAutoImport" value="true" />
+        <option name="gradleHome" value="/Applications/android-sdk-mac_x86/tools/templates/gradle/wrapper" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ContentProviderContract" />
+            <option value="$PROJECT_DIR$/DataManager" />
+            <option value="$PROJECT_DIR$/SDK" />
+            <option value="$PROJECT_DIR$/TestApp" />
+            <option value="$PROJECT_DIR$/google-play-services_lib" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
