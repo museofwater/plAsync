@@ -11,10 +11,13 @@ import org.plasync.client.android.testapp.R;
 import org.plasync.client.android.testapp.games.GameInviteListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by ericwood on 10/26/13.
@@ -77,28 +80,27 @@ public class UsersAdapterBuilder {
             mapGroups.put(status,new ArrayList<UsersAdapter.UserListItem>());
         }
 
-        // Get a map of friendRequests by user
-        Map<String, FriendRequest> mapRequestsByRequestor = getMapOfRequestsByRequestor(requests);
+        Set<User> usersWithRequests = new HashSet<User>();
 
-        Iterator<User> i = users.iterator();
-        while (i.hasNext()) {
-            User user = i.next();
-            FriendRequest request = mapRequestsByRequestor.get(user.getId());
-            if (request != null) {
-                mapGroups.get(request.getRequestStatus()).add(
-                        new UsersAdapter.UserListItem(user,request));
-                i.remove();
-            }
-        }
-        return mapGroups;
-    }
-
-    private static Map<String, FriendRequest> getMapOfRequestsByRequestor(List<FriendRequest> requests) {
-        Map<String, FriendRequest> friendRequestMap = new HashMap<String, FriendRequest>();
+        // populate the groups from the requests
         for (FriendRequest request : requests) {
-            friendRequestMap.put(request.getRequestor().getUsername(),request);
+            User requestor = request.getRequestor();
+            mapGroups.get(request.getRequestStatus()).add(
+                    new UsersAdapter.UserListItem(requestor,request));
+            usersWithRequests.add(requestor);
         }
-        return friendRequestMap;
+
+//        // Now remove all users that have requests
+//        Iterator<User> i = users.iterator();
+//        while (i.hasNext()) {
+//            User user = i.next();
+//            if (usersWithRequests.contains(user)) {
+//                i.remove();
+//            }
+//        }
+
+        users.removeAll(usersWithRequests);
+        return mapGroups;
     }
 
     private static UsersAdapter.UserListGroup createGroup(String groupTitle,

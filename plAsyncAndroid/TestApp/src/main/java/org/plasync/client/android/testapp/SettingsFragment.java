@@ -74,6 +74,10 @@ public class SettingsFragment extends Fragment {
         }
     }
 
+//    public void refresh() {
+//
+//    }
+
     public interface OnSetServerUrlListener {
 
         void onSetServerUrl(String serverUrl);

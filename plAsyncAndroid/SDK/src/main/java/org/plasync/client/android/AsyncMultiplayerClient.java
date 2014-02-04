@@ -76,7 +76,7 @@ public class AsyncMultiplayerClient {
 
     public void addApp(App app) throws AsyncMultiplayerSessionError {
         try {
-            HttpHelper.putJson(getUrl(APP_URL), new Gson().toJson(app), requestHeaders);
+            HttpHelper.postJson(getUrl(APP_URL), new Gson().toJson(app), requestHeaders);
         }
         catch (HttpHelper.ServerError ex) {
             throw new AsyncMultiplayerSessionError(ex.getMessage());
@@ -141,7 +141,7 @@ public class AsyncMultiplayerClient {
 
     public void createFriendRequest(FriendRequest request) throws AsyncMultiplayerSessionError {
         try {
-            HttpHelper.putJson(getUrl(FRIEND_REQUESTS_URL),new Gson().toJson(request),
+            HttpHelper.postJson(getUrl(FRIEND_REQUESTS_URL),new Gson().toJson(request),
                                requestHeaders);
         }
         catch (HttpHelper.ServerError ex) {

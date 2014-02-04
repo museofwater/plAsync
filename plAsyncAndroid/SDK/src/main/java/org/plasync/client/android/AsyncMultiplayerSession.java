@@ -56,6 +56,10 @@ public class AsyncMultiplayerSession {
 
     }
 
+    public User getUser() {
+        return config.getUser();
+    }
+
     /**
      * Initialize the session
      *
@@ -162,12 +166,11 @@ public class AsyncMultiplayerSession {
      * Retrieves all friend requests (pending, accepted, and declined) for the specified user for
      * the application with the app context
      * passed in in the config
-     * @param user The user to find friend requests for
      * @param callback A listener for the results.  Since the session communicates asynchronously
      *                 with the server, results of getting friend requests  will be conveyed via the
      *                 callback method on the listener
      */
-    public void getFriendRequests(User user, GetFriendRequestsListener callback) {
+    public void getFriendRequests(GetFriendRequestsListener callback) {
         // Search in background
         class GetFriendRequestsTask extends AsyncTask<User, Void, List<FriendRequest>> {
             GetFriendRequestsListener callback;
@@ -198,7 +201,7 @@ public class AsyncMultiplayerSession {
                 }
             }
         }
-        new GetFriendRequestsTask(callback).execute(user);
+        new GetFriendRequestsTask(callback).execute(getUser());
     }
 
     /**
@@ -241,7 +244,7 @@ public class AsyncMultiplayerSession {
      * @param request The request to create
      * @param callback CreateFriendRequestListener for conveying completion or errors to the caller
      */
-    public void createFriendRequest(FriendRequest request, boolean accepted, CreateFriendRequestListener callback) {
+    public void createFriendRequest(FriendRequest request, CreateFriendRequestListener callback) {
         // Search in background
         class CreateFriendRequestTask extends AsyncTask<FriendRequest, Void, Void> {
             CreateFriendRequestListener callback;
@@ -294,8 +297,8 @@ public class AsyncMultiplayerSession {
     }
 
     public interface RespondToFriendRequestListener {
-        void onResponseComplete();
-        void onSessionError(AsyncMultiplayerSessionError error);
+        void onRespondToFriendRequestComplete();
+        void onRespondToFriendRequestError(AsyncMultiplayerSessionError error);
     }
 
     public interface SessionInitListener {
@@ -315,6 +318,6 @@ public class AsyncMultiplayerSession {
 
     public interface CreateFriendRequestListener {
         void onCreateRequestComplete();
-        void onSessionError(AsyncMultiplayerSessionError error);
+        void onCreateRequestError(AsyncMultiplayerSessionError error);
     }
 }

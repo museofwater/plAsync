@@ -24,11 +24,7 @@ import org.plasync.client.android.AsyncMultiplayerSession;
 import org.plasync.client.android.AsyncMultiplayerSessionError;
 import org.plasync.client.android.model.FriendRequest;
 import org.plasync.client.android.model.User;
-import org.plasync.client.android.testapp.friends.FriendRequestListener;
 import org.plasync.client.android.testapp.friends.FriendsFragment;
-import org.plasync.client.android.testapp.friends.UsersAdapter;
-import org.plasync.client.android.testapp.friends.UsersAdapterBuilder;
-import org.plasync.client.android.testapp.games.GameInviteListener;
 import org.plasync.client.android.testapp.games.GamesFragment;
 
 import java.util.ArrayList;
@@ -39,7 +35,12 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
                               SettingsFragment.OnSetServerUrlListener {
 
     private static final String TAG = AsyncMultiplayerTestAppActivity.class.getName();
-    private static final int USER_GROUP_INDEX = 0;
+    public static final int FRIENDS_FRAGMENT_INDEX = 0;
+    private static final int USER_GROUP_INDEX = FRIENDS_FRAGMENT_INDEX;
+    public static final int GAMES_FRAGMENT_INDEX = 1;
+    public static final int SETTINGS_FRAGMENT_INDEX = 2;
+    public static final String FRAGMENT_NAME_PREFIX = "android:switcher:";
+    public static final String FRAGMENT_NAME_DELIMITER = ":";
 //    private static final String URL = "http://192.168.1.67:9000";
 //    private static final String URL = "http://192.168.8.72:9000";
 
@@ -49,20 +50,29 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
     private User user;
 
     private ViewPager fragmentPager;
+    private ActionBar.TabListener tabListener;
+    //private ActionBar.TabListener nullTabListener;
+
+    // Other than the accessor and the PagerAdapter, access to this field should only be through
+    // the accessor
     private FriendsFragment friendsFragment;
+    // Other than the accessor and the PagerAdapter, access to this field should only be through
+    // the accessor
     private GamesFragment gamesFragment;
-    private SettingsFragment settingssFragment;
+    // Other than the accessor and the PagerAdapter, access to this field should only be through
+    // the accessor
+    private SettingsFragment settingsFragment;
+    private SearchFragment searchFragment;
+
+    // Keeps track of the fragment that needs to be refreshed
+    private Integer refreshIndex = null;
 
     private List<Fragment> fragments = new ArrayList<Fragment>();
 
-//    private Button btnFriends;
-//    private Button btnGames;
-//    private Button btnSettings;
     private SearchView searchView;
 
     private ProgressDialog progressDialog;
     private AlertDialog alertDialog;
-
 
     /**
      * Called when the activity is first created.
@@ -72,14 +82,28 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_app_main);
 
-        // Create fragments
-        friendsFragment = new FriendsFragment();
-        gamesFragment = new GamesFragment();
-        settingssFragment = new SettingsFragment();
+        // Get fragments from saved state.  Note that if they are in the saved state, they won't
+        // have the activity attached yet.
+        friendsFragment = getFriendsFragment();
+        gamesFragment = getGamesFragment();
+        settingsFragment = getSettingsFragment();
 
+        // Create fragments if needed
+        if (friendsFragment == null) {
+            friendsFragment = new FriendsFragment();
+        }
+        if (gamesFragment == null) {
+            gamesFragment = new GamesFragment();
+        }
+        if (settingsFragment == null) {
+            settingsFragment = new SettingsFragment();
+        }
+        searchFragment = new SearchFragment();
+
+        // Add the fragments to the list
         fragments.add(friendsFragment);
         fragments.add(gamesFragment);
-        fragments.add(settingssFragment);
+        fragments.add(settingsFragment);
 
         // setup the ViewPager
         fragmentPager = (ViewPager) findViewById(R.id.fragmentPager);
@@ -100,11 +124,14 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
         actionBar.setDisplayShowTitleEnabled(false);
 
         // Create a tab listener that is called when the user changes tabs.
-        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
+        tabListener = new ActionBar.TabListener() {
             public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
                 // When the tab is selected, switch to the
                 // corresponding page in the ViewPager.
-                fragmentPager.setCurrentItem(tab.getPosition());
+                int position = tab.getPosition();
+                fragmentPager.setCurrentItem(position);
+                // Request the fragment to refresh itself
+                requestRefresh(position);
             }
 
             @Override
@@ -114,7 +141,9 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
 
             @Override
             public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-
+                int position = tab.getPosition();
+                // Request the fragment to refresh itself
+                requestRefresh(position);
             }
         };
 
@@ -134,21 +163,6 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
         actionBar.addTab(tab);
 
         showSettingsFragment();
-
-//        tvUsername = (TextView) findViewById(R.id.tvUsername);
-//
-//
-//        btnSetUrl = (Button) findViewById(R.id.btnServerUrl);
-//        btnSetUrl.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                onSetUrl();
-//            }
-//        });
-        
-//        if (username == null || userId == null) {
-//            setupAsyncSession();
-//        }
     }
 
     @Override
@@ -168,8 +182,7 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
         if (resultCode == getResources().getInteger(R.integer.SETUP_ASYNC_MULTIPLAYER_SESSION_RESPONSE_OK_CODE)) {
             String userId = data.getStringExtra(getString(R.string.PLASYNC_USER_ID_SETTING));
             String username = data.getStringExtra(getString(R.string.PLASYNC_USERNAME_SETTING));
-//            tvUsername.setText(username);
-            settingssFragment.setUsername(username);
+            getSettingsFragment().setUsername(username);
 
             AsyncMultiplayerTestAppSessionConfig config = new AsyncMultiplayerTestAppSessionConfig();
             user = new User(userId, username, "0");
@@ -215,39 +228,66 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
         if (progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
-        AsyncMultiplayerTestApp.setSession(this.session);
+        friendsFragment.setSession(session);
+        gamesFragment.setSession(session);
+        searchFragment.setSession(session);
         searchView.setEnabled(true);
     }
 
     @Override
     public void onInitError(AsyncMultiplayerSessionError error) {
+        // TODO Handle errors
         if (progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
         // Multiplayer disabled
     }
 
-//    @Override
-//    public void onSearchComplete(List<User> users) {
-//        // Need to get the friend requests
-//        getFriendRequests();
-//
-//    }
-//
-//    @Override
-//    public void onSearchError(AsyncMultiplayerSessionError error) {
-//
-//    }
-//
-//    @Override
-//    public void onGetFriendRequestsComplete(List<FriendRequest> friendRequests) {
-//
-//    }
-//
-//    @Override
-//    public void onGetFriendRequestsError(AsyncMultiplayerSessionError error) {
-//
-//    }
+    // Due to the way that fragments are saved and restored within the fragment pager, direct access
+    // can lead to fragments with unattached activities.  Access to fragments should be through
+    // the fragment manager
+    private FriendsFragment getFriendsFragment() {
+        if (friendsFragment ==  null) { // Happens when saved fragment is restored
+            // Get the fragment from the fragment manager
+            friendsFragment = (FriendsFragment)getSupportFragmentManager().findFragmentByTag(
+                    getFragmentName(FRIENDS_FRAGMENT_INDEX));
+//            if (friendsFragment != null && session != null) {
+//                friendsFragment.setSession(session);
+//            }
+        }
+        return friendsFragment;
+    }
+
+    // Due to the way that fragments are saved and restored within the fragment pager, direct access
+    // can lead to fragments with unattached activities.  Access to fragments should be through
+    // the fragment manager
+    private GamesFragment getGamesFragment() {
+        if (gamesFragment ==  null) { // Happens when saved fragment is restored
+            // Get the fragment from the fragment manager
+            gamesFragment = (GamesFragment)getSupportFragmentManager().findFragmentByTag(
+                    getFragmentName(GAMES_FRAGMENT_INDEX));
+//            if (gamesFragment != null && session != null) {
+//                gamesFragment.setSession(session);
+//            }
+        }
+        return gamesFragment;
+    }
+
+    // Due to the way that fragments are saved and restored within the fragment pager, direct access
+    // can lead to fragments with unattached activities.  Access to fragments should be through
+    // the fragment manager
+    private SettingsFragment getSettingsFragment() {
+        if (settingsFragment ==  null) { // Happens when saved fragment is restored
+            // Get the fragment from the fragment manager
+            settingsFragment = (SettingsFragment)getSupportFragmentManager().findFragmentByTag(
+                    getFragmentName(SETTINGS_FRAGMENT_INDEX));
+        }
+        return settingsFragment;
+    }
+
+    private String getFragmentName(int position) {
+        return FRAGMENT_NAME_PREFIX + R.id.fragmentPager + FRAGMENT_NAME_DELIMITER + position;
+    }
 
     private void setupAsyncSession(String url) {
         this.serverUrl = url;
@@ -268,88 +308,82 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
     }
 
     private void showFriendsFragment() {
-        showFragment(0);
+        showFragment(FRIENDS_FRAGMENT_INDEX);
+        friendsFragment.refresh();
     }
 
     private void showGamesFragment() {
-        showFragment(1);
+        showFragment(GAMES_FRAGMENT_INDEX);
+        gamesFragment.refresh();
     }
 
     private void showSettingsFragment() {
-        showFragment(2);
+        showFragment(SETTINGS_FRAGMENT_INDEX);
     }
 
     private void showFragment(int fragmentIndex) {
+        // suppress the tab listener when changing tabs programmatically
+        // Create a null tab listener to use when tab events should be supressed
+        final ActionBar.TabListener nullTabListener = new ActionBar.TabListener() {
+
+            @Override
+            public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+            }
+
+            @Override
+            public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+            }
+
+            @Override
+            public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+            }
+        };
+        ActionBar.Tab targetTab = getActionBar().getTabAt(fragmentIndex);
+        targetTab.setTabListener(nullTabListener);
         fragmentPager.setCurrentItem(fragmentIndex);
+        // Restore the tab listener
+        targetTab.setTabListener(tabListener);
+    }
+
+    private void requestRefresh(int position) {
+        switch(position) {
+            case FRIENDS_FRAGMENT_INDEX:
+                friendsFragment.refresh();
+                break;
+            case GAMES_FRAGMENT_INDEX:
+                gamesFragment.refresh();
+                break;
+        }
     }
 
     private void handleIntent(Intent intent) {
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())  && session != null) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            searchFriends(query);
-        }
-    }
-
-    private void searchFriends(String query) {
-        // Get the users for the app from the session.  onSearchComplete will be called when done
-        session.searchUsers(query,new TestAppSearchListener());
-    }
-
-    private void showSearchResults(List<User> users, List<FriendRequest> friendRequests) {
-        // Create an adapter
-        UsersAdapter adapter = getUsersAdapter(users,friendRequests);
-        showFriends(adapter);
-        friendsFragment.setAdapter(adapter);
-        if (users.size() > 0) {
-            friendsFragment.expandGroup(adapter.getUserGroupIndex());
-        }
-    }
-
-    private void getFriendRequests(AsyncMultiplayerSession.GetFriendRequestsListener listener) {
-        // Get the friend requests.  onGetFriendRequests will be called when done
-        session.getFriendRequests(user,listener);
-    }
-
-    private void showFriends(List<FriendRequest> friendRequests) {
-        // Create an adapter
-        UsersAdapter adapter = getUsersAdapter(new ArrayList<User>(),friendRequests);
-        showFriends(adapter);
-    }
-
-    private void showFriends(UsersAdapter adapter) {
-        // Make sure the fragment is showing before setting the adapter so that it has been
-        // initialized
-        showFriendsFragment();
-        friendsFragment.setAdapter(adapter);
-    }
-
-
-    private UsersAdapter getUsersAdapter(List<User> users, List<FriendRequest> friendRequests) {
-        return UsersAdapterBuilder.createUsersAdapter(this, users, friendRequests,
-                new FriendRequestListener() {
-                    @Override
-                    public void onAddFriend(User friend) {
-
-                    }
-
-                    @Override
-                    public void onDeclineFriend(FriendRequest friendRequest) {
-
-                    }
-
-                    @Override
-                    public void onAcceptFriend(FriendRequest friendRequest) {
-
-                    }
-                },
-                new GameInviteListener() {
-                    @Override
-                    public void onGameInvite(User user) {
-
-                    }
+            searchFragment.searchUsers(query, new SearchFragment.SearchResultsListener() {
+                @Override
+                public void onSearchComplete(List<User> users, List<FriendRequest> friendRequests) {
+                    // Set the view to the friends fragment
+                    // Showing fragment using this lower level method will prevent the
+                    // Friends fragment from refreshing
+                    showFragment(FRIENDS_FRAGMENT_INDEX);
+                    friendsFragment.showUsers(users, friendRequests);
                 }
-        );
+
+                @Override
+                public void onSearchError(AsyncMultiplayerSessionError error) {
+                    // show error message
+                }
+            });
+        }
     }
+
+//    private void showSearchResults(List<User> users, List<FriendRequest> friendRequests) {
+//        getFriendsFragment().showUsers(users, friendRequests);
+//
+//    }
 
     private void showErrorAlert(int titleResource, int messageResource) {
         AlertDialog.Builder builder = new AlertDialog.Builder(AsyncMultiplayerTestAppActivity.this);
@@ -385,54 +419,4 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
             return fragments.size();
         }
     }
-
-    private class TestAppSearchListener implements AsyncMultiplayerSession.SearchListener {
-        private List<User> users;
-        private List<FriendRequest> friendRequests;
-
-        @Override
-        public void onSearchComplete(List<User> users) {
-            this.users = users;
-            // Get the friend requests
-            getFriendRequests(new AsyncMultiplayerSession.GetFriendRequestsListener() {
-                @Override
-                public void onGetFriendRequestsComplete(List<FriendRequest> friendRequests) {
-                    TestAppSearchListener.this.friendRequests = friendRequests;
-                    showSearchResults(TestAppSearchListener.this.users,friendRequests);
-                }
-
-                @Override
-                public void onGetFriendRequestsError(AsyncMultiplayerSessionError error) {
-
-                }
-            });
-        }
-
-        @Override
-        public void onSearchError(AsyncMultiplayerSessionError error) {
-
-        }
-    }
-
-    private class TestAppGetFriendRequestsListener
-            implements AsyncMultiplayerSession.GetFriendRequestsListener {
-        private UsersAdapterBuilder adapterBuilder;
-
-        public TestAppGetFriendRequestsListener(UsersAdapterBuilder builder) {
-            this.adapterBuilder = builder;
-        }
-
-
-        @Override
-        public void onGetFriendRequestsComplete(List<FriendRequest> friendRequests) {
-
-        }
-
-        @Override
-        public void onGetFriendRequestsError(AsyncMultiplayerSessionError error) {
-
-        }
-    }
-
-
 }
