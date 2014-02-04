@@ -87,7 +87,16 @@ public class FriendService {
         return unacceptedRequests;
     }
 
-    public static void createRequest(FriendRequest request) throws DuplicateFriendRequestException, AppNotFoundException, NotificationException {
+    /**
+     * Create a new firend request
+     *
+     * Notification errors will be logged by the notification service and not propogated by this service.  The
+     * assumption is that a notification error should not prevent the creation of the friend request.
+     * @param request
+     * @throws DuplicateFriendRequestException
+     * @throws AppNotFoundException
+     */
+    public static void createRequest(FriendRequest request) throws DuplicateFriendRequestException, AppNotFoundException {
         // Verify that the user and app are known to the server
         if (!App.exists(request.getAppId(),request.getRequested().getId())) {
             throw new AppNotFoundException("User " + request.getRequested().getUsername() + " does not have an " +
@@ -106,39 +115,34 @@ public class FriendService {
                 new FriendAssociation(request.getAppId(), request.getRequested(), request.getRequestor(),
                                       FriendRequestStatus.PENDING);
         // Now save both
+        Ebean.beginTransaction();
+        requestorToRequested.save();
+        requestedToRequestor.save();
+        Ebean.commitTransaction();
+
+        // Notify the requested user
         try {
-            Ebean.beginTransaction();
-            requestorToRequested.save();
-            requestedToRequestor.save();
-            // Notify the requested user
             NotificationService.sendFriendRequest(requestorToRequested);
-            Ebean.commitTransaction();
         }
         catch (NotificationException e) {
-            throw e;
-        }
-        finally {
-            Ebean.endTransaction();
+            // Notification service logs all errors.  No value in propogating to caller
         }
 
     }
 
-    public static void accept(long requestId) throws NotFoundException, NotificationException {
+    public static void accept(long requestId) throws NotFoundException {
         FriendAssociation friendRequest = FriendAssociation.findById(requestId);
         if (friendRequest == null) {
             throw new NotFoundException("No friend request found for id " + requestId);
         }
         friendRequest.setRequestStatus(FriendRequestStatus.ACCEPTED);
+        friendRequest.save();
+        // Notify the requesting user
         try {
-            Ebean.beginTransaction();
-            friendRequest.save();
             NotificationService.sendFriendRequestAccepted(friendRequest);
         }
         catch (NotificationException e) {
-            throw e;
-        }
-        finally {
-            Ebean.endTransaction();
+            // Notification service logs all errors.  No value in propogating to caller
         }
     }
 

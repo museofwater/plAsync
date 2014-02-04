@@ -6,6 +6,8 @@ import org.plasync.server.gcm.GcmSender;
 import org.plasync.server.models.App;
 import org.plasync.server.models.Credentials;
 import org.plasync.server.models.FriendAssociation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -20,16 +22,32 @@ import java.util.List;
 /**
  * Service that handles notifying users of events
  *
- * This service delegates actual notification to device specific services
+ * This service delegates actual notification to device specific services.
+ *
+ * Notification errors returned by these services are collected and logged by this service as well as being passed on
+ * to the caller.  The assumption is that notification errors should be recorded here in case the caller chooses not to
+ * propagate the error.
  */
 public class NotificationService {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(NotificationService.class);
+
+    private static final String NOTIFY_LOG_TAG = "NOTIFY:";
+    private static final String NEW_FRIEND_REQUEST_TAG = "NewFriendRequest";
+    private static final String FRIEND_REQUEST_ACCEPTED_TAG = "FriendRequestAccepted";
 
     public static void sendFriendRequest(FriendAssociation newFriendRequest) throws NotificationException {
         List<App> apps = getApps(newFriendRequest);
 
-        AndroidNotificationService.sendFriendRequest(apps, newFriendRequest);
-        IosNotificationService.sendFriendRequest(apps);
-        FacebookNotificationService.sendFriendRequest(apps);
+        try {
+            AndroidNotificationService.sendFriendRequest(apps, newFriendRequest);
+            IosNotificationService.sendFriendRequest(apps);
+            FacebookNotificationService.sendFriendRequest(apps);
+        }
+        catch (NotificationException e) {
+            logNotificationError(e);
+            throw e;
+        }
 
     }
 
@@ -38,9 +56,15 @@ public class NotificationService {
         // Get the app id
         List<App> apps = getApps(friendRequest);
 
-        AndroidNotificationService.sendFriendRequestAccepted(apps);
-        IosNotificationService.sendFriendRequestAccepted(apps);
-        FacebookNotificationService.sendFriendRequestAccepted(apps);
+        try {
+            AndroidNotificationService.sendFriendRequestAccepted(apps);
+            IosNotificationService.sendFriendRequestAccepted(apps);
+            FacebookNotificationService.sendFriendRequestAccepted(apps);
+        }
+        catch (NotificationException e) {
+            logNotificationError(e);
+            throw e;
+        }
     }
 
     private static List<App> getApps(FriendAssociation friendRequest) {
@@ -49,5 +73,9 @@ public class NotificationService {
 
         // Find all apps with that id and requested user
         return App.findByUserAndApp(friendRequest.getFriend().getId(), appId);
+    }
+
+    private static void logNotificationError(NotificationException e) {
+        LOGGER.error(NOTIFY_LOG_TAG + NEW_FRIEND_REQUEST_TAG,e);
     }
 }
