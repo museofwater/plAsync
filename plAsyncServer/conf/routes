@@ -27,13 +27,13 @@ GET         /gcmSenderId                             org.plasync.server.controll
 # RESTFul User Services
 GET         /user                                    org.plasync.server.controllers.UserController.getUsers()
 GET         /user/:id                                org.plasync.server.controllers.UserController.getUser(id: String)
-PUT         /user                                    org.plasync.server.controllers.UserController.createUser()
+POST         /user                                    org.plasync.server.controllers.UserController.createUser()
 
 # RESTFul Friend Services
 GET         /friend/:appId/:userId                   org.plasync.server.controllers.FriendController.getAllFriendRequests(appId: String, userId: String)
 GET         /friend/:appId/:userId/accepted          org.plasync.server.controllers.FriendController.getFriends(appId: String, userId: String)
 GET         /friend/:appId/:userId/unaccepted        org.plasync.server.controllers.FriendController.getUnacceptedFriendRequests(appId: String, userId: String)
-PUT         /friend                                  org.plasync.server.controllers.FriendController.createFriendRequest()
+POST         /friend                                  org.plasync.server.controllers.FriendController.createFriendRequest()
 # Note that a generic update is not provided to ensure that the friend relationships are updated consistently
 POST        /friend/:requestId/accept                org.plasync.server.controllers.FriendController.acceptFriendRequest(requestId: Long)
 POST        /friend/:requestId/decline               org.plasync.server.controllers.FriendController.declineFriendRequest(requestId: Long)
@@ -42,7 +42,7 @@ POST        /friend/:requestId/decline               org.plasync.server.controll
 #    Search for users of an app
 GET         /app/:id/users                           org.plasync.server.controllers.AppController.searchUsers(id: String)
 #    Create an instance of an app for a particular user and device
-PUT         /app                                     org.plasync.server.controllers.AppController.addApp()
+POST         /app                                     org.plasync.server.controllers.AppController.addApp()
 
 
 
