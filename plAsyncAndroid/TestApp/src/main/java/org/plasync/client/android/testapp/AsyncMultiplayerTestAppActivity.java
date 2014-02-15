@@ -18,7 +18,10 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import org.plasync.client.android.AsyncMultiplayerSession;
 import org.plasync.client.android.AsyncMultiplayerSessionError;
@@ -51,6 +54,7 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
 
     private ViewPager fragmentPager;
     private ActionBar.TabListener tabListener;
+    private ProgressBar[] tabProgressBars;
     //private ActionBar.TabListener nullTabListener;
 
     // Other than the accessor and the PagerAdapter, access to this field should only be through
@@ -98,12 +102,17 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
         if (settingsFragment == null) {
             settingsFragment = new SettingsFragment();
         }
-        searchFragment = new SearchFragment();
 
         // Add the fragments to the list
         fragments.add(friendsFragment);
         fragments.add(gamesFragment);
         fragments.add(settingsFragment);
+
+        tabProgressBars = new ProgressBar[fragments.size()];
+
+        addRefreshListener(friendsFragment, FRIENDS_FRAGMENT_INDEX);
+        addRefreshListener(gamesFragment, GAMES_FRAGMENT_INDEX);
+        searchFragment = new SearchFragment();
 
         // setup the ViewPager
         fragmentPager = (ViewPager) findViewById(R.id.fragmentPager);
@@ -147,20 +156,9 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
             }
         };
 
-        ActionBar.Tab tab = actionBar.newTab()
-                .setText(R.string.friends_menu_button)
-                .setTabListener(tabListener);
-        actionBar.addTab(tab);
-
-        tab = actionBar.newTab()
-                .setText(R.string.games_menu_button)
-                .setTabListener(tabListener);
-        actionBar.addTab(tab);
-
-        tab = actionBar.newTab()
-                .setText(R.string.settings_menu_button)
-                .setTabListener(tabListener);
-        actionBar.addTab(tab);
+        addTab(actionBar, R.string.friends_tab, FRIENDS_FRAGMENT_INDEX);
+        addTab(actionBar, R.string.games_tab, GAMES_FRAGMENT_INDEX);
+        addTab(actionBar, R.string.settings_tab, SETTINGS_FRAGMENT_INDEX);
 
         showSettingsFragment();
     }
@@ -243,40 +241,70 @@ public class AsyncMultiplayerTestAppActivity extends FragmentActivity
         // Multiplayer disabled
     }
 
-    // Due to the way that fragments are saved and restored within the fragment pager, direct access
-    // can lead to fragments with unattached activities.  Access to fragments should be through
-    // the fragment manager
+    private void addRefreshListener(RefreshableFragment fragment, int fragmentIndex) {
+        final class ProgressUpdateRefreshListener implements RefreshListener {
+            private int fragmentIndex;
+
+            ProgressUpdateRefreshListener(int fragmentIndex) {
+                this.fragmentIndex = fragmentIndex;
+            }
+
+            @Override
+            public void refreshStarted() {
+                ProgressBar tabProgress = tabProgressBars[fragmentIndex];
+                if (tabProgress != null) {
+                    tabProgress.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void refreshComplete() {
+                ProgressBar tabProgress = tabProgressBars[fragmentIndex];
+                if (tabProgress != null) {
+                    tabProgress.setVisibility(View.INVISIBLE);
+                }
+            }
+        }
+        fragment.setRefreshListener(new ProgressUpdateRefreshListener(fragmentIndex));
+    }
+
+    private ActionBar.Tab addTab(ActionBar actionBar, int resId, int position) {
+        ActionBar.Tab tab = actionBar.newTab()
+                .setCustomView(R.layout.tab_with_progress)
+                .setTabListener(tabListener);
+        View tabView = tab.getCustomView();
+
+        // Set the text
+        TextView tabText = (TextView) tabView.findViewById(R.id.tabTextView);
+        tabText.setText(resId);
+
+        // Get the progress bar and store it in the list for later usage
+        ProgressBar tabProgress = (ProgressBar) tabView.findViewById(R.id.tabProgressBar);
+        tabProgressBars[position] = tabProgress;
+
+        actionBar.addTab(tab);
+        return tab;
+    }
+
     private FriendsFragment getFriendsFragment() {
         if (friendsFragment ==  null) { // Happens when saved fragment is restored
             // Get the fragment from the fragment manager
             friendsFragment = (FriendsFragment)getSupportFragmentManager().findFragmentByTag(
                     getFragmentName(FRIENDS_FRAGMENT_INDEX));
-//            if (friendsFragment != null && session != null) {
-//                friendsFragment.setSession(session);
-//            }
         }
         return friendsFragment;
     }
 
-    // Due to the way that fragments are saved and restored within the fragment pager, direct access
-    // can lead to fragments with unattached activities.  Access to fragments should be through
-    // the fragment manager
     private GamesFragment getGamesFragment() {
         if (gamesFragment ==  null) { // Happens when saved fragment is restored
             // Get the fragment from the fragment manager
             gamesFragment = (GamesFragment)getSupportFragmentManager().findFragmentByTag(
                     getFragmentName(GAMES_FRAGMENT_INDEX));
-//            if (gamesFragment != null && session != null) {
-//                gamesFragment.setSession(session);
-//            }
         }
         return gamesFragment;
     }
 
-    // Due to the way that fragments are saved and restored within the fragment pager, direct access
-    // can lead to fragments with unattached activities.  Access to fragments should be through
-    // the fragment manager
-    private SettingsFragment getSettingsFragment() {
+        private SettingsFragment getSettingsFragment() {
         if (settingsFragment ==  null) { // Happens when saved fragment is restored
             // Get the fragment from the fragment manager
             settingsFragment = (SettingsFragment)getSupportFragmentManager().findFragmentByTag(

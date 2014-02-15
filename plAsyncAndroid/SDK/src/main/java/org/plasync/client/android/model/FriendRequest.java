@@ -25,6 +25,12 @@ public class FriendRequest {
     @Expose
     private Long requestId;
 
+    /**
+     * The id of the app in which the request is being made
+     */
+    @Expose
+    private String appId;
+
     @Expose
     private User requestor;
 
@@ -54,5 +60,13 @@ public class FriendRequest {
 
     public FriendRequestStatus getRequestStatus() {
         return requestStatus;
+    }
+
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
     }
 }

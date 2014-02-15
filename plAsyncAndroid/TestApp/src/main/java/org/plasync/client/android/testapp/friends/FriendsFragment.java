@@ -14,6 +14,8 @@ import org.plasync.client.android.model.FriendRequest;
 import org.plasync.client.android.model.User;
 import org.plasync.client.android.testapp.DeferedDisplayFragmentSupport;
 import org.plasync.client.android.testapp.R;
+import org.plasync.client.android.testapp.RefreshListener;
+import org.plasync.client.android.testapp.RefreshableFragment;
 import org.plasync.client.android.testapp.games.GameInviteListener;
 
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ import java.util.List;
  * Created by ericwood on 8/12/13.
  */
 public class FriendsFragment extends DeferedDisplayFragmentSupport implements
+        RefreshableFragment,
         AsyncMultiplayerSession.GetFriendRequestsListener,
         AsyncMultiplayerSession.RespondToFriendRequestListener,
         AsyncMultiplayerSession.CreateFriendRequestListener,
@@ -31,6 +34,7 @@ public class FriendsFragment extends DeferedDisplayFragmentSupport implements
 {
     private ExpandableListView elvFriends;
     private AsyncMultiplayerSession session;
+    private RefreshListener refreshListener;
 
 
     @Override
@@ -114,8 +118,13 @@ public class FriendsFragment extends DeferedDisplayFragmentSupport implements
         this.session = session;
     }
 
+    public void setRefreshListener(RefreshListener refreshListener) {
+        this.refreshListener = refreshListener;
+    }
+
     public void refresh() {
         if (session != null) {
+            refreshListener.refreshStarted();
             session.getFriendRequests(this);
         }
     }
@@ -168,6 +177,7 @@ public class FriendsFragment extends DeferedDisplayFragmentSupport implements
             if (users.size() > 0) {
                 expandGroup(adapter.getUserGroupIndex());
             }
+            refreshListener.refreshComplete();
         }
     }
 }

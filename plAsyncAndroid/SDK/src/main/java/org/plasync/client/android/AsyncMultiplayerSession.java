@@ -140,7 +140,7 @@ public class AsyncMultiplayerSession {
             @Override
             protected List<User> doInBackground(String... params) {
                 try {
-                    return asyncMultiplayerClient.searchUsers(appContext.getPackageName(), params[0]);
+                    return asyncMultiplayerClient.searchUsers(getAppId(), params[0]);
                 }
                 catch (AsyncMultiplayerSessionError error) {
                     this.error = error;
@@ -183,7 +183,7 @@ public class AsyncMultiplayerSession {
             @Override
             protected List<FriendRequest> doInBackground(User... params) {
                 try {
-                    return asyncMultiplayerClient.getFriendRequests(appContext.getPackageName(), params[0]);
+                    return asyncMultiplayerClient.getFriendRequests(getAppId(), params[0]);
                 }
                 catch (AsyncMultiplayerSessionError error) {
                     this.error = error;
@@ -233,6 +233,16 @@ public class AsyncMultiplayerSession {
                 }
                 return null;
             }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                if (error == null) {
+                    callback.onRespondToFriendRequestComplete();
+                }
+                else {
+                    callback.onRespondToFriendRequestError(this.error);
+                }
+            }
         }
 
         new RespondToFriendRequestTask(accepted, callback).execute(request);
@@ -267,9 +277,16 @@ public class AsyncMultiplayerSession {
             }
 
         }
-
+        // Set the appId on the request if it is not set
+        if (request.getAppId() == null) {
+            request.setAppId(getAppId());
+        }
         new CreateFriendRequestTask(callback).execute(request);
 
+    }
+
+    private String getAppId() {
+        return appContext.getPackageName();
     }
 
     /**
@@ -281,17 +298,17 @@ public class AsyncMultiplayerSession {
     }
 
     private String getLocalGcmId() {
-        GcmSettings gcmSettings = gcmSettingsDao.getGcmSettingsForApp(appContext.getPackageName());
+        GcmSettings gcmSettings = gcmSettingsDao.getGcmSettingsForApp(getAppId());
         return gcmSettings != null ? gcmSettings.getGcmId() : null;
     }
 
     private void registerApp(String sGcmId) throws AsyncMultiplayerSessionError {
-        App app = new App(config.getUser(), appContext.getPackageName(), DeviceType.ANDROID, sGcmId);
+        App app = new App(config.getUser(), getAppId(), DeviceType.ANDROID, sGcmId);
         asyncMultiplayerClient.addApp(app);
     }
 
     private void storeGcmSettings(String sGcmId, String receiveIntentName) {
-        GcmSettings gcmSettings = new GcmSettings(config.getPlasyncServerUrl(),appContext.getPackageName(),
+        GcmSettings gcmSettings = new GcmSettings(config.getPlasyncServerUrl(), getAppId(),
                                                   sGcmId,receiveIntentName);
         gcmSettingsDao.createGcmSettings(gcmSettings);
     }

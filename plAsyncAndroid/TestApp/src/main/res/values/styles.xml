@@ -17,13 +17,18 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="navbar_button">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:button">@null</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:textSize">14dp</item>
+    <style name='AppTheme.textStyleMedium' parent="android:style/TextAppearance.Holo.Medium"/>
+
+    <style name="AppTheme.tabViewStyle">
+        <!--<item name="android:textAppearance">@style/AppTheme.textStyleMedium</item>-->
+        <!--<item name="android:textColor">?android:attr/textColorPrimaryInverse</item>-->
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <!--<item name="android:textAllCaps">true</item>--> // Requires API 14
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:maxLines">2</item>
     </style>
+
+
 
 </resources>

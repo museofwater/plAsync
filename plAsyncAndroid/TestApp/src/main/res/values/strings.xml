@@ -13,9 +13,9 @@
     <string name="SET_SERVER_URL">Change Server</string>
     <string name="INITIALIZING_TITLE">Initializing Multiplayer Session...</string>
     <string name="INITIALIZING_MSG">Please wait...</string>
-    <string name="friends_menu_button">Friends</string>
-    <string name="games_menu_button">Games</string>
-    <string name="settings_menu_button">Settings</string>
+    <string name="friends_tab">FRIENDS</string>
+    <string name="games_tab">GAMES</string>
+    <string name="settings_tab">SETTINGS</string>
     <string name="SET_URL_BUTTON">Set</string>
     <string name="search_hint">Search friends</string>
     <string name="game_invite">Game Invite</string>
