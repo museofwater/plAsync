@@ -15,3 +15,13 @@ plAsync provides support for cross-platfrom (Android, iOS, and Facebook planned)
 2.  Game invites to friends and random players
 3.  Game state data update and access
 4.  Notifications for the above
+
+### Roadmap
+Current supports the following features on Android
+1.  App and user registration
+2.  Seacrch for users of app
+3.  Create, accept, and decline friend requests
+4.  Receive friend request notifications
+
+In Development for Android
+1.  Game invites
